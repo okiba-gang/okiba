@@ -6,10 +6,14 @@ export function arrayOrOne(arrayLike) {
   return arrayLike
 }
 
-export function castArray(arrayLike) {
-  if (arrayLike instanceof Array) {
-    return arrayLike
+export function castArray(castable) {
+  if (castable instanceof Array) {
+    return castable
   }
 
-  return Array.prototype.slice.call(arrayLike)
+  if (castable.length === void 0) {
+    return [castable]
+  }
+
+  return Array.prototype.slice.call(castable)
 }
