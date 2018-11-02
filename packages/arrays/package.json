@@ -1,16 +1,15 @@
 {
   "name": "@okiba/arrays",
-  "version": "0.0.2",
-  "description": "Array helpers okiba.js",
+  "version": "0.0.0",
+  "description": "Array helpers for okiba.js",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
   },
   "contributors": [
-    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)",
-    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)"
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
-  "license": "MIT",
-  "gitHead": "f7477e40174203a5a88472eb33fb1b05a9a0feef"
+  "license": "MIT"
 }
