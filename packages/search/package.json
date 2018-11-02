@@ -1,0 +1,16 @@
+{
+  "name": "@okiba/search",
+  "version": "0.0.5",
+  "description": "Search functions used in okiba.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "contributors": [
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)",
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)"
+  ],
+  "license": "MIT",
+  "gitHead": "f7477e40174203a5a88472eb33fb1b05a9a0feef"
+}
