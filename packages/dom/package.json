@@ -1,6 +1,6 @@
 {
   "name": "@okiba/dom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "DOM helpers for okiba.js",
   "main": "index.js",
   "repository": {
