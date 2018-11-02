@@ -11,5 +11,8 @@
     "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@okiba/arrays": "0.0.1"
+  }
 }
