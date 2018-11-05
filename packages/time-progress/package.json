@@ -1,6 +1,6 @@
 {
   "name": "@okiba/time-progress",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Helper class used to normalize time on a duration between 0 and 1",
   "main": "index.js",
   "keywords": [
