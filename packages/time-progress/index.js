@@ -7,15 +7,6 @@ export default class TimeProgress {
     this.elapsed = 0
   }
 
-  updateDelta() {
-    this.time = Date.now()
-    if (!this.lastTime) {
-      this.lastTime = this.time
-    }
-    this.delta = this.time - this.lastTime
-    this.lastTime = this.time
-  }
-
   setDirection(isForward) {
     this.direction = isForward ? 1 : -1
   }
@@ -26,9 +17,18 @@ export default class TimeProgress {
   }
 
   update() {
-    this.updateDelta()
+    this._updateDelta()
     this.elapsed += this.direction * this.delta
     this.progress = cap(this.elapsed / this.duration, 0, 1)
     return this.progress
+  }
+
+  _updateDelta() {
+    this.time = Date.now()
+    if (!this.lastTime) {
+      this.lastTime = this.time
+    }
+    this.delta = this.time - this.lastTime
+    this.lastTime = this.time
   }
 }
