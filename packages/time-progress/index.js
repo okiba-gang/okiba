@@ -12,8 +12,8 @@ export default class TimeProgress {
   }
 
   setProgress(progress) {
-    this.progress = progress
     this.elapsed = this.duration * this.progress
+    this.progress = progress
   }
 
   update() {
