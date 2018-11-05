@@ -1,6 +1,7 @@
 import {cap} from '@okiba/math'
 
 export default class TimeProgress {
+
   constructor(duration = 400) {
     this.duration = duration
   }
