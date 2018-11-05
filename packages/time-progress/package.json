@@ -1,0 +1,16 @@
+{
+  "name": "@okiba/time-progress",
+  "version": "0.0.1",
+  "description": "Helper class used to normalize time on a duration between 0 and 1",
+  "main": "index.js",
+  "keywords": ["okiba", "okiba.js", "okibajs", "time", "normalization"],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "contributors": [
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)",
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)"
+  ],
+  "license": "MIT"
+}
