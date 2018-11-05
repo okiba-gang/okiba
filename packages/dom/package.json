@@ -1,6 +1,6 @@
 {
   "name": "@okiba/dom",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "DOM helpers for okiba.js",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@okiba/arrays": "0.0.1"
+    "@okiba/arrays": "^0.0.2"
   }
 }
