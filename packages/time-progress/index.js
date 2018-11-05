@@ -23,6 +23,11 @@ export default class TimeProgress {
     return this.progress
   }
 
+  reset() {
+    this.time = this.lastTime = this.delta = null
+    this.progress = this.elapsed = 0
+  }
+
   _updateDelta() {
     this.time = Date.now()
     if (!this.lastTime) {
