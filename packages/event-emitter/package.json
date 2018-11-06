@@ -2,6 +2,7 @@
   "name": "@okiba/event-emitter",
   "version": "0.1.2",
   "description": "Simple Event Emitter okiba.js",
+  "keywords": ["okiba", "okibajs", "okibajs", "events", "event-emitter", "emitter"],
   "main": "index.js",
   "repository": {
     "type": "git",
