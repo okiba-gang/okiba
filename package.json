@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "jsdoc-to-markdown": "^4.0.1",
     "lerna": "^3.4.3"
   },
   "eslintConfig": {
