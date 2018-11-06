@@ -1,8 +1,17 @@
 {
   "name": "@okiba/resource-loader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Class to fetch resources, prefers a separate thread",
-  "keywords": ["okiba", "okibajs", "loader", "resource-loader", "generic", "resource", "web-worker", "worker"],
+  "keywords": [
+    "okiba",
+    "okibajs",
+    "loader",
+    "resource-loader",
+    "generic",
+    "resource",
+    "web-worker",
+    "worker"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",

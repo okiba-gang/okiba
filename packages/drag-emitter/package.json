@@ -1,8 +1,15 @@
 {
   "name": "@okiba/drag-emitter",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Unified drag events emitter for mouse and touch",
-  "keywords": ["okiba", "okibajs", "drag", "events", "event-emitter", "drag-events"],
+  "keywords": [
+    "okiba",
+    "okibajs",
+    "drag",
+    "events",
+    "event-emitter",
+    "drag-events"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
