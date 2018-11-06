@@ -1,25 +1,25 @@
 export default class EventEmitter {
   constructor() {
-    this.handlers = {}
+    this.hs = {}
   }
 
   on(name, handler) {
     (
-      this.handlers[name] || (this.handlers[name] = [])
+      this.hs[name] || (this.hs[name] = [])
     ).push(handler)
   }
 
   off(name, handler) {
-    if (!this.handlers[name]) return
+    if (!this.hs[name]) return
 
-    const i = this.handlers[name].indexOf(handler)
+    const i = this.hs[name].indexOf(handler)
     if (i < 0) return
 
-    this.handlers[name].splice(i, 1)
+    this.hs[name].splice(i, 1)
   }
 
   emit(name, data) {
-    if (!this.handlers[name]) return
+    if (!this.hs[name]) return
 
     for (let i = 0; i < this.hs[name].length; ++i) {
       this.handlers[name][i](data)
