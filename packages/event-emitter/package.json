@@ -1,6 +1,6 @@
 {
   "name": "@okiba/event-emitter",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple Event Emitter okiba.js",
   "main": "index.js",
   "repository": {
