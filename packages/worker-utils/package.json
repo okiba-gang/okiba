@@ -1,8 +1,14 @@
 {
   "name": "@okiba/worker-utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Utils to work with WebWorker",
-  "keywords": ["okiba", "okibajs", "web-worker", "workers", "thread"],
+  "keywords": [
+    "okiba",
+    "okibajs",
+    "web-worker",
+    "workers",
+    "thread"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",

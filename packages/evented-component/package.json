@@ -1,8 +1,14 @@
 {
   "name": "@okiba/evented-component",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Component with events",
-  "keywords": ["okiba", "okibajs", "component", "events", "event-emitter"],
+  "keywords": [
+    "okiba",
+    "okibajs",
+    "component",
+    "events",
+    "event-emitter"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
