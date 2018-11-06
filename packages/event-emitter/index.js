@@ -21,7 +21,7 @@ export default class EventEmitter {
   emit(name, data) {
     if (!this.handlers[name]) return
 
-    for (const i = 0; i < this.handlers[name].length; ++i) {
+    for (let i = 0; i < this.hs[name].length; ++i) {
       this.handlers[name][i](data)
     }
   }
