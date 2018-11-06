@@ -1,0 +1,19 @@
+{
+  "name": "@okiba/drag-emitter",
+  "version": "0.0.0",
+  "description": "Unified drag events emitter for mouse and touch",
+  "keywords": ["okiba", "okibajs", "drag", "events", "event-emitter", "drag-events"],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "contributors": [
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
+  ],
+  "dependencies": {
+    "@okiba/event-emitter": "file:../event-emitter"
+  },
+  "license": "MIT"
+}
