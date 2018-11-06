@@ -1,5 +1,5 @@
 {
-  "name": "@okiba/worker",
+  "name": "@okiba/worker-utils",
   "version": "0.0.0",
   "description": "Utils to work with WebWorker",
   "keywords": ["okiba", "okibajs", "web-worker", "workers", "thread"],
