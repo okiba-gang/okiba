@@ -1,5 +1,5 @@
 {
-  "name": "@okiba/worker-proxy",
+  "name": "@okiba/evented-component",
   "version": "0.0.0",
   "description": "Component with events",
   "keywords": ["okiba", "okibajs", "component", "events", "event-emitter"],
