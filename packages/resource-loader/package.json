@@ -1,0 +1,19 @@
+{
+  "name": "@okiba/worker-utils",
+  "version": "0.0.0",
+  "description": "Utilities to work with WebWorkers",
+  "keywords": ["okiba", "okibajs", "workers", "web-worker", "web-workers"],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "contributors": [
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
+  ],
+  "dependencies": {
+    "@okiba/worker-utils": "file:../worker-utils"
+  },
+  "license": "MIT"
+}
