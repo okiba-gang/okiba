@@ -1,0 +1,16 @@
+{
+  "name": "@okiba/worker-proxy",
+  "version": "0.0.0",
+  "description": "Transparent proxy to move your classes on a separate thread if possible (WebWorker + fallback)",
+  "keywords": ["okiba", "okibajs", "web-worker", "webworker", "thread", "proxy"],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "contributors": [
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
+  ],
+  "license": "MIT"
+}
