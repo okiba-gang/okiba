@@ -22,8 +22,7 @@ function updateDelta() {
 export default class TimeProgress {
   constructor(duration = 400) {
     this.duration = duration
-    this.direction = 1
-    this.elapsed = 0
+    this.reset()
   }
 
   setDirection(isForward) {
@@ -31,6 +30,7 @@ export default class TimeProgress {
   }
 
   setProgress(progress) {
+    progress = cap(progress, 0, 1)
     this.elapsed = this.duration * Math.abs(this.progress - progress)
     this.progress = progress
   }
@@ -38,14 +38,16 @@ export default class TimeProgress {
   update() {
     updateDelta.call(this)
     this.elapsed += this.direction * this.delta
+    this.elapsed = cap(this.elapsed, 0, this.duration)
     this.progress = this.elapsed / this.duration
     checkActive.call(this)
-    this.progress = round(cap(this.elapsed / this.duration, 0, 1), 3)
+    this.progress = round(this.progress, 3)
     return this.progress
   }
 
   reset() {
     this.time = this.lastTime = this.delta = null
     this.progress = this.elapsed = 0
+    this.direction = 1
   }
 }
