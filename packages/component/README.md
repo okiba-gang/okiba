@@ -1,36 +1,74 @@
+
+
 # Okiba // Component
-Manages a DOM component, binds UI and recursively binds child components
+Manages a DOM component, binds UI and recursively binds child components.
+Can be extended or instantiated
+
 
 
 
 ```javascript
-new Component(el, ui, component, options)
+// ./components/Slider.js
+
+import Component from '@okiba/component'
+import SliderControls from '@components/SliderControls'
+
+const ui = {
+  slides: '.slide',
+}
+
+const components = {
+  controls: {
+    selector: '.slider-controls', type: SliderControls, options: {big: true}
+  }
+}
+
+class Slider extends Component {
+  constructor({el, options}) {
+    super({el, ui, components, options})
+
+    this.ui.slides.forEach(
+      slide => slide.style.opacity = 0
+    )
+
+    this.components.controls.forEach(
+      controls => controls.onNext(this.next.bind(this))
+    )
+  }
+}
 ```
 
-
-
-## Component
-
-
-
-
-
 ```javascript
-import {qs} from '@okiba/dom'
-import {Slider} from './components/Slider'
+// ./main.js
 
-const app = new Component(
-  qs('#app'),
-  { buttonNext: '#buttonNext' },
-  {
-    slider: {
-      selector: '.slider',
-      type: Slider,
-      options: { fullScreen: true }
-    }
-  },
+import {qs} from '@okiba/dom'
+import Component from '@okiba/component'
+import Slider from './components/Slider'
+
+const app = new Component({
+  el: qs('#app'),
+  components: {
+    selector: '.slider', type: Slider
+  }
 })
 ```
+
+
+
+### Installation
+```
+npm i --save @okiba/component
+```
+
+
+
+
+## constructor(args: {el, ui, components, options})
+
+
+
+
+
 
 
 
@@ -38,12 +76,19 @@ const app = new Component(
 #### Arguments
 
 
-##### __`el`__: `Element` or  `String`
+#### + `args`: `Object`
 
-DOM Element or selector
+Arguments to create a component
 
-# 　　　　　
-##### __`ui`__: `Object` | _optional_
+
+
+##### + `el`: `Element`
+
+DOM Element to be bound
+
+
+#　　　　　　　　　
+##### + `ui`: `Object` | _optional_
 
 UI hash where keys are name and values are selectors
 ```javascript
@@ -54,8 +99,9 @@ Becomes:
 this.ui.buttonNext
 ```
 
-# 　　　　　
-##### __`components`__: `Object` | _optional_
+
+#　　　　　　　　　
+##### + `components`: `Object` | _optional_
 
 Components hash for childs to bind, keys are names and values are component initialization props:
 ```javascript
@@ -76,12 +122,22 @@ Becomes:
 this.components.slider
 ```
 
-# 　　　　　
-##### __`options`__: `Object` | _optional_
+
+#　　　　　　　　　
+##### + `options`: `Object` | _optional_
 
 Custom options passed to the component
 
-## onDestroy
+
+
+
+
+
+
+
+
+## onDestroy()
+
 
 Virtual method, needs to be overridden
 It's the place to call cleanup functions as it will
@@ -90,10 +146,16 @@ be called when your component is destroyed
 
 
 
-## destroy
+
+
+
+## destroy()
+
 
 Should not be overridden, will call `onDestroy`
 and forward destruction to all child components
+
+
 
 
 

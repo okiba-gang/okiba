@@ -1,10 +1,25 @@
+
+
 # Okiba // arrays
 Array utils for okiba js
 
 
-## arrayOrOne
+
+
+### Installation
+```
+npm i --save @okiba/arrays
+```
+
+
+
+
+## arrayOrOne(arrayLike)
+
 
 Return the first element if it only contains one
+
+
 
 
 
@@ -23,14 +38,20 @@ console.log(els) // 🍏
 #### Arguments
 
 
-##### __`arrayLike`__: `Array-like`
+#### + `arrayLike`: `Array-like`
 
 The options object.
 
 
+
+
+
+
 #### Returns
 
-`any` The first element or the argument## castArray
+`any` The first element or the argument
+## castArray(castable)
+
 
 Cast an array-like object or single element to Array
 
@@ -38,12 +59,25 @@ Cast an array-like object or single element to Array
 
 
 
+
+```javascript
+const elements = castArray(document.querySelectorAll('p')) // [p, p]
+const fruits = castArray(🍒) // [🍒]
+```
+
+
+
+
 #### Arguments
 
 
-##### __`castable`__: `any`
+#### + `castable`: `any`
 
 Array to cast
+
+
+
+
 
 
 #### Returns

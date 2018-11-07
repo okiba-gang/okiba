@@ -1,31 +1,58 @@
+
+
 # Okiba // 
 
 
 
-## "no-shadow"
+
+
+### Installation
+```
+npm i --save @okiba/
+```
+
+
+
+
+## "no-shadow"()
+
 
 Variables
 
 
 
 
-## "no-cond-assign"
+
+
+
+## "no-cond-assign"()
+
 
 Possible errors
 
 
 
 
-## "consistent-return"
+
+
+
+## "consistent-return"()
+
 
 Best practices
 
 
 
 
-## indent
+
+
+
+## indent()
+
 
 Style
+
+
 
 
 

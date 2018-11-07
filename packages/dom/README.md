@@ -1,10 +1,25 @@
+
+
 # Okiba // dom
 Utilities to work with dom elements and selectors
 
 
-## qsa
+
+
+### Installation
+```
+npm i --save @okiba/dom
+```
+
+
+
+
+## qsa(selector, element)
+
 
 Selects an array of DOM elements, scoped to element
+
+
 
 
 
@@ -21,14 +36,19 @@ console.log(fruits) // [div.fruit, div.fruit]
 #### Arguments
 
 
-##### __`selector`__: `String`
+#### + `selector`: `String`
 
 DOM Selector (tag, class, id, anything that can be passed to `querySelector` API)
 
-# 　　　　　
-##### __`element`__: `Element` | _optional_ - _default_: `document`
+
+#　　　　　　　　　
+#### + `element`: `Element` | _optional_ - _default_: `document`
 
 DOM element to scope the selection query, only childs of that element will be tageted
+
+
+
+
 
 
 #### Returns
