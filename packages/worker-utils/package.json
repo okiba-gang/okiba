@@ -1,14 +1,13 @@
 {
-  "name": "@okiba/event-emitter",
-  "version": "0.1.4",
-  "description": "Simple Event Emitter okiba.js",
+  "name": "@okiba/worker-utils",
+  "version": "0.0.1",
+  "description": "Utils to work with WebWorker",
   "keywords": [
     "okiba",
     "okibajs",
-    "okibajs",
-    "events",
-    "event-emitter",
-    "emitter"
+    "web-worker",
+    "workers",
+    "thread"
   ],
   "main": "index.js",
   "repository": {
