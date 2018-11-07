@@ -1,6 +1,6 @@
 {
   "name": "@okiba/worker-proxy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transparent proxy to move your classes on a separate thread if possible (WebWorker + fallback)",
   "keywords": [
     "okiba",
