@@ -1,5 +1,19 @@
+{% macro ps(params) %}
+{%- for param in params -%}
+  {{param.name}}
+  {%- if not loop.last -%}, {% endif -%}
+  {%- if param.subparams %}: {% raw %}{{% endraw %}{% for subparam in param.subparams -%}
+  {{subparam.name}}
+  {%- if not loop.last -%}, {% endif -%}
+  {%- endfor -%} {% raw %}}{% endraw %}
+  {%- endif -%}
+{%- endfor -%}
+{% endmacro %}
+
 # Okiba // {{ name }}
 {{ description }}
+
+
 {% if examples %}
 {% for example in examples %}
 ```javascript
@@ -8,9 +22,25 @@
 {% endfor %}
 {% endif %}
 
+### Installation
+```
+npm i --save @okiba/{{pkgName}}
+```
+
+{% if todo %}
+#### Todo:
+{% for t in todo %}
++ {{t}}
+{%- endfor %}
+{% endif %}
+
 {% for member in members -%}
-## {{member.name}}
+{% if member.kind == 'class' %}
+## constructor({{ps(member.params)}})
+{% else %}
+## {{member.name}}({{ps(member.params)}})
+{% endif %}
 
 {% include "./docs/partials/describe.njk" %}
-
 {%- endfor -%}
+
