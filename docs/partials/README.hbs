@@ -1,0 +1,16 @@
+# Okiba // {{ name }}
+{{ description }}
+{% if examples %}
+{% for example in examples %}
+```javascript
+{{example}}
+```
+{% endfor %}
+{% endif %}
+
+{% for member in members -%}
+## {{member.name}}
+
+{% include "./docs/partials/describe.njk" %}
+
+{%- endfor -%}
