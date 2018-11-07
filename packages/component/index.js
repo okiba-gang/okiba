@@ -1,7 +1,6 @@
 import {qsa} from '@okiba/dom'
 
-export default class Component {
-  /**
+/**
   * Accepted arguments:
   * - `el`: DOM element
   * - `ui`: Hash where key is name, and value is DOM selector
@@ -10,38 +9,46 @@ export default class Component {
   *   - `type`: Component class to instantiate
   *   - `options`: Optional hash passed to the class constructor
   */
-  constructor(args) {
-    this.el = args.el
-    this.options = args.options
+class Component {
+  constructor(el, ui, components, options) {
+    this.el = el
 
-    this.ui = Object.keys(args.ui).reduce(
-      (hash, key) => {
-        const els = qsa(args.ui[key], this.el)
+    if (options) {
+      this.options = options
+    }
 
-        if (els) {
-          hash[key] = els
-        } else {
-          console.warn(`[!!] [Component] Cant't find UI element for selector: ${args.ui[key]}`)
-        }
+    if (ui) {
+      this.ui = Object.keys(ui).reduce(
+        (hash, key) => {
+          const els = qsa(ui[key], this.el)
 
-        return hash
-      }, {}
-    )
+          if (els) {
+            hash[key] = els
+          } else {
+            console.warn(`[!!] [Component] Cant't find UI element for selector: ${ui[key]}`)
+          }
 
-    this.components = Object.keys(args.components).reduce(
-      (hash, key) => {
-        const {type, selector, options} = args.components[key]
-        const els = qsa(args.ui[key], this.el)
+          return hash
+        }, {}
+      )
+    }
 
-        if (els) {
-          hash[key] = els.map(n => new type({el: n, options}))
-        } else {
-          console.warn(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
-        }
+    if (components) {
+      this.components = Object.keys(args.components).reduce(
+        (hash, key) => {
+          const {type, selector, options} = args.components[key]
+          const els = qsa(args.ui[key], this.el)
 
-        return hash
-      }, {}
-    )
+          if (els) {
+            hash[key] = els.map(n => new type({el: n, options}))
+          } else {
+            console.warn(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
+          }
+
+          return hash
+        }, {}
+      )
+    }
   }
 
   destroy() {
@@ -55,3 +62,6 @@ export default class Component {
       ))
   }
 }
+
+
+export default Component
