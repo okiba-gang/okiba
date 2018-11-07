@@ -1,14 +1,13 @@
 {
-  "name": "@okiba/event-emitter",
-  "version": "0.1.4",
-  "description": "Simple Event Emitter okiba.js",
+  "name": "@okiba/evented-component",
+  "version": "0.0.1",
+  "description": "Component with events",
   "keywords": [
     "okiba",
     "okibajs",
-    "okibajs",
+    "component",
     "events",
-    "event-emitter",
-    "emitter"
+    "event-emitter"
   ],
   "main": "index.js",
   "repository": {
@@ -19,5 +18,9 @@
     "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
+  "dependencies": {
+    "@okiba/component": "file:../component",
+    "@okiba/event-emitter": "file:../event-emitter"
+  },
   "license": "MIT"
 }

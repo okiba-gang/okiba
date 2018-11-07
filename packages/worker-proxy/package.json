@@ -1,14 +1,14 @@
 {
-  "name": "@okiba/event-emitter",
-  "version": "0.1.4",
-  "description": "Simple Event Emitter okiba.js",
+  "name": "@okiba/worker-proxy",
+  "version": "0.0.1",
+  "description": "Transparent proxy to move your classes on a separate thread if possible (WebWorker + fallback)",
   "keywords": [
     "okiba",
     "okibajs",
-    "okibajs",
-    "events",
-    "event-emitter",
-    "emitter"
+    "web-worker",
+    "webworker",
+    "thread",
+    "proxy"
   ],
   "main": "index.js",
   "repository": {
