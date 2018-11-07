@@ -1,6 +1,6 @@
 {
   "name": "@okiba/drag-emitter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Unified drag events emitter for mouse and touch",
   "keywords": [
     "okiba",
