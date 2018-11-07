@@ -1,18 +1,16 @@
 /**
- * @module Okiba / arrays
- * @description Utilities to work with arrays
+ * @module arrays
+ * @description Array utils for okiba js
  */
 
 /**
  * Return the first element if it only contains one
- *
- * ```javascript
+ * @example
  * const els = arrayOrOne([🍏, 🍌])
  * console.log(els) // [🍏, 🍌]
  *
  * const els = arrayOrOne([🍏])
  * console.log(els) // 🍏
- * ```
  *
  * @param {Array-like} arrayLike The options object.
  * @returns {any} The first element or the argument
@@ -27,6 +25,9 @@ export function arrayOrOne(arrayLike) {
 
 /**
  * Cast an array-like object or single element to Array
+ * @example
+ * const elements = castArray(document.querySelectorAll('p')) // [p, p]
+ * const fruits = castArray(🍒) // [🍒]
  *
  * @param {any} castable Array to cast
  * @returns {Array} The array-like converted to Array, or an Array containing the element

@@ -1,0 +1,39 @@
+{%- if member.description -%}
+{{member.description}}
+{% endif %}
+
+{% if member.examples %}
+{% for example in member.examples %}
+```javascript
+{{example}}
+```
+{% endfor %}
+{% endif %}
+
+{% if member.params.length %}
+#### Arguments
+
+{% for param in member.params %}
+##### __`{{param.name}}`__:
+  {%- if param.type.names.length %}
+    {%- for name in param.type.names %} `{{name}}`
+      {%- if not loop.last %} or {% endif -%}
+    {%- endfor -%}
+  {%- endif %}
+  {%- if param.optional %} | _optional_ {%- endif %}
+  {%- if param.defaultvalue %} - _default_: `{{param.defaultvalue}}` {%- endif %}
+
+{{param.description}}
+
+{% if not loop.last %}# 　　　　　{% endif %}
+
+{%- endfor -%}
+{% endif %}
+
+{%- if member.returns %}
+#### Returns
+
+{% for return in member.returns -%}
+`{{return.type.names[0]}}` {{return.description}}
+{%- endfor -%}
+{%- endif -%}
