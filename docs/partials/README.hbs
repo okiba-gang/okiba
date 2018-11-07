@@ -2,9 +2,7 @@
 {%- for param in params -%}
   {{param.name}}
   {%- if not loop.last -%}, {% endif -%}
-  {%- if param.subparams %}: {% raw %}{
-    {%- endraw %}{{ ps(param.subparams) }}
-  {%- raw %}}{% endraw %}
+  {%- if param.subparams %}: {% raw %}{{% endraw %}{{ ps(param.subparams) }}{% raw %}}{% endraw %}
   {%- endif -%}
 {%- endfor -%}
 {% endmacro %}
