@@ -1,0 +1,56 @@
+{% macro listps(params, depth) %}
+{% for param in params %}
+  {%- for i in range(0, depth) -%}#{%- endfor %} + `{{param.name}}`:
+  {%- if param.type.names.length %}
+    {%- for name in param.type.names %} `{{name}}`
+      {%- if not loop.last %} or {% endif -%}
+    {%- endfor -%}
+  {%- endif %}
+  {%- if param.optional %} | _optional_ {%- endif %}
+  {%- if param.defaultvalue %} - _default_: `{{param.defaultvalue}}` {%- endif %}
+
+{{param.description}}
+
+{% if param.subparams %}
+{{ listps(param.subparams, 5) }}
+{% endif %}
+{% if not loop.last %}#　　　　　　　　　{% endif %}
+{% endfor -%}
+{% endmacro %}
+
+{%- if member.description -%}
+{{member.description}}
+{% endif %}
+
+{% if member.see %}
+{% for see in member.see %}
+{% for name, link in see %}
+#### See: [{{name}}]({{baseUrl}}{{link}})
+{% endfor %}
+{% endfor %}
+{% endif  %}
+
+{% if member.examples %}
+{% for example in member.examples %}
+```javascript
+{{example}}
+```
+{% endfor %}
+{% endif %}
+
+{% if member.params.length %}
+#### Arguments
+
+{{ listps(member.params, 4) }}
+
+{% endif %}
+
+
+
+{%- if member.returns %}
+#### Returns
+
+{% for return in member.returns -%}
+`{{return.type.names[0]}}` {{return.description}}
+{%- endfor -%}
+{%- endif -%}

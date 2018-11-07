@@ -1,6 +1,22 @@
-import EventEmitter from 'eventemitter3'
+/**
+ * @module  DragEmitter
+ * @description Emits drag events for all common pointers kinds (touch & mouse)
+ */
+import EventEmitter from '@okiba/event-emitter'
 
-export default class DragNormalizer extends EventEmitter {
+/**
+ * @param {Element} el Element whose surface is used for drag events
+ * @example
+ * import {DragEmitter} from '@okiba/drag-emitter'
+ * import {qs} from '@okiba/dom'
+ *
+ * const dragEmitter = new DragEmitter(qs('.container'))
+ * dragEmitter.on(
+ *   'drag',
+ *   (deltaX, clientX) => console.log(deltaX, clientX)
+ * )
+ */
+class DragEmitter extends EventEmitter {
   constructor(el) {
     super()
     this.el = el
@@ -8,6 +24,10 @@ export default class DragNormalizer extends EventEmitter {
     this.addEventListeners()
   }
 
+  /**
+   * Unbinds events from the element and deletes the reference.
+   * To be called when the instance is not needed anymore for cleanup.
+   */
   destroy() {
     this.removeEventListeners()
     this.el = null
@@ -99,3 +119,5 @@ export default class DragNormalizer extends EventEmitter {
     this.onMouseUp = this.onMouseUp.bind(this)
   }
 }
+
+export default DragEmitter
