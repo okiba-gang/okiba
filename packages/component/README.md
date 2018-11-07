@@ -63,7 +63,9 @@ npm i --save @okiba/component
 
 
 
-## constructor(args: {el, ui, components, options})
+## constructor(args: {
+    {%- endraw %}{{ ps(param.subparams) }}
+  {%- raw %}})
 
 
 
