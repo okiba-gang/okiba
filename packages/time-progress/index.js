@@ -76,7 +76,7 @@ class TimeProgress {
 
   /**
    * Forces a certain progress, reflected on the time
-   * @param {[type]} progress [description]
+   * @param {Number} progress [description]
    */
   setProgress(progress) {
     progress = cap(progress, 0, 1)
