@@ -85,28 +85,20 @@ class TimeProgress {
   }
 
   /**
-   * Sets the direction to go forward in time (progress goes from 0 to 1)
+   * Sets a direction in time.
+   * `1` is forward in time (progress goes from 0 to 1)
+   * `-1` is backwards in time (progress goes from 1 to 0)
+   * @param {Number} direction 1 is forward, -1 is backwards
    */
-  goForward() {
-    this.direction = 1
-  }
-
-  /**
-   * Sets the direction to go backwards in time (progress goes from 0 to 1)
-   */
-  goBackwards() {
-    this.direction = -1
+  setDirection(direction) {
+    this.direction = direction
   }
 
   /**
    * Reverses the direction in time
    */
   reverse() {
-    if (this.direction === 1) {
-      this.goBackwards()
-    } else {
-      this.goForward()
-    }
+    this.direction *= -1
   }
 }
 
