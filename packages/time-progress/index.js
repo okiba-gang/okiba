@@ -1,3 +1,26 @@
+/**
+ * @module TimeProgress
+ * @description Maps progress ovrer time, normalized between 0 and 1
+ *
+ * @example
+ * import TimeProgress from '@okiba/time-progress'
+ *
+ * const tp = new TimeProgress(400)
+ * tp.setProgress(0.2)
+ *
+ *  function loop() {
+ *   const progress = tp.update()
+ *   domeElement.style.opacity = progress
+ *
+ *   if (progress > 0.8 || progress < 0.2) {
+ *     tp.reverse()
+ *   }
+ *
+ *   requestAnimationFrame(loop)
+ * }
+ *
+ * requestAnimationFrame(loop)
+ */
 import {cap, round} from '@okiba/math'
 
 function checkActive() {
@@ -19,22 +42,19 @@ function updateDelta() {
   this.lastTime = this.time
 }
 
-export default class TimeProgress {
+/**
+ * @param [duration=400] Amount of time it takes to reach progress = 1
+ */
+class TimeProgress {
   constructor(duration = 400) {
     this.duration = duration
     this.reset()
   }
 
-  setDirection(isForward) {
-    this.direction = isForward ? 1 : -1
-  }
-
-  setProgress(progress) {
-    progress = cap(progress, 0, 1)
-    this.elapsed = this.duration * Math.abs(this.progress - progress)
-    this.progress = progress
-  }
-
+  /**
+   * Has to be called at every loop or whenever you want get an updated progress
+   * @return {Number} Normalized progress in time
+   */
   update() {
     updateDelta.call(this)
     this.elapsed += this.direction * this.delta
@@ -45,9 +65,41 @@ export default class TimeProgress {
     return this.progress
   }
 
+  /**
+   * Sets the timer back to zero
+   */
   reset() {
     this.time = this.lastTime = this.delta = null
     this.progress = this.elapsed = 0
     this.direction = 1
   }
+
+  /**
+   * Forces a certain progress, reflected on the time
+   * @param {Number} progress [description]
+   */
+  setProgress(progress) {
+    progress = cap(progress, 0, 1)
+    this.elapsed = this.duration * Math.abs(this.progress - progress)
+    this.progress = progress
+  }
+
+  /**
+   * Sets a direction in time.
+   * `1` is forward in time (progress goes from 0 to 1)
+   * `-1` is backwards in time (progress goes from 1 to 0)
+   * @param {Number} direction 1 is forward, -1 is backwards
+   */
+  setDirection(direction) {
+    this.direction = direction
+  }
+
+  /**
+   * Reverses the direction in time
+   */
+  reverse() {
+    this.direction *= -1
+  }
 }
+
+export default TimeProgress
