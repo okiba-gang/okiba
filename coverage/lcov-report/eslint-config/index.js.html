@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for eslint-config/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">eslint-config</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >module.exports = {</span>
+  "parser": "babel-eslint", // https://github.com/babel/babel-eslint
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "expect": true,
+    "sinon": true,
+    "__DEV__": true,
+      "Promise": true,
+      "Float32Array": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-var": 2,                     // http://eslint.org/docs/rules/no-var
+    "prefer-const": 2,               // http://eslint.org/docs/rules/prefer-const
+&nbsp;
+    /**
+     * Variables
+     */
+    "no-shadow": 2,                  // http://eslint.org/docs/rules/no-shadow
+    "no-shadow-restricted-names": 2, // http://eslint.org/docs/rules/no-shadow-restricted-names
+    "no-undef": 2,                   // http://eslint.org/docs/rules/no-undef
+    "no-unused-vars": [2, {          // http://eslint.org/docs/rules/no-unused-vars
+      "vars": "local",
+      "args": "after-used",
+      "argsIgnorePattern": "_"
+    }],
+    "no-use-before-define": 2,       // http://eslint.org/docs/rules/no-use-before-define
+&nbsp;
+    /**
+     * Possible errors
+     */
+    "no-cond-assign": [2, "always"], // http://eslint.org/docs/rules/no-cond-assign
+    "no-console": 1,                 // http://eslint.org/docs/rules/no-console
+    "no-debugger": 1,                // http://eslint.org/docs/rules/no-debugger
+    "no-alert": 1,                   // http://eslint.org/docs/rules/no-alert
+    "no-constant-condition": 1,      // http://eslint.org/docs/rules/no-constant-condition
+    "no-dupe-keys": 2,               // http://eslint.org/docs/rules/no-dupe-keys
+    "no-duplicate-case": 2,          // http://eslint.org/docs/rules/no-duplicate-case
+    "no-empty": 2,                   // http://eslint.org/docs/rules/no-empty
+    "no-ex-assign": 2,               // http://eslint.org/docs/rules/no-ex-assign
+    "no-extra-boolean-cast": 0,      // http://eslint.org/docs/rules/no-extra-boolean-cast
+    "no-extra-semi": 2,              // http://eslint.org/docs/rules/no-extra-semi
+    "no-func-assign": 2,             // http://eslint.org/docs/rules/no-func-assign
+    "no-inner-declarations": 2,      // http://eslint.org/docs/rules/no-inner-declarations
+    "no-invalid-regexp": 2,          // http://eslint.org/docs/rules/no-invalid-regexp
+    "no-irregular-whitespace": 2,    // http://eslint.org/docs/rules/no-irregular-whitespace
+    "no-obj-calls": 2,               // http://eslint.org/docs/rules/no-obj-calls
+    "no-sparse-arrays": 2,           // http://eslint.org/docs/rules/no-sparse-arrays
+    "no-unreachable": 2,             // http://eslint.org/docs/rules/no-unreachable
+    "use-isnan": 2,                  // http://eslint.org/docs/rules/use-isnan
+    "block-scoped-var": 2,           // http://eslint.org/docs/rules/block-scoped-var
+&nbsp;
+    /**
+     * Best practices
+     */
+    "consistent-return": 2,          // http://eslint.org/docs/rules/consistent-return
+    "curly": [2, "multi-line"],      // http://eslint.org/docs/rules/curly
+    "default-case": 2,               // http://eslint.org/docs/rules/default-case
+    "dot-notation": [2, {            // http://eslint.org/docs/rules/dot-notation
+      "allowKeywords": true
+    }],
+    "eqeqeq": 2,                     // http://eslint.org/docs/rules/eqeqeq
+    // "guard-for-in": 2,               // http://eslint.org/docs/rules/guard-for-in
+    "no-caller": 2,                  // http://eslint.org/docs/rules/no-caller
+    "no-else-return": 2,             // http://eslint.org/docs/rules/no-else-return
+    "no-eq-null": 2,                 // http://eslint.org/docs/rules/no-eq-null
+    "no-eval": 2,                    // http://eslint.org/docs/rules/no-eval
+    "no-extend-native": 2,           // http://eslint.org/docs/rules/no-extend-native
+    "no-extra-bind": 2,              // http://eslint.org/docs/rules/no-extra-bind
+    "no-fallthrough": 2,             // http://eslint.org/docs/rules/no-fallthrough
+    "no-floating-decimal": 2,        // http://eslint.org/docs/rules/no-floating-decimal
+    "no-implied-eval": 2,            // http://eslint.org/docs/rules/no-implied-eval
+    "no-lone-blocks": 2,             // http://eslint.org/docs/rules/no-lone-blocks
+    "no-loop-func": 2,               // http://eslint.org/docs/rules/no-loop-func
+    "no-multi-str": 2,               // http://eslint.org/docs/rules/no-multi-str
+    "no-native-reassign": 2,         // http://eslint.org/docs/rules/no-native-reassign
+    "no-new": 2,                     // http://eslint.org/docs/rules/no-new
+    "no-new-func": 2,                // http://eslint.org/docs/rules/no-new-func
+    "no-new-wrappers": 2,            // http://eslint.org/docs/rules/no-new-wrappers
+    "no-octal": 2,                   // http://eslint.org/docs/rules/no-octal
+    "no-octal-escape": 2,            // http://eslint.org/docs/rules/no-octal-escape
+    "no-param-reassign": 2,          // http://eslint.org/docs/rules/no-param-reassign
+    "no-proto": 2,                   // http://eslint.org/docs/rules/no-proto
+    "no-redeclare": 2,               // http://eslint.org/docs/rules/no-redeclare
+    "no-return-assign": 0,           // http://eslint.org/docs/rules/no-return-assign
+    "no-script-url": 2,              // http://eslint.org/docs/rules/no-script-url
+    "no-self-compare": 2,            // http://eslint.org/docs/rules/no-self-compare
+    "no-sequences": 2,               // http://eslint.org/docs/rules/no-sequences
+    "no-throw-literal": 2,           // http://eslint.org/docs/rules/no-throw-literal
+    "no-with": 2,                    // http://eslint.org/docs/rules/no-with
+    "radix": 2,                      // http://eslint.org/docs/rules/radix
+    "vars-on-top": 2,                // http://eslint.org/docs/rules/vars-on-top
+    "yoda": 2,                       // http://eslint.org/docs/rules/yoda
+&nbsp;
+    /**
+     * Style
+     */
+    "indent": [
+      2,
+      2,
+      { "SwitchCase": 1 }
+    ],                              // http://eslint.org/docs/rules/indent
+    "brace-style": [
+      2,
+      "1tbs", {
+        "allowSingleLine": true
+      }
+    ],                               // http://eslint.org/docs/rules/brace-style
+    "quotes": [
+      2, "single", "avoid-escape"    // http://eslint.org/docs/rules/quotes
+    ],
+    "camelcase": [2, {               // http://eslint.org/docs/rules/camelcase
+      "properties": "never"
+    }],
+    "comma-spacing": [2, {           // http://eslint.org/docs/rules/comma-spacing
+      "before": false,
+      "after": true
+    }],
+    "keyword-spacing": [2, {"before": true, "after": true}],
+    "comma-style": [2, "last"],      // http://eslint.org/docs/rules/comma-style
+    "eol-last": 2,                   // http://eslint.org/docs/rules/eol-last
+    "func-names": 0,                 // http://eslint.org/docs/rules/func-names
+    "key-spacing": [2, {             // http://eslint.org/docs/rules/key-spacing
+      "beforeColon": false,
+      "afterColon": true
+    }],
+    "new-cap": [0, {                 // http://eslint.org/docs/rules/new-cap
+      "newIsCap": true
+    }],
+    "no-multiple-empty-lines": [2, { // http://eslint.org/docs/rules/no-multiple-empty-lines
+      "max": 2
+    }],
+    "no-nested-ternary": 2,          // http://eslint.org/docs/rules/no-nested-ternary
+    "no-new-object": 2,              // http://eslint.org/docs/rules/no-new-object
+    "no-spaced-func": 2,             // http://eslint.org/docs/rules/no-spaced-func
+    "no-trailing-spaces": 2,         // http://eslint.org/docs/rules/no-trailing-spaces
+    "no-extra-parens": [2, "functions"], // http://eslint.org/docs/rules/no-extra-parens
+    "no-underscore-dangle": 0,       // http://eslint.org/docs/rules/no-underscore-dangle
+    "one-var": [2, "never"],         // http://eslint.org/docs/rules/one-var
+    "padded-blocks": [2, "never"],   // http://eslint.org/docs/rules/padded-blocks
+    "semi": [2, "never"],           // http://eslint.org/docs/rules/semi
+    "semi-spacing": [2, {            // http://eslint.org/docs/rules/semi-spacing
+      "before": false,
+      "after": true
+    }],
+    "array-bracket-spacing": ["error", "never"],
+    "space-before-blocks": "error",        // http://eslint.org/docs/rules/space-before-blocks
+    "space-before-function-paren": [2, "never"], // http://eslint.org/docs/rules/space-before-function-paren
+    "space-infix-ops": 2,            // http://eslint.org/docs/rules/space-infix-ops
+    "space-in-parens": ["error", "never"],
+    "spaced-comment": [2, "always",  {// http://eslint.org/docs/rules/spaced-comment
+      "exceptions": ["-", "+"],
+      "markers": ["=", "!"]           // space here to support sprockets directives
+    }],
+    // React
+    "jsx-quotes": [2, "prefer-double"],
+    "react/display-name": 0,
+    "react/jsx-boolean-value": 1,
+    "react/jsx-no-undef": 2,
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    // "react/no-did-mount-set-state": [2, "allow-in-func"],
+    "react/no-did-update-set-state": 2,
+    "react/no-multi-comp": 2,
+    "react/no-unknown-property": 2,
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 2,
+    "react/self-closing-comp": 2,
+    "react/sort-comp": 0,
+    "react/wrap-multilines": 0
+  },
+  "plugins": [
+    "react"
+  ]
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 08 2018 02:02:52 GMT+0100 (Central European Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

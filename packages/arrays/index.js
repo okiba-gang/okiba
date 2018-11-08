@@ -13,9 +13,13 @@
  * console.log(els) // 🍏
  *
  * @param {Array-like} arrayLike The options object.
- * @returns {any} The first element or the argument
+ * @returns {any} The first element or the argument, undefined if empty array
  */
 export function arrayOrOne(arrayLike) {
+  if (arrayLike === void 0 || arrayLike.length === 0) {
+    return void 0
+  }
+
   if (arrayLike.length === 1) {
     return arrayLike[0]
   }
@@ -33,11 +37,13 @@ export function arrayOrOne(arrayLike) {
  * @returns {Array} The array-like converted to Array, or an Array containing the element
  */
 export function castArray(castable) {
+  if (castable === void 0) return castable
+
   if (castable instanceof Array) {
     return castable
   }
 
-  if (castable.length === void 0) {
+  if (castable.length === void 0 || typeof castable === 'string') {
     return [castable]
   }
 
