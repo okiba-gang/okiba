@@ -7,12 +7,9 @@
 {% for pkg in packages %}
 ## [{{ pkg.name }}]({{ pkg.url }})
 
-{{ pkg.description }}
   {% if pkg.members %}
   {% for m in pkg.members %}
 **\+ [`{{ m.name }}`]({{ m.url }})**
-
-> {{ m.description }}
   {% endfor %}
   {% endif %}
 {% endfor %}
