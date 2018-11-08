@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "test": "lerna run test",
+    "test": "jest",
     "docs": "node ./docs/generate.js"
   },
   "devDependencies": {
