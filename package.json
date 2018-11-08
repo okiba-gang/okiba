@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-cache",
     "docs": "node ./docs/generate.js"
   },
   "devDependencies": {
