@@ -9,7 +9,6 @@ inerithing both's method sets.
 
 
 
-
 ```javascript
 // FetchButton.js
 import EventedComponent from '@okiba/EventedComponent'

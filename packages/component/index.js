@@ -130,7 +130,7 @@ class Component {
 
   /**
    * @function onDestroy
-   * Virtual method, needs to be overridden
+   * @description Virtual method, needs to be overridden
    * It's the place to call cleanup functions as it will
    * be called when your component is destroyed
    */
