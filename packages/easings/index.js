@@ -1,6 +1,6 @@
 /**
  * @module  easings
- * Collection of easings to alter a value
+ * @description Collection of easings to alter a value
  * @example
  * import {easeInQuad} from '@okiba/easings'
  * const easedProgress = easeInQuad(progress)

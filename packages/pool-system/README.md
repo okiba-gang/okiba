@@ -8,7 +8,7 @@ Class to manage dinamically a pool of system
 
 ### Installation
 ```
-npm i --save @okiba/pool-system
+npm i --save @okiba/
 ```
 
 

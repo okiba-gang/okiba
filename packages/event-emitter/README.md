@@ -6,7 +6,6 @@ Emits events that can be listened and unlistened to
 
 
 
-
 ```javascript
 import EventEmitter from '@okiba/event-emitter'
 const emitter = new EventEmitter
@@ -23,7 +22,7 @@ emitter.emit('log', 'Will not run')
 
 ### Installation
 ```
-npm i --save @okiba/event-emitter
+npm i --save @okiba/
 ```
 
 

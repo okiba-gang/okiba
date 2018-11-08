@@ -3,56 +3,46 @@ const jsdoc = require('jsdoc-api')
 const nunjucks = require('nunjucks')
 nunjucks.configure({autoescape: false})
 
-const template = readFileSync('./docs/partials/README.hbs', 'utf8')
+const {model, modelPackage} = require('./model-data')
+
+const template = readFileSync('./docs/partials/readme-package.hbs', 'utf8')
+const templateRoot = readFileSync('./docs/partials/readme-root.hbs', 'utf8')
+
 const packages = readdirSync('./packages')
-const baseUrl = 'https://github.com/okiba-gang/okiba/tree/master/packages/'
 
-function model(data, pkgName) {
-  return data.filter(e => !e.undocumented && e.kind !== 'package')
-    .reduce((acc, entry) => {
-      if (entry.kind === 'module') {
-        return Object.assign({}, acc, {...entry, baseUrl, pkgName})
-      }
-
-      if (entry.see) {
-        entry.see = entry.see.map(JSON.parse)
-      }
-
-      if (entry.params) {
-        let lastParam
-        entry.params = entry.params.reduce((params, param) => {
-          if (param.name.indexOf('{') <= -1) {
-            lastParam = param
-            params.push(lastParam)
-          } else {
-            param.name = param.name.substring(1, param.name.length - 1)
-            if (!lastParam.subparams) {
-              lastParam.subparams = []
-            }
-            lastParam.subparams.push(param)
-          }
-
-          return params
-        }, [])
-      }
-
-      if (!acc.members) {
-        acc.members = []
-      }
-
-      acc.members.push(entry)
-      return acc
-    }, {})
+const baseData = {
+  name: 'Okiba',
+  description: '',
+  packages: [],
+  url: 'https://github.com/okiba-gang/okiba/tree/master/packages/'
 }
 
-packages.forEach(async name => {
-  const data = model(await jsdoc.explain({
-    files: `./packages/${name}/index.js`
-  }), name)
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array)
+  }
+}
 
-  // writeFileSync(`./debug/data-${name}-dump.js`, JSON.stringify(data))
+async function generate() {
+  await asyncForEach(packages, async name => {
+    const packageData = model(await jsdoc.explain({
+      files: `./packages/${name}/index.js`
+    }), baseData)
 
-  const markdown = nunjucks.renderString(template, data)
-  writeFileSync(`./packages/${name}/README.md`, markdown)
-})
+    const markdown = nunjucks.renderString(template, packageData)
+    writeFileSync(`./packages/${name}/README.md`, markdown)
 
+    try {
+      baseData.packages.push(modelPackage(packageData, baseData))
+    } catch (e) {
+      throw new Error(`Missing required fields in package: ${name}\n`)
+    }
+    // writeFileSync(`./debug/data-${name}-dump.js`, JSON.stringify(data))
+  })
+
+  // await writeFileSync('./debug/data-root-dump.js', JSON.stringify(rootData))
+  const markdown = nunjucks.renderString(templateRoot, baseData)
+  writeFileSync('./README.md', markdown)
+}
+
+generate()
