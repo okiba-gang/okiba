@@ -6,7 +6,6 @@ Emits events that can be listened and unlistened to
 
 
 
-
 ```javascript
 import EventEmitter from '@okiba/event-emitter'
 const emitter = new EventEmitter

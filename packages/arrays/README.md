@@ -49,7 +49,7 @@ The options object.
 
 #### Returns
 
-`any` The first element or the argument
+`any` The first element or the argument, undefined if empty array
 ## castArray(castable)
 
 

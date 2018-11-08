@@ -1,6 +1,6 @@
 /**
  * @module EventEmitter
- * Emits events that can be listened and unlistened to
+ * @description Emits events that can be listened and unlistened to
  * @example
  * import EventEmitter from '@okiba/event-emitter'
  * const emitter = new EventEmitter

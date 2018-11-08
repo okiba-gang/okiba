@@ -6,7 +6,6 @@ Collection of easings to alter a value
 
 
 
-
 ```javascript
 import {easeInQuad} from '@okiba/easings'
 const easedProgress = easeInQuad(progress)
@@ -22,8 +21,7 @@ npm i --save @okiba/easings
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.linear(t)
+## linear(t)
 
 
 Ease linear
@@ -46,8 +44,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInQuad(t)
+## easeInQuad(t)
 
 
 Ease In Quad
@@ -70,8 +67,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeOutQuad(t)
+## easeOutQuad(t)
 
 
 Ease Out Quad
@@ -94,8 +90,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInOutQuad(t)
+## easeInOutQuad(t)
 
 
 Ease InOut Quad
@@ -118,8 +113,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInCubic(t)
+## easeInCubic(t)
 
 
 Ease In Cubic
@@ -142,8 +136,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeOutCubic(t)
+## easeOutCubic(t)
 
 
 Ease Out Cubic
@@ -166,8 +159,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInOutCubic(t)
+## easeInOutCubic(t)
 
 
 Ease InOut Cubic
@@ -190,8 +182,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInQuart(t)
+## easeInQuart(t)
 
 
 Ease In Quart
@@ -214,8 +205,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeOutQuart(t)
+## easeOutQuart(t)
 
 
 Ease Out Quart
@@ -238,8 +228,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInOutQuart(t)
+## easeInOutQuart(t)
 
 
 Ease InOut Quart
@@ -262,8 +251,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInQuint(t)
+## easeInQuint(t)
 
 
 Ease In Quint
@@ -286,8 +274,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeOutQuint(t)
+## easeOutQuint(t)
 
 
 Ease Out Quint
@@ -310,8 +297,7 @@ Parameter to be eased
 
 
 
-## easings
-Collection of easings to alter a valuemodule:.easeInOutQuint(t)
+## easeInOutQuint(t)
 
 
 Ease InOut Quint

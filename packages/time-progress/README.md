@@ -106,10 +106,12 @@ Forces a certain progress, reflected on the time
 
 
 
-## goForward()
+## setDirection(direction)
 
 
-Sets the direction to go forward in time (progress goes from 0 to 1)
+Sets a direction in time.
+`1` is forward in time (progress goes from 0 to 1)
+`-1` is backwards in time (progress goes from 1 to 0)
 
 
 
@@ -117,11 +119,12 @@ Sets the direction to go forward in time (progress goes from 0 to 1)
 
 
 
-## goBackwards()
+#### Arguments
 
 
-Sets the direction to go backwards in time (progress goes from 0 to 1)
+#### + `direction`: `Number`
 
+1 is forward, -1 is backwards
 
 
 
