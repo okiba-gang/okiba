@@ -12,12 +12,6 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "license": "MIT",
-  "scripts": {
-    "test": "jest"
-  },
-  "devDependencies": {
-    "jest": "^23.6.0"
-  },
   "dependencies": {
     "@okiba/dom": "file:../dom",
     "@okiba/arrays": "file:../arrays"

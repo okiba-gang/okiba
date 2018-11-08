@@ -4,6 +4,4 @@ node_js:
 
 script:
   - lerna bootstrap
-  - npm install
-  - lerna link
-  - lerna run test
+  - npm run test
