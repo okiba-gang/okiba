@@ -1,9 +1,10 @@
 function model(data, baseData) {
   return data.filter(e => !e.undocumented && e.kind !== 'package')
     .reduce((acc, entry) => {
-      const {url, name} = baseData
+      const {url} = baseData
+
       if (entry.kind === 'module') {
-        return Object.assign({}, acc, {...entry, url, name})
+        return Object.assign({}, acc, {...entry, baseUrl: url})
       }
 
       if (entry.see) {
@@ -39,12 +40,16 @@ function model(data, baseData) {
 
 
 function modelPackage(packageData, baseData) {
+  if (!packageData.name) {
+    throw new Error('package is missing a name in docs', packageData)
+  }
+
   const {name, description, url, members = []} = packageData
   const pkg = {name, description, url, members: []}
 
   members.forEach(m => {
     pkg.members.push({
-      name: m.name.toLowerCase() === name
+      name: m.name === name
         ? 'constructor'
         : m.name,
       description: m.description,

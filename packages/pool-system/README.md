@@ -1,6 +1,6 @@
 
 
-# Okiba // pool-system
+# Okiba // Okiba / pool-system
 Class to manage dinamically a pool of system
 
 

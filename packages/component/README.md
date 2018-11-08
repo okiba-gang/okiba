@@ -1,6 +1,6 @@
 
 
-# Okiba // component
+# Okiba // Component
 Manages a DOM component, binds UI and recursively binds child components.
 Can be extended or instantiated
 

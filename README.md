@@ -3,7 +3,7 @@
 
 
 
-## [arrays](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [arrays]()
 
 Array utils for okiba js
   
@@ -18,30 +18,30 @@ Array utils for okiba js
   
   
 
-## [component](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [Component]()
 
 Manages a DOM component, binds UI and recursively binds child components.
 Can be extended or instantiated
   
   
-**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/component#Component)**
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/Component#Component)**
 
 > 
   
-**\+ [`onDestroy`](https://github.com/okiba-gang/okiba/tree/master/packages/component#onDestroy)**
+**\+ [`onDestroy`](https://github.com/okiba-gang/okiba/tree/master/packages/Component#onDestroy)**
 
 > Virtual method, needs to be overridden
 It's the place to call cleanup functions as it will
 be called when your component is destroyed
   
-**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/component#destroy)**
+**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/Component#destroy)**
 
 > Should not be overridden, will call `onDestroy`
 and forward destruction to all child components
   
   
 
-## [dom](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [dom]()
 
 Utilities to work with dom elements and selectors
   
@@ -52,23 +52,23 @@ Utilities to work with dom elements and selectors
   
   
 
-## [drag-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [DragEmitter]()
 
 Emits drag events for all common pointers kinds (touch & mouse)
   
   
-**\+ [`DragEmitter`](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter#DragEmitter)**
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/DragEmitter#DragEmitter)**
 
 > 
   
-**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter#destroy)**
+**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/DragEmitter#destroy)**
 
 > Unbinds events from the element and deletes the reference.
 To be called when the instance is not needed anymore for cleanup.
   
   
 
-## [easings](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [easings]()
 
 Collection of easings to alter a value
   
@@ -127,43 +127,43 @@ Collection of easings to alter a value
   
   
 
-## [eslint-config]()
+## []()
 
 
   
   
-**\+ [`"no-shadow"`](https://github.com/okiba-gang/okiba/tree/master/packages/eslint-config#"no-shadow")**
+**\+ [`"no-shadow"`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#"no-shadow")**
 
 > Variables
   
-**\+ [`"no-cond-assign"`](https://github.com/okiba-gang/okiba/tree/master/packages/eslint-config#"no-cond-assign")**
+**\+ [`"no-cond-assign"`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#"no-cond-assign")**
 
 > Possible errors
   
-**\+ [`"consistent-return"`](https://github.com/okiba-gang/okiba/tree/master/packages/eslint-config#"consistent-return")**
+**\+ [`"consistent-return"`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#"consistent-return")**
 
 > Best practices
   
-**\+ [`indent`](https://github.com/okiba-gang/okiba/tree/master/packages/eslint-config#indent)**
+**\+ [`indent`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#indent)**
 
 > Style
   
   
 
-## [event-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [EventEmitter]()
 
 Emits events that can be listened and unlistened to
   
   
-**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#on)**
+**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/EventEmitter#on)**
 
 > Sets an event listener for an event type
   
-**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#off)**
+**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/EventEmitter#off)**
 
 > Unsets an event listener for an event type
   
-**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emit)**
+**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/EventEmitter#emit)**
 
 > Triggers an event with optional data attached.
 All listeners will be triggered in registration order.
@@ -171,7 +171,7 @@ Custom data will be passed to them as a parameter
   
   
 
-## [evented-component](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [EventedComponent]()
 
 A component that has events.
 Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component) and
@@ -179,21 +179,21 @@ composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/pac
 inerithing both's method sets.
   
   
-**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#on)**
+**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/EventedComponent#on)**
 
 > 
   
-**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#off)**
+**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/EventedComponent#off)**
 
 > 
   
-**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#emit)**
+**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/EventedComponent#emit)**
 
 > 
   
   
 
-## [math](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [math]()
 
 Collection of math functions
   
@@ -216,12 +216,12 @@ Collection of math functions
   
   
 
-## [pool-system](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [Okiba / pool-system]()
 
 Class to manage dinamically a pool of system
   
   
-**\+ [`module:Okiba / pool-system`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#module:Okiba / pool-system)**
+**\+ [`module:Okiba / pool-system`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#module:Okiba / pool-system)**
 
 > Create an istance of PoolSystem
 
@@ -238,7 +238,7 @@ const pool = new PoolSystem(container, createEl)
 
 ```
   
-**\+ [`ensure`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#ensure)**
+**\+ [`ensure`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#ensure)**
 
 > Function to ensure a minimum pool size.
 Skipped If actual size is bigger that the passed size,
@@ -249,35 +249,35 @@ pool.ensure(5)
 
 ```
   
-**\+ [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#get)**
+**\+ [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#get)**
 
 > Return the first free element from pool.
 If there isn't free element, the pool size is increased and a new element is created.
 This behaviour provide you a dinamic pool system that create elements only if necessary
   
-**\+ [`free`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#free)**
+**\+ [`free`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#free)**
 
 > Set an element like free
   
-**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#destroy)**
+**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#destroy)**
 
 > Destroy all reference from instance
   
   
 
-## [resource-loader](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [ResourceLoader]()
 
 Manages loading of resources trough fetch to boost caching.
 Transparently relies on a WebWorker if possible to load on a separate thread.
   
   
-**\+ [`load`](https://github.com/okiba-gang/okiba/tree/master/packages/resource-loader#load)**
+**\+ [`load`](https://github.com/okiba-gang/okiba/tree/master/packages/ResourceLoader#load)**
 
 > Initiates loading of a resource at a given URL
   
   
 
-## [search](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [search]()
 
 Search utilities
   
@@ -288,47 +288,47 @@ Search utilities
   
   
 
-## [time-progress](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [TimeProgress]()
 
 Maps progress ovrer time, normalized between 0 and 1
   
   
-**\+ [`TimeProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#TimeProgress)**
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#TimeProgress)**
 
 > 
   
-**\+ [`update`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#update)**
+**\+ [`update`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#update)**
 
 > Has to be called at every loop or whenever you want get an updated progress
   
-**\+ [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reset)**
+**\+ [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#reset)**
 
 > Sets the timer back to zero
   
-**\+ [`setProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setProgress)**
+**\+ [`setProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#setProgress)**
 
 > Forces a certain progress, reflected on the time
   
-**\+ [`setDirection`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setDirection)**
+**\+ [`setDirection`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#setDirection)**
 
 > Sets a direction in time.
 `1` is forward in time (progress goes from 0 to 1)
 `-1` is backwards in time (progress goes from 1 to 0)
   
-**\+ [`reverse`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reverse)**
+**\+ [`reverse`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#reverse)**
 
 > Reverses the direction in time
   
   
 
-## [worker-proxy]()
+## []()
 
 
   
   
   
 
-## [worker-utils](https://github.com/okiba-gang/okiba/tree/master/packages/)
+## [worker-utils]()
 
 Set of useful functions to ease WebWorkers development
   
