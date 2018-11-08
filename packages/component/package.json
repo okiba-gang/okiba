@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@okiba/dom": "^0.0.4",
+    "@okiba/dom": "file:../dom",
     "@okiba/arrays": "file:../arrays"
   }
 }
