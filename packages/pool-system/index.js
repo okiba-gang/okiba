@@ -89,5 +89,6 @@ export default class PoolSystem {
     this.pool = null
     this.parent = null
     this.createEl = null
+    this.size = null
   }
 }
