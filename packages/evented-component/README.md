@@ -1,6 +1,6 @@
 
 
-# Okiba // evented-component
+# Okiba // EventedComponent
 A component that has events.
 Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component) and
 composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter),
@@ -73,7 +73,7 @@ npm i --save @okiba/
 
 
 
-#### See: [EventEmitter](event-emitter#on)
+#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#on)
 
 
 
@@ -89,7 +89,7 @@ npm i --save @okiba/
 
 
 
-#### See: [EventEmitter](event-emitter#off)
+#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#off)
 
 
 
@@ -105,7 +105,7 @@ npm i --save @okiba/
 
 
 
-#### See: [EventEmitter](event-emitter#emit)
+#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emit)
 
 
 

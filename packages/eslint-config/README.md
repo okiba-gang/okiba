@@ -1,6 +1,6 @@
 
 
-# Okiba // eslint-config
+# Okiba // 
 
 
 

@@ -1,6 +1,6 @@
 
 
-# Okiba // event-emitter
+# Okiba // EventEmitter
 Emits events that can be listened and unlistened to
 
 

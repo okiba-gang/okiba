@@ -29,12 +29,11 @@ async function generate() {
       files: `./packages/${name}/index.js`
     }), baseData)
 
-    packageData.name = name
-
-    // writeFileSync(`./debug/data-${name}-dump.js`, JSON.stringify(data))
-    baseData.packages.push(modelPackage(packageData, baseData))
     const markdown = nunjucks.renderString(template, packageData)
     writeFileSync(`./packages/${name}/README.md`, markdown)
+
+    baseData.packages.push(modelPackage(packageData, baseData))
+    // writeFileSync(`./debug/data-${name}-dump.js`, JSON.stringify(data))
   })
 
   // await writeFileSync('./debug/data-root-dump.js', JSON.stringify(rootData))
