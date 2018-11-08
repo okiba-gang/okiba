@@ -41,7 +41,7 @@ function model(data, baseData) {
 
 function modelPackage(packageData, baseData) {
   if (!packageData.name) {
-    throw new Error('package is missing a name in docs', packageData)
+    throw new Error(`Missing name, data: ${JSON.stringify(packageData)}`)
   }
 
   const {name, description, url, members = []} = packageData

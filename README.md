@@ -1,6 +1,8 @@
 # Okiba
 
 
+[![Build Status](https://travis-ci.com/okiba-gang/okiba.svg?branch=master)](https://travis-ci.com/okiba-gang/okiba)
+
 
 
 ## [arrays]()
@@ -124,29 +126,6 @@ Collection of easings to alter a value
 **\+ [`easeInOutQuint`](https://github.com/okiba-gang/okiba/tree/master/packages/easings#easeInOutQuint)**
 
 > Ease InOut Quint
-  
-  
-
-## []()
-
-
-  
-  
-**\+ [`"no-shadow"`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#"no-shadow")**
-
-> Variables
-  
-**\+ [`"no-cond-assign"`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#"no-cond-assign")**
-
-> Possible errors
-  
-**\+ [`"consistent-return"`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#"consistent-return")**
-
-> Best practices
-  
-**\+ [`indent`](https://github.com/okiba-gang/okiba/tree/master/packages/undefined#indent)**
-
-> Style
   
   
 
@@ -321,9 +300,9 @@ Maps progress ovrer time, normalized between 0 and 1
   
   
 
-## []()
+## [WorkerProxy]()
 
-
+Transparent proxying of a class of yours
   
   
   

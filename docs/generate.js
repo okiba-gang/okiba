@@ -32,7 +32,11 @@ async function generate() {
     const markdown = nunjucks.renderString(template, packageData)
     writeFileSync(`./packages/${name}/README.md`, markdown)
 
-    baseData.packages.push(modelPackage(packageData, baseData))
+    try {
+      baseData.packages.push(modelPackage(packageData, baseData))
+    } catch (e) {
+      throw new Error(`Missing required fields in package: ${name}\n`)
+    }
     // writeFileSync(`./debug/data-${name}-dump.js`, JSON.stringify(data))
   })
 
