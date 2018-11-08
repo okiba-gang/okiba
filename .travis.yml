@@ -2,4 +2,5 @@ language: node_js
 node_js:
   - "10.13.0"
 before_script:
-  lerna bootstrap
+  - npm i -g lerna
+  - lerna bootstrap
