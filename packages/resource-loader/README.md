@@ -1,6 +1,6 @@
 
 
-# Okiba // ResourceLoader
+# Okiba // resource-loader
 Manages loading of resources trough fetch to boost caching.
 Transparently relies on a WebWorker if possible to load on a separate thread.
 
@@ -18,7 +18,7 @@ imgUrls.forEac(imgUrl => resLoader.load(imgUrl))
 
 ### Installation
 ```
-npm i --save @okiba/resource-loader
+npm i --save @okiba/
 ```
 
 

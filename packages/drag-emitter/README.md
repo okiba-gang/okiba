@@ -1,6 +1,6 @@
 
 
-# Okiba // DragEmitter
+# Okiba // drag-emitter
 Emits drag events for all common pointers kinds (touch & mouse)
 
 
@@ -8,7 +8,7 @@ Emits drag events for all common pointers kinds (touch & mouse)
 
 ### Installation
 ```
-npm i --save @okiba/drag-emitter
+npm i --save @okiba/
 ```
 
 

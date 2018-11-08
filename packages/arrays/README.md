@@ -8,7 +8,7 @@ Array utils for okiba js
 
 ### Installation
 ```
-npm i --save @okiba/arrays
+npm i --save @okiba/
 ```
 
 
