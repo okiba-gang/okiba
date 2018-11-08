@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-cache",
     "docs": "node ./docs/generate.js"
   },
   "devDependencies": {
@@ -26,11 +26,10 @@
       "packages/"
     ],
     "testEnvironment": "node",
-    "testURL": "http://localhost/"
-  },
-  "eslintConfig": {
-    "extends": "@okiba/eslint-config",
-    "root": true
+    "testURL": "http://localhost/",
+    "moduleNameMapper": {
+      "^@okiba/(.*)": "<rootDir>/packages/$1"
+    }
   },
   "babel": {
     "presets": [
