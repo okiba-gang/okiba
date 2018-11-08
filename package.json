@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "docs": "node ./docs/generate.js",
     "coverage": "jest --coverage"
   },
