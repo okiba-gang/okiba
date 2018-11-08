@@ -47,6 +47,7 @@
  * })
  */
 import {qsa} from '@okiba/dom'
+import {arrayOrOne} from '@okiba/arrays'
 
 /**
  * Accepts an __hash__ whose properties can be:
@@ -94,12 +95,12 @@ class Component {
     if (args.ui) {
       this.ui = Object.keys(args.ui).reduce(
         (hash, key) => {
-          const els = qsa(args.ui[key], this.el)
+          const els = arrayOrOne(qsa(args.ui[key], this.el))
 
           if (els) {
             hash[key] = els
           } else {
-            console.warn(`[!!] [Component] Cant't find UI element for selector: ${ui[key]}`)
+            throw new Error(`[!!] [Component] Cant't find UI element for selector: ${args.ui[key]}`)
           }
 
           return hash
@@ -111,12 +112,14 @@ class Component {
       this.components = Object.keys(args.components).reduce(
         (hash, key) => {
           const {type, selector, options} = args.components[key]
-          const els = qsa(args.components[key].selector, this.el)
+          const els = arrayOrOne(qsa(args.components[key].selector, this.el))
 
           if (els) {
-            hash[key] = els.map(n => new type({el: n, options}))
+            hash[key] = els.length
+              ? els.map(n => new type({el: n, options}))
+              : new type({el: els, options})
           } else {
-            console.warn(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
+            throw new Error(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
           }
 
           return hash
@@ -126,21 +129,26 @@ class Component {
   }
 
   /**
+   * @function onDestroy
    * Virtual method, needs to be overridden
    * It's the place to call cleanup functions as it will
    * be called when your component is destroyed
    */
-  onDestroy() {}
 
   /**
    * Should not be overridden, will call `onDestroy`
    * and forward destruction to all child components
    */
   destroy() {
-    Object.keys(this.components)
-      .forEach(key => this.components[key].forEach(
-        c => c.destroy()
-      ))
+    if (this.components) {
+      Object.keys(this.components)
+        .forEach(key => (this.components[key].length
+          ? this.components[key]
+          : [this.components[key]]
+        ).forEach(
+          c => c.destroy()
+        ))
+    }
 
     if (this.onDestroy) {
       this.onDestroy()
