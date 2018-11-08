@@ -34,7 +34,7 @@ test('pool size have increase dinamically', done => {
   done()
 })
 
-test('complete routine', done => {
+test('size should be correct after growing', done => {
   const p = new PoolSystem(container, createEl)
   const els = []
 
@@ -53,6 +53,16 @@ test('complete routine', done => {
 
   expect(p.size).toBe(10)
   expect(p.pool.length).toBe(10)
+  done()
+})
+
+test('destroy removes all references', done => {
+  const p = new PoolSystem(container, createEl)
+  p.destroy()
+  expect(p.size).toBe(null)
+  expect(p.pool).toBe(null)
+  expect(p.createEl).toBe(null)
+  expect(p.parent).toBe(null)
   done()
 })
 
