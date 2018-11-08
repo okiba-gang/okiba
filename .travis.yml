@@ -1,9 +1,8 @@
 language: node_js
 node_js:
   - "10.13.0"
-install:
-  - npm install
-  - lerna bootstrap
 
 script:
+  - npm install
+  - lerna bootstrap
   - npm run test
