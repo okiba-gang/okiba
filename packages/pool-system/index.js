@@ -1,28 +1,22 @@
 /**
  * @module Okiba / pool-system
- * @description Class to manage dinamically a pool of system
+ * @description Manages a dinamically grown pool of DOM Elements
+ * import PoolSystem from '@okiba/pool-system'
+ *
+ * @example
+ * const container = document.querySelector('#container')
+ *
+ * function createEl(){
+ *  return document.createElement('img');
+ * }
+ *
+ * const pool = new PoolSystem(container, createEl)
  */
 
-export default class PoolSystem {
+class PoolSystem {
   /**
-   * Create an istance of PoolSystem
-   *
-   * ```javascript
-   * import PoolSystem from '@okiba/pool-system'
-   *
-   * const container = document.querySelector('#container')
-   *
-   * function createEl(){
-   *  return document.createElement('img');
-   * }
-   *
-   * const pool = new PoolSystem(container, createEl)
-   *
-   * ```
-   *
-   * @param {Object} parent The dom node used like container of pool system elements.
-   * @param {Function} createEl Function that create an istance of what you want to add to you pool system.
-   * @returns {PoolSystem} PoolSystem instance.
+   * @param {Object} parent DOM Element used as container for all pool elements.
+   * @param {Function} createEl Function that creates an istance the element you want to add to the pool.
    */
 
   constructor(parent, createEl) {
@@ -33,16 +27,10 @@ export default class PoolSystem {
   }
 
   /**
-   * Function to ensure a minimum pool size.
-   * Skipped If actual size is bigger that the passed size,
-   * otherwise create new element to reach the new size
+   * Makes sure the pool can host a minimum number of elements,
+   * grows it if that's not the case.
    *
-   * ```javascript
-   * pool.ensure(5)
-   *
-   * ```
-   *
-   * @param {int} size Minimum pool size to ensure.
+   * @param {Number} size Minimum pool size to ensure.
    */
 
   ensure(size) {
@@ -60,11 +48,11 @@ export default class PoolSystem {
   }
 
   /**
-   * Return the first free element from pool.
-   * If there isn't free element, the pool size is increased and a new element is created.
-   * This behaviour provide you a dinamic pool system that create elements only if necessary
+   * Hands a free element from the pool.
+   * If there isn't one, it automatically grows the pool's.
+   * This provides dynamic sizing which ensures
    *
-   * @returns {any} A free element from pool
+   * @returns {Element} A free DOM Element
    */
   get() {
     if (!this.pool.length) {
@@ -74,16 +62,17 @@ export default class PoolSystem {
     return this.pool.pop()
   }
   /**
-   * Set an element like free
+   * Marks an element as elegible for reutilization,
+   * and pushes it into the pool
    *
-   * @param {*} el
+   * @param {Element} Element to mark as free
    */
   free(el) {
     this.pool.push(el)
   }
 
   /**
-   * Destroy all reference from instance
+   * Nulls all references to DOM Elements
    */
   destroy() {
     this.pool = null
@@ -92,3 +81,5 @@ export default class PoolSystem {
     this.size = null
   }
 }
+
+export default PoolSystem
