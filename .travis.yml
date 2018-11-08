@@ -3,5 +3,5 @@ node_js:
   - "10.13.0"
 
 script:
-  - lerna bootstrap
+  - lerna bootstrap --hoist --no-ci
   - npm run test
