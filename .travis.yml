@@ -2,10 +2,5 @@ language: node_js
 node_js:
   - "10.13.0"
 
-install:
-  - npm install
-  - lerna bootstrap --hoist --no-ci
-
-script:
-  - lerna bootstrap --hoist --no-ci
-  - npm run test
+before_script:
+  - lerna bootstrap
