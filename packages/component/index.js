@@ -46,8 +46,8 @@
  *   }
  * })
  */
-import {arrayOrOne} from '@okiba/arrays'
 import {qsa} from '@okiba/dom'
+import {arrayOrOne} from '@okiba/arrays'
 
 /**
  * Accepts an __hash__ whose properties can be:
