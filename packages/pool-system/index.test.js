@@ -34,3 +34,25 @@ test('pool size have increase dinamically', done => {
   done()
 })
 
+test('complete routine', done => {
+  const p = new PoolSystem(container, createEl)
+  const els = []
+
+  p.ensure(10)
+  for (let i = 0; i < 10; ++i) {
+    els.push(p.get())
+  }
+
+  p.ensure(10)
+
+  for (let i = 0; i < 10; ++i) {
+    p.free(els.pop())
+  }
+
+  p.ensure(10)
+
+  expect(p.size).toBe(10)
+  expect(p.pool.length).toBe(10)
+  done()
+})
+
