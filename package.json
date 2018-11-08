@@ -28,10 +28,6 @@
     "testEnvironment": "node",
     "testURL": "http://localhost/"
   },
-  "eslintConfig": {
-    "extends": "@okiba/eslint-config",
-    "root": true
-  },
   "babel": {
     "presets": [
       "env"

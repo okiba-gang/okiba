@@ -1,0 +1,8 @@
+{
+  "extends": "@okiba/eslint-config",
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
