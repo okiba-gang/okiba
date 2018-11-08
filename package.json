@@ -2,8 +2,9 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "test": "jest",
-    "docs": "node ./docs/generate.js"
+    "test": "jest --coverage",
+    "docs": "node ./docs/generate.js",
+    "coverage": "jest --coverage"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
