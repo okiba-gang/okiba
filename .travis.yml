@@ -6,5 +6,4 @@ script:
   - lerna bootstrap
   - npm install
   - lerna link
-  - npm install
-  - npm run test
+  - lerna run test
