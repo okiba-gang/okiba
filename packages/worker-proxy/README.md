@@ -1,7 +1,7 @@
 
 
-# Okiba // 
-
+# Okiba // WorkerProxy
+Transparent proxying of a class of yours
 
 
 

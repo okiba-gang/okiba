@@ -9,7 +9,6 @@ inerithing both's method sets.
 
 
 
-
 ```javascript
 // FetchButton.js
 import EventedComponent from '@okiba/EventedComponent'
@@ -60,7 +59,7 @@ class UIPiece extends Component {
 
 ### Installation
 ```
-npm i --save @okiba/evented-component
+npm i --save @okiba/
 ```
 
 

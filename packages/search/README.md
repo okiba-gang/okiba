@@ -8,7 +8,7 @@ Search utilities
 
 ### Installation
 ```
-npm i --save @okiba/search
+npm i --save @okiba/
 ```
 
 

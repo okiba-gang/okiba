@@ -57,7 +57,7 @@ const app = new Component({
 
 ### Installation
 ```
-npm i --save @okiba/component
+npm i --save @okiba/
 ```
 
 

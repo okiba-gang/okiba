@@ -1,3 +1,8 @@
+/**
+ * @module WorkerProxy
+ * @description Transparent proxying of a class of yours
+ */
+
 import EventEmitter from '@okiba/event-emitter'
 
 export default class WorkerProxy extends EventEmitter {

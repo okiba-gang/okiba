@@ -8,7 +8,7 @@ Array utils for okiba js
 
 ### Installation
 ```
-npm i --save @okiba/arrays
+npm i --save @okiba/
 ```
 
 
@@ -49,7 +49,7 @@ The options object.
 
 #### Returns
 
-`any` The first element or the argument
+`any` The first element or the argument, undefined if empty array
 ## castArray(castable)
 
 
