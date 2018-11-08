@@ -3,17 +3,14 @@
 
 {% if packages %}
 {% for pkg in packages %}
-## ({{ pkg.name }})[{{ pkg.url }}]
+## [{{ pkg.name }}]({{ pkg.url }})
 
 {{ pkg.description }}
   {% if pkg.members %}
   {% for m in pkg.members %}
-### ({{ m.name }})[{{ m.url }}]
+**\+ [`{{ m.name }}`]({{ m.url }})**
 
-{{ m.description }}
-{% if loop.last %}
----
-{% endif %}
+> {{ m.description }}
   {% endfor %}
   {% endif %}
 {% endfor %}

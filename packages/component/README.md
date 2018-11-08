@@ -1,6 +1,6 @@
 
 
-# Okiba // Component
+# Okiba // component
 Manages a DOM component, binds UI and recursively binds child components.
 Can be extended or instantiated
 
@@ -57,7 +57,7 @@ const app = new Component({
 
 ### Installation
 ```
-npm i --save @okiba/component
+npm i --save @okiba/
 ```
 
 

@@ -1,6 +1,6 @@
 
 
-# Okiba // EventEmitter
+# Okiba // event-emitter
 Emits events that can be listened and unlistened to
 
 
@@ -22,7 +22,7 @@ emitter.emit('log', 'Will not run')
 
 ### Installation
 ```
-npm i --save @okiba/event-emitter
+npm i --save @okiba/
 ```
 
 

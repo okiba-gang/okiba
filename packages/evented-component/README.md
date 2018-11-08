@@ -1,6 +1,6 @@
 
 
-# Okiba // EventedComponent
+# Okiba // evented-component
 A component that has events.
 Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component) and
 composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter),
@@ -59,7 +59,7 @@ class UIPiece extends Component {
 
 ### Installation
 ```
-npm i --save @okiba/evented-component
+npm i --save @okiba/
 ```
 
 
@@ -73,7 +73,7 @@ npm i --save @okiba/evented-component
 
 
 
-#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#on)
+#### See: [EventEmitter](event-emitter#on)
 
 
 
@@ -89,7 +89,7 @@ npm i --save @okiba/evented-component
 
 
 
-#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#off)
+#### See: [EventEmitter](event-emitter#off)
 
 
 
@@ -105,7 +105,7 @@ npm i --save @okiba/evented-component
 
 
 
-#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emit)
+#### See: [EventEmitter](event-emitter#emit)
 
 
 

@@ -1,6 +1,6 @@
 
 
-# Okiba // TimeProgress
+# Okiba // time-progress
 Maps progress ovrer time, normalized between 0 and 1
 
 
@@ -30,7 +30,7 @@ requestAnimationFrame(loop)
 
 ### Installation
 ```
-npm i --save @okiba/time-progress
+npm i --save @okiba/
 ```
 
 
