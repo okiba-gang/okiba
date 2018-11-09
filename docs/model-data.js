@@ -44,8 +44,8 @@ function modelPackage(packageData, baseData) {
     throw new Error(`Missing name, data: ${JSON.stringify(packageData)}`)
   }
 
-  const {name, description, url, members = []} = packageData
-  const pkg = {name, description, url, members: []}
+  const {name, description, members = []} = packageData
+  const pkg = {name, description, url: `${baseData.url}packages/${name}`, members: []}
 
   members.forEach(m => {
     pkg.members.push({
