@@ -7,6 +7,7 @@
 A sharp collection of tools for web development created with performance in mind.  🔪🔪
 
 **Maximum FPS** and **minimum bundle size** are our primary concerns 🤓.
+
 That's why you can import every bit separately, so you'll bring the minimum set of code you really need.
 
 Aiming to achieve affidablity and affordability, we keep our tools sharp with 100% test coverage and A maintainability.
@@ -14,9 +15,11 @@ Aiming to achieve affidablity and affordability, we keep our tools sharp with 10
 If you're into buzzwords then Okiba is:
 > **tree-shake friendly**, **dependency-free**, altough **internally cross-dependent**, built as a **lerna monorepo**
 
+
+## Full API List:
 {% if packages %}
 {% for pkg in packages %}
-## [{{ pkg.name }}]({{ pkg.url }})
+### [{{ pkg.name }}]({{ pkg.url }})
 
   {% if pkg.members %}
   {% for m in pkg.members %}
