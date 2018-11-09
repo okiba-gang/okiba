@@ -7,6 +7,7 @@
 A sharp collection of tools for web development created with performance in mind.  🔪🔪
 
 **Maximum FPS** and **minimum bundle size** are our primary concerns 🤓.
+
 That's why you can import every bit separately, so you'll bring the minimum set of code you really need.
 
 Aiming to achieve affidablity and affordability, we keep our tools sharp with 100% test coverage and A maintainability.
@@ -15,8 +16,10 @@ If you're into buzzwords then Okiba is:
 > **tree-shake friendly**, **dependency-free**, altough **internally cross-dependent**, built as a **lerna monorepo**
 
 
+## Full API List:
 
-## [arrays](https://github.com/okiba-gang/okiba/tree/master/packages/packages/arrays)
+
+### [arrays](https://github.com/okiba-gang/okiba/tree/master/packages/packages/arrays)
 
   
   
@@ -26,7 +29,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [Component](https://github.com/okiba-gang/okiba/tree/master/packages/packages/Component)
+### [Component](https://github.com/okiba-gang/okiba/tree/master/packages/packages/Component)
 
   
   
@@ -38,7 +41,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [dom](https://github.com/okiba-gang/okiba/tree/master/packages/packages/dom)
+### [dom](https://github.com/okiba-gang/okiba/tree/master/packages/packages/dom)
 
   
   
@@ -46,7 +49,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [DragEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/packages/DragEmitter)
+### [DragEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/packages/DragEmitter)
 
   
   
@@ -56,13 +59,13 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [easings](https://github.com/okiba-gang/okiba/tree/master/packages/packages/easings)
+### [easings](https://github.com/okiba-gang/okiba/tree/master/packages/packages/easings)
 
   
   
   
 
-## [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/packages/EventEmitter)
+### [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/packages/EventEmitter)
 
   
   
@@ -74,7 +77,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [EventedComponent](https://github.com/okiba-gang/okiba/tree/master/packages/packages/EventedComponent)
+### [EventedComponent](https://github.com/okiba-gang/okiba/tree/master/packages/packages/EventedComponent)
 
   
   
@@ -86,7 +89,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [math](https://github.com/okiba-gang/okiba/tree/master/packages/packages/math)
+### [math](https://github.com/okiba-gang/okiba/tree/master/packages/packages/math)
 
   
   
@@ -100,7 +103,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [PoolSystem](https://github.com/okiba-gang/okiba/tree/master/packages/packages/PoolSystem)
+### [PoolSystem](https://github.com/okiba-gang/okiba/tree/master/packages/packages/PoolSystem)
 
   
   
@@ -116,7 +119,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [ResourceLoader](https://github.com/okiba-gang/okiba/tree/master/packages/packages/ResourceLoader)
+### [ResourceLoader](https://github.com/okiba-gang/okiba/tree/master/packages/packages/ResourceLoader)
 
   
   
@@ -124,7 +127,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [search](https://github.com/okiba-gang/okiba/tree/master/packages/packages/search)
+### [search](https://github.com/okiba-gang/okiba/tree/master/packages/packages/search)
 
   
   
@@ -132,7 +135,7 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [TimeProgress](https://github.com/okiba-gang/okiba/tree/master/packages/packages/TimeProgress)
+### [TimeProgress](https://github.com/okiba-gang/okiba/tree/master/packages/packages/TimeProgress)
 
   
   
@@ -150,13 +153,13 @@ If you're into buzzwords then Okiba is:
   
   
 
-## [WorkerProxy](https://github.com/okiba-gang/okiba/tree/master/packages/packages/WorkerProxy)
+### [WorkerProxy](https://github.com/okiba-gang/okiba/tree/master/packages/packages/WorkerProxy)
 
   
   
   
 
-## [worker-utils](https://github.com/okiba-gang/okiba/tree/master/packages/packages/worker-utils)
+### [worker-utils](https://github.com/okiba-gang/okiba/tree/master/packages/packages/worker-utils)
 
   
   
