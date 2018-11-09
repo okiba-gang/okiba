@@ -1,17 +1,17 @@
 # Okiba //
-A sharp collection of tools for web development created with performance in mind.  🔪🔪
-
-Small bundle size and maximum FPS are our primary concerns 🤓.
-
-That's why you can import every bit separately and tree-shake it, so you'll bring the minimum set of code you really need.
-
-Aiming to achieve affidablity and affordability, we keep our tools sharp achieving 100% Coverage and A maintainability.
-
-If you're into buzzwords then Okiba is: **dependency-free**, altough **internally cross-dependent**, built as a **lerna monorepo**.
 
 [![Build Status](https://semaphoreci.com/api/v1/okiba-gang/okiba/branches/master/shields_badge.svg)](https://semaphoreci.com/okiba-gang/okiba)
 [![Maintainability](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/maintainability)](https://codeclimate.com/github/okiba-gang/okiba/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/test_coverage)](https://codeclimate.com/github/okiba-gang/okiba/test_coverage)
+
+A sharp collection of tools for web development created with performance in mind.  🔪🔪
+
+Maximum FPS and small bundle size are our primary concerns 🤓.
+That's why you can import every bit separately and tree-shake it, so you'll bring the minimum set of code you really need.
+
+Aiming to achieve affidablity and affordability, we keep our tools sharp with 100% test coverage and A maintainability.
+
+If you're into buzzwords then Okiba is: **tree-shake friendly**, **dependency-free**, altough **internally cross-dependent**, built as a **lerna monorepo**
 
 
 
