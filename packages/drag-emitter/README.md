@@ -40,10 +40,9 @@ dragEmitter.on(
 #### Arguments
 
 
-#### + `el`: `Element`
+##### + `el`: `Element`
 
 Element whose surface is used for drag events
-
 
 
 

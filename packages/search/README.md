@@ -28,34 +28,29 @@ Binary searches an array
 #### Arguments
 
 
-#### + `data`: `Array.<Object>` or  `Array.<Number>`
+##### + `data`: `Array.<Object>` or  `Array.<Number>`
 
 data to search
 
 
-#　　　　　　　　　
-#### + `target`: `Number`
+##### + `target`: `Number`
 
 the value to find
 
 
-#　　　　　　　　　
-#### + `start`: `Number`
+##### + `start`: `Number`
 
 array index where to start from
 
 
-#　　　　　　　　　
-#### + `end`: `Number`
+##### + `end`: `Number`
 
 array index where to end to
 
 
-#　　　　　　　　　
-#### + `prop`: `String` | _optional_
+##### + `prop`: `String` | _optional_
 
 property to look into (if data contains objects)
-
 
 
 

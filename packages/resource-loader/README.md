@@ -43,10 +43,9 @@ Initiates loading of a resource at a given URL
 #### Arguments
 
 
-#### + `url`: `String`
+##### + `url`: `String`
 
 Resource URL
-
 
 
 
