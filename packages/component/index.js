@@ -49,6 +49,41 @@
 import {qsa} from '@okiba/dom'
 import {arrayOrOne} from '@okiba/arrays'
 
+function bindUi(ui, el) {
+  return Object.keys(ui).reduce(
+    (hash, key) => {
+      const els = arrayOrOne(qsa(ui[key], el))
+
+      if (els) {
+        hash[key] = els
+      } else {
+        throw new Error(`[!!] [Component] Cant't find UI element for selector: ${ui[key]}`)
+      }
+
+      return hash
+    }, {}
+  )
+}
+
+function bindComponents(components, el) {
+  Object.keys(components).reduce(
+    (hash, key) => {
+      const {type, selector, options} = components[key]
+      const els = arrayOrOne(qsa(components[key].selector, el))
+
+      if (els) {
+        hash[key] = els.length
+          ? els.map(n => new type({el: n, options}))
+          : new type({el: els, options})
+      } else {
+        throw new Error(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
+      }
+
+      return hash
+    }, {}
+  )
+}
+
 /**
  * Accepts an __hash__ whose properties can be:
  * @param {Object} args Arguments to create a component
@@ -93,38 +128,11 @@ class Component {
     }
 
     if (args.ui) {
-      this.ui = Object.keys(args.ui).reduce(
-        (hash, key) => {
-          const els = arrayOrOne(qsa(args.ui[key], this.el))
-
-          if (els) {
-            hash[key] = els
-          } else {
-            throw new Error(`[!!] [Component] Cant't find UI element for selector: ${args.ui[key]}`)
-          }
-
-          return hash
-        }, {}
-      )
+      this.ui = bindUi(args.ui, args.el)
     }
 
     if (args.components) {
-      this.components = Object.keys(args.components).reduce(
-        (hash, key) => {
-          const {type, selector, options} = args.components[key]
-          const els = arrayOrOne(qsa(args.components[key].selector, this.el))
-
-          if (els) {
-            hash[key] = els.length
-              ? els.map(n => new type({el: n, options}))
-              : new type({el: els, options})
-          } else {
-            throw new Error(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
-          }
-
-          return hash
-        }, {}
-      )
+      this.components = bindComponents(args.components, args.el)
     }
   }
 
