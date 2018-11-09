@@ -2,7 +2,8 @@
 
 
 [![Build Status](https://travis-ci.com/okiba-gang/okiba.svg?branch=master)](https://travis-ci.com/okiba-gang/okiba)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/maintainability)](https://codeclimate.com/github/okiba-gang/okiba/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/test_coverage)](https://codeclimate.com/github/okiba-gang/okiba/test_coverage)
 
 
 ## [arrays]()
