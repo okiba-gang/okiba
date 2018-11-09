@@ -66,7 +66,7 @@ function bindUi(ui, el) {
 }
 
 function bindComponents(components, el) {
-  Object.keys(components).reduce(
+  return Object.keys(components).reduce(
     (hash, key) => {
       const {type, selector, options} = components[key]
       const els = arrayOrOne(qsa(components[key].selector, el))
