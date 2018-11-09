@@ -1,3 +1,9 @@
 plugins:
   eslint:
     enabled: true
+
+exclude_patterns:
+  - config/
+  - '**/node_modules/'
+  - '**/*.test.js'
+  - 'docs/'
