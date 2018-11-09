@@ -36,16 +36,14 @@ console.log(fruits) // [div.fruit, div.fruit]
 #### Arguments
 
 
-#### + `selector`: `String`
+##### + `selector`: `String`
 
 DOM Selector (tag, class, id, anything that can be passed to `querySelector` API)
 
 
-#　　　　　　　　　
-#### + `element`: `Element` | _optional_ - _default_: `document`
+##### + `element`: `Element` | _optional_ - _default_: `document`
 
 DOM element to scope the selection query, only childs of that element will be tageted
-
 
 
 

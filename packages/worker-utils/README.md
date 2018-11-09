@@ -28,10 +28,9 @@ Creates a web worker starting from a function
 #### Arguments
 
 
-#### + `script`: `function`
+##### + `script`: `function`
 
 function to be included in the worker script, will be self-invoked
-
 
 
 

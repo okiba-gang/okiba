@@ -36,22 +36,19 @@ console.log(xPosition) // 0
 #### Arguments
 
 
-#### + `min`: `Number`
+##### + `min`: `Number`
 
 Minimum possible value
 
 
-#　　　　　　　　　
-#### + `max`: `Number`
+##### + `max`: `Number`
 
 Maximum possible value
 
 
-#　　　　　　　　　
-#### + `fraction`: `Number`
+##### + `fraction`: `Number`
 
 Current position
-
 
 
 
@@ -83,22 +80,19 @@ console.log(progress) // 1
 #### Arguments
 
 
-#### + `n`: `Number`
+##### + `n`: `Number`
 
 Value to cap
 
 
-#　　　　　　　　　
-#### + `min`: `Number`
+##### + `min`: `Number`
 
 Minimum possible value
 
 
-#　　　　　　　　　
-#### + `max`: `Number`
+##### + `max`: `Number`
 
 Maximum possible value
-
 
 
 
@@ -130,16 +124,14 @@ console.log(d) // 200
 #### Arguments
 
 
-#### + `x1`: `Number`
+##### + `x1`: `Number`
 
 First number
 
 
-#　　　　　　　　　
-#### + `x2`: `Number`
+##### + `x2`: `Number`
 
 Second number
-
 
 
 
@@ -170,16 +162,14 @@ console.log(rounded) // 1.111
 #### Arguments
 
 
-#### + `n`: `Number`
+##### + `n`: `Number`
 
 Number to round
 
 
-#　　　　　　　　　
-#### + `p`: `Number` | _optional_ - _default_: `3`
+##### + `p`: `Number` | _optional_ - _default_: `3`
 
 Precision of digits to leave
-
 
 
 

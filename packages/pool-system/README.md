@@ -40,16 +40,14 @@ npm i --save @okiba/
 #### Arguments
 
 
-#### + `parent`: `Object`
+##### + `parent`: `Object`
 
 DOM Element used as container for all pool elements.
 
 
-#　　　　　　　　　
-#### + `createEl`: `function`
+##### + `createEl`: `function`
 
 Function that creates an istance the element you want to add to the pool.
-
 
 
 
@@ -70,10 +68,9 @@ grows it if that's not the case.
 #### Arguments
 
 
-#### + `size`: `Number`
+##### + `size`: `Number`
 
 Minimum pool size to ensure.
-
 
 
 
@@ -110,10 +107,9 @@ and pushes it into the pool
 #### Arguments
 
 
-#### + `Element`: `Element`
+##### + `Element`: `Element`
 
 to mark as free
-
 
 
 

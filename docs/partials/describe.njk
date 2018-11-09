@@ -12,9 +12,8 @@
 {{param.description}}
 
 {% if param.subparams %}
-{{ listps(param.subparams, 5) }}
+{{ listps(param.subparams, 6) }}
 {% endif %}
-{% if not loop.last %}#　　　　　　　　　{% endif %}
 {% endfor -%}
 {% endmacro %}
 
@@ -41,7 +40,7 @@
 {% if member.params.length %}
 #### Arguments
 
-{{ listps(member.params, 4) }}
+{{ listps(member.params, 5) }}
 
 {% endif %}
 

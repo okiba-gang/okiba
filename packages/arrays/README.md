@@ -38,10 +38,9 @@ console.log(els) // 🍏
 #### Arguments
 
 
-#### + `arrayLike`: `Array-like`
+##### + `arrayLike`: `Array-like`
 
 The options object.
-
 
 
 
@@ -71,10 +70,9 @@ const fruits = castArray(🍒) // [🍒]
 #### Arguments
 
 
-#### + `castable`: `any`
+##### + `castable`: `any`
 
 Array to cast
-
 
 
 

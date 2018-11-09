@@ -42,16 +42,14 @@ Sets an event listener for an event type
 #### Arguments
 
 
-#### + `name`: `String`
+##### + `name`: `String`
 
 Event type
 
 
-#　　　　　　　　　
-#### + `handler`: `function`
+##### + `handler`: `function`
 
 Callback to be fired when that event occours
-
 
 
 
@@ -71,16 +69,14 @@ Unsets an event listener for an event type
 #### Arguments
 
 
-#### + `name`: `String`
+##### + `name`: `String`
 
 Event type
 
 
-#　　　　　　　　　
-#### + `handler`: `function`
+##### + `handler`: `function`
 
 Callback previously registered for that event type
-
 
 
 
@@ -102,16 +98,14 @@ Custom data will be passed to them as a parameter
 #### Arguments
 
 
-#### + `name`: `String`
+##### + `name`: `String`
 
 Event type
 
 
-#　　　　　　　　　
-#### + `data`: `Object` | _optional_
+##### + `data`: `Object` | _optional_
 
 Custom data to be passed to the handlers
-
 
 
 

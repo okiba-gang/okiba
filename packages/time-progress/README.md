@@ -49,10 +49,9 @@ npm i --save @okiba/
 #### Arguments
 
 
-#### + `duration`: | _optional_ - _default_: `400`
+##### + `duration`: | _optional_ - _default_: `400`
 
 Amount of time it takes to reach progress = 1
-
 
 
 
@@ -97,10 +96,9 @@ Forces a certain progress, reflected on the time
 #### Arguments
 
 
-#### + `progress`: `Number`
+##### + `progress`: `Number`
 
 [description]
-
 
 
 
@@ -122,10 +120,9 @@ Sets a direction in time.
 #### Arguments
 
 
-#### + `direction`: `Number`
+##### + `direction`: `Number`
 
 1 is forward, -1 is backwards
-
 
 
 

@@ -76,19 +76,18 @@ npm i --save @okiba/
 #### Arguments
 
 
-#### + `args`: `Object`
+##### + `args`: `Object`
 
 Arguments to create a component
 
 
 
-##### + `el`: `Element`
+###### + `el`: `Element`
 
 DOM Element to be bound
 
 
-#　　　　　　　　　
-##### + `ui`: `Object` | _optional_
+###### + `ui`: `Object` | _optional_
 
 UI hash where keys are name and values are selectors
 ```javascript
@@ -100,8 +99,7 @@ this.ui.buttonNext
 ```
 
 
-#　　　　　　　　　
-##### + `components`: `Object` | _optional_
+###### + `components`: `Object` | _optional_
 
 Components hash for childs to bind, keys are names and values are component initialization props:
 ```javascript
@@ -123,12 +121,9 @@ this.components.slider
 ```
 
 
-#　　　　　　　　　
-##### + `options`: `Object` | _optional_
+###### + `options`: `Object` | _optional_
 
 Custom options passed to the component
-
-
 
 
 
