@@ -17,7 +17,7 @@
  */
 export function arrayOrOne(arrayLike) {
   if (arrayLike === void 0 || arrayLike.length === 0) {
-    return void 0
+    return void 00
   }
 
   if (arrayLike.length === 1) {
