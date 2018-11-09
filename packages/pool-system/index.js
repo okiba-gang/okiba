@@ -1,5 +1,5 @@
 /**
- * @module Okiba / pool-system
+ * @module PoolSystem
  * @description Manages a dinamically grown pool of DOM Elements
  * import PoolSystem from '@okiba/pool-system'
  *
@@ -18,7 +18,6 @@ class PoolSystem {
    * @param {Object} parent DOM Element used as container for all pool elements.
    * @param {Function} createEl Function that creates an istance the element you want to add to the pool.
    */
-
   constructor(parent, createEl) {
     this.parent = parent
     this.createEl = createEl

@@ -91,19 +91,19 @@
   
   
 
-## [Okiba / pool-system]()
+## [PoolSystem]()
 
   
   
-**\+ [`PoolSystem`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#PoolSystem)**
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#PoolSystem)**
   
-**\+ [`ensure`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#ensure)**
+**\+ [`ensure`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#ensure)**
   
-**\+ [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#get)**
+**\+ [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#get)**
   
-**\+ [`free`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#free)**
+**\+ [`free`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#free)**
   
-**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/Okiba / pool-system#destroy)**
+**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#destroy)**
   
   
 
