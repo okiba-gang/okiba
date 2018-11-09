@@ -4,17 +4,16 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/maintainability)](https://codeclimate.com/github/okiba-gang/okiba/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/test_coverage)](https://codeclimate.com/github/okiba-gang/okiba/test_coverage)
 
-A sharp collection of tools for web development created with performance in mind.  🔪🔪
+Sharp collection of tools for web development, created with performance in mind.  🔪🔪
 
-**Maximum FPS** and **minimum bundle size** are our primary concerns 🤓.
+Our primary concerns are: **maximum FPS** and **minimum bundle size** 🤓
 
-That's why you can import every bit separately, so you'll bring the minimum set of code you really need.
+That's why you can import every bit separately, so you'll bring the minimum set of what you really need into your bundle.
 
-Aiming to achieve affidablity and affordability, we keep our tools sharp with 100% test coverage and A maintainability.
+Aiming to achieve affidability and affordability, we try our best to keep our tools sharp with 100% test coverage and A maintainability.
 
 If you're into buzzwords then Okiba is:
-> **tree-shake friendly**, **dependency-free**, altough **internally cross-dependent**, built as a **lerna monorepo**
-
+> **tree-shake friendly**, **DRY**, **dependency-free**, altough **internally cross-dependent**, built as a **lerna monorepo**
 
 ## Full API List:
 
