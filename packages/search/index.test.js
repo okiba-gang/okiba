@@ -26,6 +26,6 @@ test('find prop i with value 5 in array of object', done => {
 
 test('find prop i with value 0 in array of object', done => {
   const f = binarySearch(dataObj, 0, 0, dataObj.length-1, 'i')
-  expect(f).toBe(5)
+  expect(f).toBe(0)
   done()
 })
