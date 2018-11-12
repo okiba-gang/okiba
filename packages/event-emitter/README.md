@@ -22,7 +22,7 @@ emitter.emit('log', 'Will not run')
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/event-emitter
 ```
 
 

@@ -21,7 +21,7 @@ const pool = new PoolSystem(container, createEl)
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/pool-system
 ```
 
 

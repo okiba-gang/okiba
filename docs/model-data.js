@@ -44,16 +44,30 @@ function modelPackage(packageData, baseData) {
     throw new Error(`Missing name, data: ${JSON.stringify(packageData)}`)
   }
 
-  const {name, description, members = []} = packageData
-  const pkg = {name, description, url: `${baseData.url}packages/${name}`, members: []}
+  const {name, description, pkgName, members = []} = packageData
+  const pkg = {name, description, url: `${baseData.url}${pkgName}`, members: []}
 
   members.forEach(m => {
+    let params = [];
+    if(m.params){
+      params = m.params.reduce( (acc, p) => {
+        acc.push(p.name)
+        if(p.subparams){
+          p.subparams.reduce( (ac, sp) => {
+            ac.push(sp.name)
+            return ac
+          }, acc)
+        }
+        return acc
+      }, [])
+    }
+
     pkg.members.push({
       name: m.name === name
         ? 'constructor'
         : m.name,
       description: m.description,
-      url: `${baseData.url}${name}#${m.name}`
+      url: `${pkg.url}#${m.name.toLowerCase()}${params.join('-')}`
     })
   })
 

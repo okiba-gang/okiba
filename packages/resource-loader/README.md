@@ -18,7 +18,7 @@ imgUrls.forEac(imgUrl => resLoader.load(imgUrl))
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/resource-loader
 ```
 
 

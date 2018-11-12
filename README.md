@@ -18,151 +18,151 @@ If you're into buzzwords then Okiba is:
 ## Full API List:
 
 
-### [arrays](https://github.com/okiba-gang/okiba/tree/master/packages/packages/arrays)
+### [arrays](https://github.com/okiba-gang/okiba/tree/master/packages/arrays)
 
   
   
-**\+ [`arrayOrOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#arrayOrOne)**
+**\+ [`arrayOrOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#arrayoronearrayLike)**
   
-**\+ [`castArray`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#castArray)**
-  
-  
-
-### [Component](https://github.com/okiba-gang/okiba/tree/master/packages/packages/Component)
-
-  
-  
-**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/Component#Component)**
-  
-**\+ [`onDestroy`](https://github.com/okiba-gang/okiba/tree/master/packages/Component#onDestroy)**
-  
-**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/Component#destroy)**
+**\+ [`castArray`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#castarraycastable)**
   
   
 
-### [dom](https://github.com/okiba-gang/okiba/tree/master/packages/packages/dom)
+### [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component)
 
   
   
-**\+ [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsa)**
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/component#componentargs-el-ui-components-options)**
+  
+**\+ [`onDestroy`](https://github.com/okiba-gang/okiba/tree/master/packages/component#ondestroy)**
+  
+**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/component#destroy)**
   
   
 
-### [DragEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/packages/DragEmitter)
+### [dom](https://github.com/okiba-gang/okiba/tree/master/packages/dom)
 
   
   
-**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/DragEmitter#DragEmitter)**
-  
-**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/DragEmitter#destroy)**
+**\+ [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element)**
   
   
 
-### [easings](https://github.com/okiba-gang/okiba/tree/master/packages/packages/easings)
+### [DragEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter)
 
   
   
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter#dragemitterel)**
   
-
-### [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/packages/EventEmitter)
-
-  
-  
-**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/EventEmitter#on)**
-  
-**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/EventEmitter#off)**
-  
-**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/EventEmitter#emit)**
+**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter#destroy)**
   
   
 
-### [EventedComponent](https://github.com/okiba-gang/okiba/tree/master/packages/packages/EventedComponent)
-
-  
-  
-**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/EventedComponent#on)**
-  
-**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/EventedComponent#off)**
-  
-**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/EventedComponent#emit)**
-  
-  
-
-### [math](https://github.com/okiba-gang/okiba/tree/master/packages/packages/math)
-
-  
-  
-**\+ [`lerp`](https://github.com/okiba-gang/okiba/tree/master/packages/math#lerp)**
-  
-**\+ [`cap`](https://github.com/okiba-gang/okiba/tree/master/packages/math#cap)**
-  
-**\+ [`distance`](https://github.com/okiba-gang/okiba/tree/master/packages/math#distance)**
-  
-**\+ [`round`](https://github.com/okiba-gang/okiba/tree/master/packages/math#round)**
-  
-  
-
-### [PoolSystem](https://github.com/okiba-gang/okiba/tree/master/packages/packages/PoolSystem)
-
-  
-  
-**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#PoolSystem)**
-  
-**\+ [`ensure`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#ensure)**
-  
-**\+ [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#get)**
-  
-**\+ [`free`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#free)**
-  
-**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/PoolSystem#destroy)**
-  
-  
-
-### [ResourceLoader](https://github.com/okiba-gang/okiba/tree/master/packages/packages/ResourceLoader)
-
-  
-  
-**\+ [`load`](https://github.com/okiba-gang/okiba/tree/master/packages/ResourceLoader#load)**
-  
-  
-
-### [search](https://github.com/okiba-gang/okiba/tree/master/packages/packages/search)
-
-  
-  
-**\+ [`binarySearch`](https://github.com/okiba-gang/okiba/tree/master/packages/search#binarySearch)**
-  
-  
-
-### [TimeProgress](https://github.com/okiba-gang/okiba/tree/master/packages/packages/TimeProgress)
-
-  
-  
-**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#TimeProgress)**
-  
-**\+ [`update`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#update)**
-  
-**\+ [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#reset)**
-  
-**\+ [`setProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#setProgress)**
-  
-**\+ [`setDirection`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#setDirection)**
-  
-**\+ [`reverse`](https://github.com/okiba-gang/okiba/tree/master/packages/TimeProgress#reverse)**
-  
-  
-
-### [WorkerProxy](https://github.com/okiba-gang/okiba/tree/master/packages/packages/WorkerProxy)
+### [easings](https://github.com/okiba-gang/okiba/tree/master/packages/easings)
 
   
   
   
 
-### [worker-utils](https://github.com/okiba-gang/okiba/tree/master/packages/packages/worker-utils)
+### [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter)
 
   
   
-**\+ [`createWorker`](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils#createWorker)**
+**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#onname-handler)**
+  
+**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#offname-handler)**
+  
+**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emitname-data)**
+  
+  
+
+### [EventedComponent](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component)
+
+  
+  
+**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#on)**
+  
+**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#off)**
+  
+**\+ [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#emit)**
+  
+  
+
+### [math](https://github.com/okiba-gang/okiba/tree/master/packages/math)
+
+  
+  
+**\+ [`lerp`](https://github.com/okiba-gang/okiba/tree/master/packages/math#lerpmin-max-fraction)**
+  
+**\+ [`cap`](https://github.com/okiba-gang/okiba/tree/master/packages/math#capn-min-max)**
+  
+**\+ [`distance`](https://github.com/okiba-gang/okiba/tree/master/packages/math#distancex1-x2)**
+  
+**\+ [`round`](https://github.com/okiba-gang/okiba/tree/master/packages/math#roundn-p)**
+  
+  
+
+### [PoolSystem](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system)
+
+  
+  
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#poolsystemparent-createEl)**
+  
+**\+ [`ensure`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#ensuresize)**
+  
+**\+ [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#get)**
+  
+**\+ [`free`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#freeElement)**
+  
+**\+ [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#destroy)**
+  
+  
+
+### [ResourceLoader](https://github.com/okiba-gang/okiba/tree/master/packages/resource-loader)
+
+  
+  
+**\+ [`load`](https://github.com/okiba-gang/okiba/tree/master/packages/resource-loader#loadurl)**
+  
+  
+
+### [search](https://github.com/okiba-gang/okiba/tree/master/packages/search)
+
+  
+  
+**\+ [`binarySearch`](https://github.com/okiba-gang/okiba/tree/master/packages/search#binarysearchdata-target-start-end-prop)**
+  
+  
+
+### [TimeProgress](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress)
+
+  
+  
+**\+ [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#timeprogressduration)**
+  
+**\+ [`update`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#update)**
+  
+**\+ [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reset)**
+  
+**\+ [`setProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setprogressprogress)**
+  
+**\+ [`setDirection`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setdirectiondirection)**
+  
+**\+ [`reverse`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reverse)**
+  
+  
+
+### [WorkerProxy](https://github.com/okiba-gang/okiba/tree/master/packages/worker-proxy)
+
+  
+  
+  
+
+### [worker-utils](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils)
+
+  
+  
+**\+ [`createWorker`](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils#createworkerscript)**
   
   
 

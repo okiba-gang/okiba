@@ -30,7 +30,7 @@ requestAnimationFrame(loop)
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/time-progress
 ```
 
 
