@@ -14,7 +14,13 @@
  */
 export function binarySearch(data, target, start, end, prop) {
   const middle = ~~((start + end) / 2)
-  const current = prop ? data[middle][prop] : data[middle]
+  let current
+
+  if (prop) {
+    current = data[middle][prop]
+  } else {
+    current = data[middle]
+  }
 
   if (end - 1 === start) return start
 
