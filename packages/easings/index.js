@@ -18,3 +18,4 @@ export function easeInOutQuart(t) { return t < 0.5 ? 8 * t * t * t * t : 1 - 8 *
 export function easeInQuint(t) { return t * t * t * t * t }
 export function easeOutQuint(t) { return 1 + (--t) * t * t * t * t }
 export function easeInOutQuint(t) { return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t }
+export function easeInOutQuint(t) { return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t }
