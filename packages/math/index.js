@@ -13,7 +13,7 @@
  * @example
  * import {lerp} from '@okiba/math'
  * const xPosition = lerp(0, 100, 0.5)
- * console.log(xPosition) // 0
+ * console.log(xPosition) // 50
  */
 export function lerp(min, max, fraction) {
   return (max - min) * fraction + min
