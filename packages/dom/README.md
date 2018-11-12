@@ -8,7 +8,7 @@ Utilities to work with dom elements and selectors
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/dom
 ```
 
 

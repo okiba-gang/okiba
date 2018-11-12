@@ -28,7 +28,7 @@ async function generate() {
     const packageData = model(await jsdoc.explain({
       files: `./packages/${name}/index.js`
     }), baseData)
-
+    packageData.pkgName = name
     const markdown = nunjucks.renderString(template, packageData)
     writeFileSync(`./packages/${name}/README.md`, markdown)
 

@@ -8,7 +8,7 @@ Set of useful functions to ease WebWorkers development
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/worker-utils
 ```
 
 

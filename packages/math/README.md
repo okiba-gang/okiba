@@ -8,7 +8,7 @@ Collection of math functions
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/math
 ```
 
 

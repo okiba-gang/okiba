@@ -15,7 +15,7 @@ const easedProgress = easeInQuad(progress)
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/easings
 ```
 
 
