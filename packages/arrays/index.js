@@ -43,7 +43,10 @@ export function castArray(castable) {
     return castable
   }
 
-  if (castable.length === void 0 || typeof castable === 'string') {
+  if (castable.length === void 0 ||
+      typeof castable === 'string' ||
+      typeof castable === 'function'
+  ) {
     return [castable]
   }
 

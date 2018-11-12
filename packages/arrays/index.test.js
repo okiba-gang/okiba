@@ -43,8 +43,9 @@ test('castArray, should return undefined if passed an undefined', done => {
 })
 
 test('castArray, should return an array from single', done => {
-  const res = castArray(single)
-  expect(res).toEqual(singleArray)
+  function val() {return 'val'}
+  const res = castArray(val)
+  expect(res).toEqual([val])
   done()
 })
 
