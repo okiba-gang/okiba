@@ -3,6 +3,7 @@
  * @description Emits drag events for all common pointers kinds (touch & mouse)
  */
 import EventEmitter from '@okiba/event-emitter'
+import {on, off} from '@okiba/dom'
 
 /**
  * @param {Element} el Element whose surface is used for drag events
@@ -21,7 +22,7 @@ class DragEmitter extends EventEmitter {
     super()
     this.el = el
     this.autoBind()
-    this.addEventListeners()
+    this.listen()
   }
 
   /**
@@ -29,7 +30,7 @@ class DragEmitter extends EventEmitter {
    * To be called when the instance is not needed anymore for cleanup.
    */
   destroy() {
-    this.removeEventListeners()
+    this.unlisten()
     this.el = null
   }
 
@@ -89,24 +90,24 @@ class DragEmitter extends EventEmitter {
     this.setPointerUp()
   }
 
-  addEventListeners() {
-    this.el.addEventListener('touchstart', this.onTouchStart)
-    window.addEventListener('touchmove', this.onTouchMove)
-    window.addEventListener('touchend', this.onTouchEnd)
+  listen() {
+    on(this.el, 'touchstart', this.onTouchStart)
+    on(window, 'touchmove', this.onTouchMove)
+    on(window, 'touchend', this.onTouchEnd)
 
-    this.el.addEventListener('mousedown', this.onMouseDown)
-    window.addEventListener('mousemove', this.onMouseMove)
-    window.addEventListener('mouseup', this.onMouseUp)
+    on(this.el, 'mousedown', this.onMouseDown)
+    on(window, 'mousemove', this.onMouseMove)
+    on(window, 'mouseup', this.onMouseUp)
   }
 
-  removeEventListeners() {
-    this.el.removeEventListener('touchstart', this.onTouchStart)
-    window.removeEventListener('touchmove', this.onTouchMove)
-    window.removeEventListener('touchend', this.onTouchEnd)
+  unlisten() {
+    off(this.el, 'touchstart', this.onTouchStart)
+    off(window, 'touchmove', this.onTouchMove)
+    off(window, 'touchend', this.onTouchEnd)
 
-    this.el.removeEventListener('mousedown', this.onMouseDown)
-    window.removeEventListener('mousemove', this.onMouseMove)
-    window.removeEventListener('mouseup', this.onMouseUp)
+    off(this.el, 'mousedown', this.onMouseDown)
+    off(window, 'mousemove', this.onMouseMove)
+    off(window, 'mouseup', this.onMouseUp)
   }
 
   autoBind() {
