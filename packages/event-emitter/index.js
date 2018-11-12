@@ -53,7 +53,7 @@ class EventEmitter {
     if (!this.hs[name]) return
 
     for (let i = 0; i < this.hs[name].length; ++i) {
-      this.handlers[name][i](data)
+      this.hs[name][i](data)
     }
   }
 }
