@@ -59,7 +59,7 @@ class UIPiece extends Component {
 
 ### Installation
 ```
-npm i --save @okiba/
+npm i --save @okiba/evented-component
 ```
 
 
