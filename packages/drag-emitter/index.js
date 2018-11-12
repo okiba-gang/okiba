@@ -63,6 +63,7 @@ class DragEmitter extends EventEmitter {
     })
   }
 
+
   onTouchStart(e) {
     this.setPointerDown()
     this.setPointerX(e.touches[0].clientX)
@@ -76,8 +77,9 @@ class DragEmitter extends EventEmitter {
     this.setPointerUp()
   }
 
-  onMouseDown() {
+  onMouseDown(e) {
     this.setPointerDown()
+    this.setPointerX(e.clientX)
   }
 
   onMouseMove(e) {
