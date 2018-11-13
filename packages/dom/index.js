@@ -67,11 +67,11 @@ function evt(source, type, handler, action) {
  * // adds `onClick` to 'click' and `onMouseChange` to both 'mouseenter' and 'mouseleave'
  * on(buttons, ['click', mouseenter', 'mouseleve'], [onClick, onMouseChange])
  *
- * @param {Element|[]Element} [window] source
+ * @param {(Element|Element[])} [window] source
  * the element which will trigger the event
- * @param {String|[]String} type
+ * @param {(String|String[])} type
  * the event name to bind. Or an array of
- * @param {Function|[]Function} handler
+ * @param {(Function|Function[])} handler
  * the callback to be fired at the event. If an array is supplied the handlers will be bound in order,
  * if there are less handlers than event types, the last handler is bound to all remaining events.
  *
@@ -99,11 +99,11 @@ export function on(source, type, handler) {
  * // removes `onClick` from 'click' and `onMouseChange` from both 'mouseenter' and 'mouseleave'
  * off(buttons, ['click', mouseenter', 'mouseleve'], [onClick, onMouseChange])
  *
- * @param {Element|[]Element} [window] source
+ * @param {(Element|Element[])} [window] source
  * Element which will trigger the event
- * @param {String|[]String} type
+ * @param {(String|String[])} type
  * Event name to unbind. Or an array of
- * @param {Function|[]Function} handler
+ * @param {(Function|Function[])} handler
  * Callback bound to the event. If an array is supplied the handlers will be unbound in order,
  * if there are less handlers than event types, the last handler is unbound from all remaining events.
  *
