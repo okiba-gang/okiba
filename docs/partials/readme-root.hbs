@@ -19,11 +19,7 @@ If you're into buzzwords then Okiba is:
 {% if packages %}
 {% for pkg in packages %}
 ### [{{ pkg.name }}]({{ pkg.url }})
-
-  {% if pkg.members %}
-  {% for m in pkg.members %}
-**\+ [`{{ m.name }}`]({{ m.url }})**
-  {% endfor %}
-  {% endif %}
+{{pkg.description}}
+{% if not loop.last %}---{% endif %}
 {% endfor %}
 {% endif %}
