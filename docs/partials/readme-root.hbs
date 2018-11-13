@@ -20,6 +20,12 @@ If you're into buzzwords then Okiba is:
 {% for pkg in packages %}
 ### [{{ pkg.name }}]({{ pkg.url }})
 {{pkg.description}}
+
+{% if pkg.members -%}
+{%- for m in pkg.members -%}
+[`{{ m.name }}`]({{ m.url }}){%- if not loop.last %}, {% endif -%}
+{%- endfor -%}
+{%- endif %}
 {% if not loop.last %}---{% endif %}
 {% endfor %}
 {% endif %}
