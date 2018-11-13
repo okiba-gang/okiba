@@ -45,7 +45,6 @@ function modelPackage(packageData, baseData) {
   }
 
   const {name, description, pkgName, members = []} = packageData
-  const pkg = {name, description, url: `${baseData.url}${pkgName}`, members: []}
   const pkg = {name: pkgName, description, url: `${baseData.url}${pkgName}`, members: []}
 
   members.forEach(m => {
