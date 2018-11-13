@@ -13,22 +13,29 @@
  * @todo  Fetch is not on IE11
  */
 import {createWorker} from '@okiba/worker-utils'
+import {on, off} from '@okiba/dom'
 
-function workerScript() {
-  self.addEventListener(
-    'message',
-    ({data}) => {
-      fetch(data, {mode: 'cors'})
-    }
-  )
-}
+const workerScript = `
+  onmessage = ({data}) => {
+    fetch(data.url, {mode: 'cors'})
+      .then(r => postMessage({url: data.url, value: r.ok}))
+      .catch(_ => postMessage({url: data.url, value: false}))
+  }
+`
 
 class ResourceLoader {
   constructor() {
     this.cache = {}
     if (window.Worker) {
+      this.onWorkerMessage = this.onWorkerMessage.bind(this)
       this.worker = createWorker(workerScript)
+      on(this.worker, 'message', this.onWorkerMessage)
     }
+  }
+
+  onWorkerMessage({data}) {
+    console.log(data)
+    this.cache[data.url] = data.value
   }
 
   /**
@@ -40,9 +47,18 @@ class ResourceLoader {
     this.cache[url] = true
 
     if (this.worker) {
-      this.worker.postMessage(url)
+      this.worker.postMessage({url})
     } else {
       fetch(url, {mode: 'cors'})
+        .then(r => {console.log(r); this.cache[url] = r.ok})
+        .catch(_ => this.cache[url] = false)
+    }
+  }
+
+  destroy() {
+    if (this.worker) {
+      off(this.worker, 'message', this.onWorkerMessage)
+      this.worker.terminate()
     }
   }
 }
