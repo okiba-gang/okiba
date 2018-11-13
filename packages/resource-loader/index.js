@@ -17,9 +17,14 @@ import {on, off} from '@okiba/dom'
 
 const workerScript = `
   onmessage = ({data}) => {
-    fetch(data.url, {mode: 'cors'})
-      .then(r => postMessage({url: data.url, value: r.ok}))
-      .catch(_ => postMessage({url: data.url, value: false}))
+    self.fetch(data.url, {mode: 'cors'})
+      .then(r => {
+        postMessage({url: data.url, value: r.ok})
+      })
+      .catch(e => {
+        console.log(e);
+        postMessage({url: data.url, value: false})
+      })
   }
 `
 
@@ -34,7 +39,6 @@ class ResourceLoader {
   }
 
   onWorkerMessage({data}) {
-    console.log(data)
     this.cache[data.url] = data.value
   }
 
@@ -44,15 +48,41 @@ class ResourceLoader {
    */
   load(url) {
     if (this.cache[url]) return
-    this.cache[url] = true
+
+    let promise
 
     if (this.worker) {
+      promise = new Promise((res, rej) => {
+        this.worker.addEventListener('message', ({data}) => {
+          if (data.value) {
+            res()
+          } else {
+            rej()
+          }
+        })
+      })
       this.worker.postMessage({url})
     } else {
-      fetch(url, {mode: 'cors'})
-        .then(r => {console.log(r); this.cache[url] = r.ok})
-        .catch(_ => this.cache[url] = false)
+      promise = new Promise((res, rej) => {
+        fetch(url, {mode: 'cors'})
+          .then(r => {
+            if (r.ok) {
+              res()
+              this.cache[url] = true
+            } else {
+              rej()
+              delete this.cache[url]
+            }
+          })
+          .catch(_ => {
+            delete this.cache[url]
+            rej()
+          })
+      })
     }
+
+    this.cache[url] = promise
+    return promise
   }
 
   destroy() {

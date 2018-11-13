@@ -1,5 +1,4 @@
 import ResourceLoader from '@okiba/resource-loader'
-import fetch from 'node-fetch'
 jest.useFakeTimers()
 
 import { JSDOM } from 'jsdom'
@@ -8,75 +7,68 @@ global.window = window
 global.document = window.document
 global.FileReader = window.FileReader
 
-import FetchMock from 'fetch-mock'
 import 'jsdom-global/register'
 import 'jsdom-worker'
+
+const oldFetch = global.fetch
+global.fetch = function(url) {
+  if (url.indexOf('blob') === 0) {
+    return oldFetch(url)
+  }
+
+  return new Promise((res) => {
+    res({ok: global.fetchMockResult})
+  })
+}
 
 window.Worker = Worker
 global.Worker = Worker
 
 jest.runAllTimers()
 
-const SUCCESS_URL = 'https://example.com/success'
-const FAILURE_URL = 'https://example.com/failure'
+it('should fetch and cache if success in Worker', async done => {
+  const url = 'http://2/'
+  const rl = new ResourceLoader()
+  global.fetchMockResult = true
+  await rl.load(url)
+  expect(rl.cache[url]).toBe(global.fetchMockResult)
+  done()
+})
 
-// it('should fetch and cache if success in Worker', done => {
-//   const rl = new ResourceLoader()
-//   rl.load(SUCCESS_URL)
-//   rl.worker.addEventListener('message', function() {
-//     // FetchMock.restore()
-//     expect(rl.cache[SUCCESS_URL]).toBe(true)
-//     done()
-//   })
+it('should fetch and not cache if failure in Worker', async done => {
+  const url = 'http://1/'
+  const rl = new ResourceLoader()
+  global.fetchMockResult = false
 
-//   jest.runAllTimers()
-// })
+  try {
+    await rl.load(url)
+  } catch (e) {
+    expect(rl.cache[url]).toBe(global.fetchMockResult)
+    done()
+  }
+})
 
-// it('should fetch and not cache if failure in Worker', done => {
-//   const rl = new ResourceLoader()
-//   rl.load(FAILURE_URL)
-//   rl.worker.addEventListener('message', function() {
-//     // FetchMock.restore()
-//     expect(rl.cache[FAILURE_URL]).toBe(false)
-//     done()
-//   })
+it('should fetch and cache if success', async done => {
+  const url = 'http://3'
+  window.Worker = null
+  const rl = new ResourceLoader()
+  global.fetchMockResult = true
+  await rl.load(url)
+  expect(rl.cache).toHaveProperty(url)
+  done()
+})
 
-//   jest.runAllTimers()
-// })
-
-// it('should fetch and cache if success', done => {
-//   window.Worker = null
-//   const rl = new ResourceLoader()
-//   FetchMock.once('http://3', 200)
-//   rl.load(SUCCESS_URL)
-//   FetchMock.restore()
-//   setTimeout(function() {
-//     expect(rl.cache[SUCCESS_URL]).toBe(true)
-//     done()
-//   }, 100)
-
-//   jest.runAllTimers()
-// })
-
-it('should fetch and not cache if failure', done => {
+it('should fetch and not cache if failure', async done => {
   const url = 'http://4'
   window.Worker = null
   const rl = new ResourceLoader()
+  global.fetchMockResult = false
 
-  FetchMock.once(url, 500)
-  rl.load(url)
-  FetchMock.restore()
-
-  setTimeout(function() {
-    console.log('test')
-    setTimeout(function() {
-      expect(rl.cache[url]).toBe(false)
-      done()
-    }, 100)
-
-    jest.runAllTimers()
-  }, 100)
-
-
-  jest.runAllTimers()
+  try {
+    await rl.load(url)
+  } catch (e) {
+    expect(rl.cache).not.toHaveProperty(url)
+    done()
+  }
 })
+
