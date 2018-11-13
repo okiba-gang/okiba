@@ -132,8 +132,8 @@ export function off(source, type, handler) {
  */
 export function eventCoords(event) {
   let coords = event
-  if (e.type.indexOf('touch') === 0) {
-    coords = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0]
+  if (event.type.indexOf('touch') === 0) {
+    coords = event.touches[0] || event.changedTouches[0]
   }
   return {
     clientX: coords.clientX,
