@@ -9,9 +9,13 @@ Transparently relies on a WebWorker if possible to load on a separate thread.
 
 ```javascript
 import ResourceLoader from '@okiba/resource-loader'
+
 const resLoader = new ResourceLoader()
 
-imgUrls.forEac(imgUrl => resLoader.load(imgUrl))
+urls.forEach(
+  url => resLoader.load(url)
+    .then(console.log('Loaded! 📦'))
+)
 ```
 
 

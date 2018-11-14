@@ -5,9 +5,13 @@
  *
  * @example
  * import ResourceLoader from '@okiba/resource-loader'
+ *
  * const resLoader = new ResourceLoader()
  *
- * imgUrls.forEac(imgUrl => resLoader.load(imgUrl))
+ * urls.forEach(
+ *   url => resLoader.load(url)
+ *     .then(console.log('Loaded! 📦'))
+ * )
  *
  * @todo  Handle abortion
  * @todo  Fetch is not on IE11
