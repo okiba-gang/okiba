@@ -14,14 +14,17 @@
  */
 import {createWorker} from '@okiba/worker-utils'
 
-function workerScript() {
-  self.addEventListener(
-    'message',
-    ({data}) => {
-      fetch(data, {mode: 'cors'})
+const workerScript = `
+  onmessage = ({data}) => {
+      self.fetch(data.url, {mode: 'cors'})
+        .then(r =>
+          postMessage({url: data.url, value: r.ok})
+        )
+        .catch(_ =>
+          postMessage({url: data.url, value: false})
+        )
     }
-  )
-}
+`
 
 class ResourceLoader {
   constructor() {
@@ -34,15 +37,45 @@ class ResourceLoader {
   /**
    * Initiates loading of a resource at a given URL
    * @param  {String} url Resource URL
+   * @return {Promise} A promise which will be resolved if the resource
+   * is loaded and rejected if not.
    */
   load(url) {
-    if (this.cache[url]) return
-    this.cache[url] = true
+    if (this.cache[url]) return this.cache[url]
 
-    if (this.worker) {
-      this.worker.postMessage(url)
-    } else {
+    this.cache[url] = this.worker
+      ? this._loadWithWorker(url)
+      : this._loadWithFetch(url)
+
+    this.cache[url]
+      .catch(_ => delete this.cache[url])
+
+    return this.cache[url]
+  }
+
+  _loadWithWorker(url) {
+    const p = new Promise((res, rej) => {
+      this.worker.addEventListener(
+        'message',
+        ({data}) => data.value ? res() : rej()
+      )
+    })
+    this.worker.postMessage({url})
+    return p
+  }
+
+  _loadWithFetch(url) {
+    return new Promise((res, rej) => {
       fetch(url, {mode: 'cors'})
+        .then(r => r.ok ? res() : rej())
+        .catch(rej)
+    })
+  }
+
+  destroy() {
+    delete this.cache
+    if (this.worker) {
+      this.worker.terminate()
     }
   }
 }
