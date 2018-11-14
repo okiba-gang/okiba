@@ -11,6 +11,7 @@ inerithing both's method sets.
 
 ```javascript
 // FetchButton.js
+
 import EventedComponent from '@okiba/EventedComponent'
 import {on, off} from '@okiba/dom'
 
@@ -31,8 +32,11 @@ class FetchButton extends EventedComponent {
     off(this.el, 'click', this.onClick)
   }
 }
+```
 
+```javascript
 // UIPiece.js
+
 import Component from '@okiba/Component'
 
 const components = {

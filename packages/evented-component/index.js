@@ -7,6 +7,7 @@
  *
  * @example
  * // FetchButton.js
+ *
  * import EventedComponent from '@okiba/EventedComponent'
  * import {on, off} from '@okiba/dom'
  *
@@ -28,7 +29,9 @@
  *   }
  * }
  *
+ * @example
  * // UIPiece.js
+ *
  * import Component from '@okiba/Component'
  *
  * const components = {
