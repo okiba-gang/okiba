@@ -5,13 +5,13 @@
 
 /**
   * Creates a web worker starting from a function
-  * @param  {Function} script function to be included in the worker script, will be self-invoked
+  * @param  {Function} fn function to be included in the worker script, will be self-invoked
   * @return {WebWorker}        worker running the passed script
   */
-export function createWorker(script) {
+export function createWorker(code) {
   return new Worker(
     URL.createObjectURL(
-      new Blob([`(${script})()`])
+      new Blob([code])
     )
   )
 }
