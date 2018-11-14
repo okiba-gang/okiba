@@ -96,16 +96,10 @@ Maps progress ovrer time, normalized between 0 and 1
 ###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#timeprogressduration), [`update`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#update), [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reset), [`setProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setprogressprogress), [`setDirection`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setdirectiondirection), [`reverse`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reverse)
 ---
 
-### [worker-proxy](https://github.com/okiba-gang/okiba/tree/master/packages/worker-proxy)
-Transparent proxying of a class of yours
-
-###### 
----
-
 ### [worker-utils](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils)
 Set of useful functions to ease WebWorkers development
 
-###### [`createWorker`](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils#createworkerscript)
+###### [`createWorker`](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils#createworkerfn)
 
 
 

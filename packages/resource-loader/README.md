@@ -50,3 +50,8 @@ Resource URL
 
 
 
+
+#### Returns
+
+`Promise` A promise which will be resolved if the resource
+is loaded and rejected if not.
