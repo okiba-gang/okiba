@@ -13,81 +13,68 @@
  * @todo  Fetch is not on IE11
  */
 import {createWorker} from '@okiba/worker-utils'
-import {on, off} from '@okiba/dom'
 
 const workerScript = `
   onmessage = ({data}) => {
-    self.fetch(data.url, {mode: 'cors'})
-      .then(r => {
-        postMessage({url: data.url, value: r.ok})
-      })
-      .catch(e => {
-        console.log(e);
-        postMessage({url: data.url, value: false})
-      })
-  }
+      self.fetch(data.url, {mode: 'cors'})
+        .then(r =>
+          postMessage({url: data.url, value: r.ok})
+        )
+        .catch(_ =>
+          postMessage({url: data.url, value: false})
+        )
+    }
 `
 
 class ResourceLoader {
   constructor() {
     this.cache = {}
     if (window.Worker) {
-      this.onWorkerMessage = this.onWorkerMessage.bind(this)
       this.worker = createWorker(workerScript)
-      on(this.worker, 'message', this.onWorkerMessage)
     }
-  }
-
-  onWorkerMessage({data}) {
-    this.cache[data.url] = data.value
   }
 
   /**
    * Initiates loading of a resource at a given URL
    * @param  {String} url Resource URL
+   * @return {Promise} A promise which will be resolved if the resource
+   * is loaded and rejected if not.
    */
   load(url) {
-    if (this.cache[url]) return
+    if (this.cache[url]) return this.cache[url]
 
-    let promise
+    this.cache[url] = this.worker
+      ? this._loadWithWorker(url)
+      : this._loadWithFetch(url)
 
-    if (this.worker) {
-      promise = new Promise((res, rej) => {
-        this.worker.addEventListener('message', ({data}) => {
-          if (data.value) {
-            res()
-          } else {
-            rej()
-          }
-        })
-      })
-      this.worker.postMessage({url})
-    } else {
-      promise = new Promise((res, rej) => {
-        fetch(url, {mode: 'cors'})
-          .then(r => {
-            if (r.ok) {
-              res()
-              this.cache[url] = true
-            } else {
-              rej()
-              delete this.cache[url]
-            }
-          })
-          .catch(_ => {
-            delete this.cache[url]
-            rej()
-          })
-      })
-    }
+    this.cache[url]
+      .catch(_ => delete this.cache[url])
 
-    this.cache[url] = promise
-    return promise
+    return this.cache[url]
+  }
+
+  _loadWithWorker(url) {
+    const p = new Promise((res, rej) => {
+      this.worker.addEventListener(
+        'message',
+        ({data}) => data.value ? res() : rej()
+      )
+    })
+    this.worker.postMessage({url})
+    return p
+  }
+
+  _loadWithFetch(url) {
+    return new Promise((res, rej) => {
+      fetch(url, {mode: 'cors'})
+        .then(r => r.ok ? res() : rej())
+        .catch(rej)
+    })
   }
 
   destroy() {
+    delete this.cache
     if (this.worker) {
-      off(this.worker, 'message', this.onWorkerMessage)
       this.worker.terminate()
     }
   }

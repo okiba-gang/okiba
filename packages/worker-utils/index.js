@@ -11,7 +11,6 @@
 export function createWorker(code) {
   return new Worker(
     URL.createObjectURL(
-      // new Blob([`(${code})()`])
       new Blob([code])
     )
   )
