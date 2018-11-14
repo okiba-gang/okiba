@@ -1,6 +1,6 @@
 
 
-# Okiba // dom
+# Okiba / dom
 Utilities to work with dom elements and selectors
 
 

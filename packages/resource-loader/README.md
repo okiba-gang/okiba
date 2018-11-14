@@ -1,6 +1,6 @@
 
 
-# Okiba // ResourceLoader
+# Okiba / ResourceLoader
 Manages loading of resources trough fetch to boost caching.
 Transparently relies on a WebWorker if possible to load on a separate thread.
 

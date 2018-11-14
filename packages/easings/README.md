@@ -1,6 +1,6 @@
 
 
-# Okiba // easings
+# Okiba / easings
 Collection of easings to alter a value
 
 

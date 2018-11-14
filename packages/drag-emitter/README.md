@@ -1,6 +1,6 @@
 
 
-# Okiba // DragEmitter
+# Okiba / DragEmitter
 Emits drag events for all common pointers kinds (touch & mouse)
 
 

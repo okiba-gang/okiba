@@ -1,6 +1,6 @@
 
 
-# Okiba // arrays
+# Okiba / arrays
 Array utils for okiba js
 
 

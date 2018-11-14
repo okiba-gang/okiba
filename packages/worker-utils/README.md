@@ -1,6 +1,6 @@
 
 
-# Okiba // worker-utils
+# Okiba / worker-utils
 Set of useful functions to ease WebWorkers development
 
 
