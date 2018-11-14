@@ -1,4 +1,4 @@
-import {qs, qsa, on, off} from './'
+import {qs, qsa, on, off, eventCoords} from './'
 
 import { JSDOM } from 'jsdom'
 const { window } = (new JSDOM(`<div>
@@ -119,4 +119,34 @@ test('on should not bind if there is no type', done => {
   }, 30)
 })
 
+const coord = {clientX: 10, clientY: 10}
+const touchStartEvent =
+  new window.TouchEvent('touchstart', {type: 'touchstart', touches: [coord]})
 
+const touchMoveEvent =
+new window.TouchEvent('touchmove', {type: 'touchmove', changedTouches: [coord]})
+const mouseDownEvent =
+  new window.MouseEvent('mousedown', {type: 'mousedown', ...coord})
+
+
+test('eventCoords should return the same value for touch and mouse event', done => {
+  const node = qs('.element')
+  const results = {}
+
+  const callback = jest.fn(function(e) {
+    results[e.type] = eventCoords(e)
+  })
+
+  on(node, 'touchstart', callback)
+  on(node, 'touchmove', callback)
+  on(node, 'mousedown', callback)
+
+  node.dispatchEvent(touchStartEvent)
+  node.dispatchEvent(touchMoveEvent)
+  node.dispatchEvent(mouseDownEvent)
+
+  expect(results.touchstart).toEqual(coord)
+  expect(results.touchmove).toEqual(coord)
+  expect(results.mousedown).toEqual(coord)
+  done()
+})

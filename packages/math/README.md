@@ -27,7 +27,7 @@ Linear interpolation between a two values
 ```javascript
 import {lerp} from '@okiba/math'
 const xPosition = lerp(0, 100, 0.5)
-console.log(xPosition) // 0
+console.log(xPosition) // 50
 ```
 
 

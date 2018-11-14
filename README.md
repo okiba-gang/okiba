@@ -44,7 +44,15 @@ If you're into buzzwords then Okiba is:
 
   
   
+**\+ [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element)**
+  
 **\+ [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element)**
+  
+**\+ [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler)**
+  
+**\+ [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler)**
+  
+**\+ [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM)**
   
   
 
