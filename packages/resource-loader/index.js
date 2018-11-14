@@ -5,12 +5,21 @@
  *
  * @example
  * import ResourceLoader from '@okiba/resource-loader'
+ *
  * const resLoader = new ResourceLoader()
  *
- * imgUrls.forEac(imgUrl => resLoader.load(imgUrl))
+ * // if `window.Worker` is available
+ * // `fetch` happens on a separate thread!
+ *
+ * urls.forEach(
+ *   url => resLoader.load(url)
+ *     .then(console.log('Loaded! 📦'))
+ *     .catch(console.log('Fail! ☹️'))
+ * )
  *
  * @todo  Handle abortion
  * @todo  Fetch is not on IE11
+ * @todo  Clone response and pass it as promise reslult
  */
 import {createWorker} from '@okiba/worker-utils'
 

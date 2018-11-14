@@ -9,9 +9,17 @@ Transparently relies on a WebWorker if possible to load on a separate thread.
 
 ```javascript
 import ResourceLoader from '@okiba/resource-loader'
+
 const resLoader = new ResourceLoader()
 
-imgUrls.forEac(imgUrl => resLoader.load(imgUrl))
+// if `window.Worker` is available
+// `fetch` happens on a separate thread!
+
+urls.forEach(
+  url => resLoader.load(url)
+    .then(console.log('Loaded! 📦'))
+    .catch(console.log('Fail! ☹️'))
+)
 ```
 
 
@@ -26,6 +34,7 @@ npm i --save @okiba/resource-loader
 
 + Handle abortion
 + Fetch is not on IE11
++ Clone response and pass it as promise reslult
 
 
 
