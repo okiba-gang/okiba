@@ -4,8 +4,7 @@ jest.useFakeTimers()
 it('should return 0 on first update', async done => {
   const tp = new TimeProgress()
   const now = jest.fn();
-  now
-    .mockReturnValueOnce(0)
+  now.mockReturnValueOnce(0)
 
   global.performance = { now }
   expect(tp.update()).toBe(0)
@@ -54,28 +53,11 @@ it('should return 1 when progress setted is bigger than 1', async done => {
   done()
 })
 
-it('should return 0 when time is elapsed in reverse mode', async done => {
-  const now = jest.fn();
-  now
-  .mockReturnValueOnce(0)
-  .mockReturnValueOnce(500)
-  
-  global.performance = { now }
-  const tp = new TimeProgress(400)
-  tp.setProgress(1)
-  tp.setDirection(-1)
-  tp.update()
-  tp.update()
-  expect(tp.progress).toBe(0)
-  done()
-})
-
-
 it('should return 0 when time is elapsed in backward mode', async done => {
   const now = jest.fn();
   now
-  .mockReturnValueOnce(0)
-  .mockReturnValueOnce(500)
+    .mockReturnValueOnce(0)
+    .mockReturnValueOnce(500)
   
   global.performance = { now }
   const tp = new TimeProgress(400)
@@ -87,11 +69,11 @@ it('should return 0 when time is elapsed in backward mode', async done => {
   done()
 })
 
-it('should return 0 when time is elapsed using reverse mode', async done => {
+it('should go backward when reverse is called', async done => {
   const now = jest.fn();
   now
-  .mockReturnValueOnce(0)
-  .mockReturnValueOnce(500)
+    .mockReturnValueOnce(0)
+    .mockReturnValueOnce(500)
   
   global.performance = { now }
   const tp = new TimeProgress(400)
