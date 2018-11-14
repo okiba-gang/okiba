@@ -8,13 +8,18 @@
  *
  * const resLoader = new ResourceLoader()
  *
+ * // if `window.Worker` is available
+ * // `fetch` happens on a separate thread!
+ *
  * urls.forEach(
  *   url => resLoader.load(url)
  *     .then(console.log('Loaded! 📦'))
+ *     .catch(console.log('Fail! ☹️'))
  * )
  *
  * @todo  Handle abortion
  * @todo  Fetch is not on IE11
+ * @todo  Clone response and pass it as promise reslult
  */
 import {createWorker} from '@okiba/worker-utils'
 

@@ -12,9 +12,13 @@ import ResourceLoader from '@okiba/resource-loader'
 
 const resLoader = new ResourceLoader()
 
+// if `window.Worker` is available
+// `fetch` happens on a separate thread!
+
 urls.forEach(
   url => resLoader.load(url)
     .then(console.log('Loaded! 📦'))
+    .catch(console.log('Fail! ☹️'))
 )
 ```
 
@@ -30,6 +34,7 @@ npm i --save @okiba/resource-loader
 
 + Handle abortion
 + Fetch is not on IE11
++ Clone response and pass it as promise reslult
 
 
 
