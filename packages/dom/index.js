@@ -112,3 +112,31 @@ export function on(source, type, handler) {
 export function off(source, type, handler) {
   return evt(source, type, handler, 'remove')
 }
+
+/**
+ *
+ * Read mouse and touch position in the same way
+ *
+ * @example
+ * import {eventCoords, on} from '@okiba/dom'
+ * on(window, ['mousemove', 'touchmove'], onMove)
+ *
+ * function onMove(e){
+ *  const coords = eventCoords(e)
+ *  console.log(coords)
+ * }
+ *
+ * @param {Event} DOM Event
+ *
+ * @return {Object} Event position coordinates (clientX and ClientY)
+ */
+export function eventCoords(event) {
+  let coords = event
+  if (event.type.indexOf('touch') === 0) {
+    coords = event.touches[0] || event.changedTouches[0]
+  }
+  return {
+    clientX: coords.clientX,
+    clientY: coords.clientY,
+  }
+}
