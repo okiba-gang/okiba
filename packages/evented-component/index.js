@@ -4,7 +4,7 @@
  * Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component) and
  * composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter),
  * inerithing both's method sets.
- *
+ * @see  {"Component": "component"}
  * @example
  * // FetchButton.js
  *
@@ -80,4 +80,9 @@ export default class EventedComponent extends Component {
      */
     this.emit = this.emitter.emit.bind(this.emitter)
   }
+
+  /**
+   * @function destroy
+   * @see  {"Component": "component#destroy"}
+   */
 }
