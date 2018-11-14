@@ -1,6 +1,6 @@
 
 
-# Okiba // math
+# Okiba / math
 Collection of math functions
 
 
