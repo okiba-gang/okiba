@@ -45,15 +45,15 @@ function modelPackage(packageData, baseData) {
   }
 
   const {name, description, pkgName, members = []} = packageData
-  const pkg = {name, description, url: `${baseData.url}${pkgName}`, members: []}
+  const pkg = {name: pkgName, description, url: `${baseData.url}${pkgName}`, members: []}
 
   members.forEach(m => {
-    let params = [];
-    if(m.params){
-      params = m.params.reduce( (acc, p) => {
+    let params = []
+    if (m.params) {
+      params = m.params.reduce((acc, p) => {
         acc.push(p.name)
-        if(p.subparams){
-          p.subparams.reduce( (ac, sp) => {
+        if (p.subparams) {
+          p.subparams.reduce((ac, sp) => {
             ac.push(sp.name)
             return ac
           }, acc)
