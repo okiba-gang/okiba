@@ -53,7 +53,6 @@ class WorkerProxy extends EventEmitter {
     super()
 
     if (window.Worker) {
-      console.log(`(${connect})(${BaseClass})`)
       this.worker = createWorker(`(${connect})(${BaseClass})`)
       this.onWorkerMessage = this.onWorkerMessage.bind(this)
       on(this.worker, 'message', this.onWorkerMessage)
