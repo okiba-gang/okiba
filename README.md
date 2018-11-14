@@ -16,7 +16,7 @@ ______
 
 #### Okiba **is**:
 
-###### A set of tools you can use separately.
+##### A set of tools you can use separately.
 
 It is meant to **level-up** and **ease-in** your web-development routines.
 
@@ -26,7 +26,7 @@ It is always evolving and open to contributons from OSS peers.
 
 #### Okiba **is not**:
 
-###### A library, framework or language.
+##### A library, framework or language.
 
 It is not meant to replace the tools you already have, but rather offer battle-tested solutions to common routine tasks; sometimes it offers a cheaper alternative.
 
@@ -38,7 +38,7 @@ We strive to achieve **affidability** and **affordability**.
 
 #### Our granularity is *fine*
 
-###### We `export` single units that you can `import` separately. ✨
+##### We `export` single units that you can `import` separately. ✨
 
 This way **tree-shake** and **uglification** can work at their best.
 
@@ -47,7 +47,7 @@ Being **dependency-free** you always know what you're using and can look it up i
 
 #### Our code is *DRY* and *minimal*
 
-###### If something is common we abstract it away. 💡
+##### If something is common we abstract it away. 💡
 
 We don't put something in until it is actually needed.
 
@@ -55,7 +55,7 @@ We strictly check for duplication and complexity, and take charge of some develo
 
 #### Our seriousness level is *high*
 
-###### Our quality checks are automated. 🤖
+##### Our quality checks are automated. 🤖
 
 Metrics matter, so our CI tools help us by enforcing **100% coverage** and **A maintainability**.
 
