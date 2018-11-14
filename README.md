@@ -14,7 +14,7 @@ You can visualize it as a bag full of **ninja tools** for you to pick and use to
 ______
 
 
-### Okiba **is**:
+#### Okiba **is**:
 
 ##### A set of tools you can use separately.
 
@@ -26,7 +26,7 @@ It is always evolving and open to contributons from OSS peers.
 
 #### Okiba **is not**:
 
-###### A library, framework or language.
+##### A library, framework or language.
 
 It is not meant to replace the tools you already have, but rather offer battle-tested solutions to common routine tasks; sometimes it offers a cheaper alternative.
 
@@ -42,7 +42,7 @@ We strive to achieve **affidability** and **affordability**.
 
 This way **tree-shake** and **uglification** can work at their best.
 
-Being **dependency-free** you always know what you're using and can look it up in our API, no surpises. 🎁
+Being **dependency-free** you always know what you're using and can look it up in our API, no surpises.
 
 
 #### Our code is *DRY* and *minimal*
