@@ -52,7 +52,7 @@ Collection of easings to alter a value
 ### [event-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter)
 Emits events that can be listened and unlistened to
 
-###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#onname-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#offname-handler), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emitname-data)
+###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#onname-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#offname-handler), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emitname-data), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#destroy)
 ---
 
 ### [evented-component](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component)
@@ -61,7 +61,7 @@ Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/com
 composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter),
 inerithing both's method sets.
 
-###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#on), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#off), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#emit)
+###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#on), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#off), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#emit), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#destroy)
 ---
 
 ### [math](https://github.com/okiba-gang/okiba/tree/master/packages/math)

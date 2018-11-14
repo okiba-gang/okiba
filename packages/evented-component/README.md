@@ -117,3 +117,19 @@ npm i --save @okiba/evented-component
 
 
 
+
+## destroy()
+
+
+
+
+
+
+
+#### See: [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component#destroy)
+
+
+
+
+
+

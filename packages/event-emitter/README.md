@@ -110,3 +110,14 @@ Custom data to be passed to the handlers
 
 
 
+
+## destroy()
+
+
+Removes all event listeners and deletes the handlers object
+
+
+
+
+
+
