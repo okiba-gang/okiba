@@ -82,7 +82,11 @@ export default class EventedComponent extends Component {
   }
 
   /**
-   * @function destroy
+   *
    * @see  {"Component": "component#destroy"}
    */
+  destroy() {
+    Component.prototype.destroy.apply(this)
+    this.emitter.destroy()
+  }
 }
