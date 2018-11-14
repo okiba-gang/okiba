@@ -35,7 +35,7 @@ function checkActive() {
 
 function updateDelta() {
   this.time = performance.now()
-  if (!this.lastTime) {
+  if (this.lastTime === null) {
     this.lastTime = this.time
   }
   this.delta = this.time - this.lastTime
