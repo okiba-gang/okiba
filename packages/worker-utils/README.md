@@ -1,6 +1,6 @@
 
 
-# Okiba // worker-utils
+# Okiba / worker-utils
 Set of useful functions to ease WebWorkers development
 
 
@@ -14,7 +14,7 @@ npm i --save @okiba/worker-utils
 
 
 
-## createWorker(script)
+## createWorker(fn)
 
 
 Creates a web worker starting from a function
@@ -28,7 +28,7 @@ Creates a web worker starting from a function
 #### Arguments
 
 
-##### + `script`: `function`
+##### + `fn`: `function`
 
 function to be included in the worker script, will be self-invoked
 

@@ -1,6 +1,6 @@
 
 
-# Okiba // EventedComponent
+# Okiba / EventedComponent
 A component that has events.
 Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component) and
 composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter),
@@ -11,14 +11,16 @@ inerithing both's method sets.
 
 ```javascript
 // FetchButton.js
+
 import EventedComponent from '@okiba/EventedComponent'
+import {on, off} from '@okiba/dom'
 
 class FetchButton extends EventedComponent {
   constructor(args) {
     super(args)
 
     this.onClick = this.onClick.bind(this)
-    this.el.addEventListener('click', this.onClick)
+    on(this.el, 'click', this.onClick)
   }
 
   onClick() {
@@ -27,11 +29,14 @@ class FetchButton extends EventedComponent {
   }
 
   onDestroy() {
-    this.el.removeEventListener('click', this.onClick)
+    off(this.el, 'click', this.onClick)
   }
 }
+```
 
+```javascript
 // UIPiece.js
+
 import Component from '@okiba/Component'
 
 const components = {
@@ -73,7 +78,7 @@ npm i --save @okiba/evented-component
 
 
 
-#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#on)
+#### See: [EventEmitter::on](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emitname-data)
 
 
 
@@ -89,7 +94,7 @@ npm i --save @okiba/evented-component
 
 
 
-#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#off)
+#### See: [EventEmitter::off](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter##offname-handler)
 
 
 
@@ -105,7 +110,23 @@ npm i --save @okiba/evented-component
 
 
 
-#### See: [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emit)
+#### See: [EventEmitter::emit](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emitname-data)
+
+
+
+
+
+
+
+## destroy()
+
+
+
+
+
+
+
+#### See: [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component#destroy)
 
 
 

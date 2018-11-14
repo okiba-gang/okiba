@@ -1,6 +1,6 @@
 
 
-# Okiba // ResourceLoader
+# Okiba / ResourceLoader
 Manages loading of resources trough fetch to boost caching.
 Transparently relies on a WebWorker if possible to load on a separate thread.
 
@@ -50,3 +50,8 @@ Resource URL
 
 
 
+
+#### Returns
+
+`Promise` A promise which will be resolved if the resource
+is loaded and rejected if not.

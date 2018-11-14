@@ -22,3 +22,14 @@ it('should work as event emitter', done => {
   expect(spy).toHaveBeenCalledTimes(1)
   done()
 })
+
+it('should call destroy of event emitter', done => {
+  const ec = new EventedComponent({})
+  const spy = jest.fn()
+
+  ec.on('test-event', spy)
+  ec.destroy()
+  ec.emit('test-event')
+  expect(spy).not.toBeCalled()
+  done()
+})

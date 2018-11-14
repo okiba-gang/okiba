@@ -1,6 +1,6 @@
 
 
-# Okiba // EventEmitter
+# Okiba / EventEmitter
 Emits events that can be listened and unlistened to
 
 
@@ -106,6 +106,17 @@ Event type
 ##### + `data`: `Object` | _optional_
 
 Custom data to be passed to the handlers
+
+
+
+
+
+## destroy()
+
+
+Removes all event listeners and deletes the handlers object
+
+
 
 
 

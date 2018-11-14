@@ -50,11 +50,26 @@ class EventEmitter {
    * @param  {Object} [data] Custom data to be passed to the handlers
    */
   emit(name, data) {
-    if (!this.hs[name]) return
+    if (!this.hs || !this.hs[name]) return
 
     for (let i = 0; i < this.hs[name].length; ++i) {
       this.hs[name][i](data)
     }
+  }
+
+  /**
+   * Removes all event listeners and deletes the handlers object
+   */
+  destroy() {
+    Object.entries(this.hs)
+      .forEach(
+        ([name, handlers]) =>
+          handlers.forEach(
+            handler => this.off(name, handler)
+          )
+      )
+
+    delete this.hs
   }
 }
 

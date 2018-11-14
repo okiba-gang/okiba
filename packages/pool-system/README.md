@@ -1,6 +1,6 @@
 
 
-# Okiba // PoolSystem
+# Okiba / PoolSystem
 Manages a dinamically grown pool of DOM Elements
 import PoolSystem from '@okiba/pool-system'
 

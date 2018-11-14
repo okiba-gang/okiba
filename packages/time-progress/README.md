@@ -1,6 +1,6 @@
 
 
-# Okiba // TimeProgress
+# Okiba / TimeProgress
 Maps progress ovrer time, normalized between 0 and 1
 
 

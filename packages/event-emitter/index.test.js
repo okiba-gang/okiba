@@ -41,3 +41,14 @@ it('should not remove an handler if reference is wrong', done => {
   expect(hs).toEqual(ee.hs)
   done()
 })
+
+it('should not call listeners after destroy', done => {
+  const ee = new EventEmitter()
+  const spy = jest.fn()
+
+  ee.on('test-event', spy)
+  ee.destroy()
+  ee.emit('test-event')
+  expect(spy).not.toBeCalled()
+  done()
+})

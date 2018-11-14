@@ -4,17 +4,19 @@
  * Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component) and
  * composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter),
  * inerithing both's method sets.
- *
+ * @see  {"Component": "component"}
  * @example
  * // FetchButton.js
+ *
  * import EventedComponent from '@okiba/EventedComponent'
+ * import {on, off} from '@okiba/dom'
  *
  * class FetchButton extends EventedComponent {
  *   constructor(args) {
  *     super(args)
  *
  *     this.onClick = this.onClick.bind(this)
- *     this.el.addEventListener('click', this.onClick)
+ *     on(this.el, 'click', this.onClick)
  *   }
  *
  *   onClick() {
@@ -23,11 +25,13 @@
  *   }
  *
  *   onDestroy() {
- *     this.el.removeEventListener('click', this.onClick)
+ *     off(this.el, 'click', this.onClick)
  *   }
  * }
  *
+ * @example
  * // UIPiece.js
+ *
  * import Component from '@okiba/Component'
  *
  * const components = {
@@ -60,20 +64,29 @@ export default class EventedComponent extends Component {
     this.emitter = new EventEmitter()
     /**
      * @function on
-     * @see {"EventEmitter": "event-emitter#on"}
+     * @see {"EventEmitter::on": "event-emitter#emitname-data"}
      */
     this.on = this.emitter.on.bind(this.emitter)
 
     /**
      * @function off
-     * @see {"EventEmitter": "event-emitter#off"}
+     * @see {"EventEmitter::off": "event-emitter##offname-handler"}
      */
     this.off = this.emitter.off.bind(this.emitter)
 
     /**
      * @function emit
-     * @see {"EventEmitter": "event-emitter#emit"}
+     * @see {"EventEmitter::emit": "event-emitter#emitname-data"}
      */
     this.emit = this.emitter.emit.bind(this.emitter)
+  }
+
+  /**
+   *
+   * @see  {"Component": "component#destroy"}
+   */
+  destroy() {
+    Component.prototype.destroy.apply(this)
+    this.emitter.destroy()
   }
 }
