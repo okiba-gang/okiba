@@ -1,0 +1,15 @@
+{
+  "name": "@okiba/class-utils",
+  "version": "0.0.1",
+  "description": "Utilities that operate on classes",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "contributors": [
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
+  ],
+  "license": "MIT"
+}
