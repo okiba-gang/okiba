@@ -1,6 +1,6 @@
 {
   "name": "@okiba/component",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "DOM Component for okiba.js",
   "main": "index.js",
   "repository": {
