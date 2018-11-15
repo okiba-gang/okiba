@@ -1,6 +1,6 @@
 {
   "name": "@okiba/resource-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Class to fetch resources, prefers a separate thread",
   "keywords": [
     "okiba",
