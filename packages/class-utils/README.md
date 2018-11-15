@@ -1,23 +1,23 @@
 
 
-# Okiba / arrays
-Array utils for okiba js
+# Okiba / class-utils
+Utilities that operate on classes
 
 
 
 
 ### Installation
 ```
-npm i --save @okiba/arrays
+npm i --save @okiba/class-utils
 ```
 
 
 
 
-## arrayOrOne(arrayLike)
+## mixin(BaseClass, context, Arguments)
 
 
-Return the first element if it only contains one
+Mixes properties and methods from a class into a given `this` context
 
 
 
@@ -25,11 +25,33 @@ Return the first element if it only contains one
 
 
 ```javascript
-const els = arrayOrOne([🍏, 🍌])
-console.log(els) // [🍏, 🍌]
+class Fruit {
+  constructor() {
+    this.isPeeled = false
+  }
 
-const els = arrayOrOne([🍏])
-console.log(els) // 🍏
+  peel() {
+    this.isPeeled = true
+  }
+}
+
+class Coloured {
+  constructor(color) {
+    this.color = color
+  }
+}
+
+class Edible {
+  constructor(color) {
+    mixin(Fruit, this)
+    mixin(Coloured, this, color)
+  }
+}
+
+const edible = new Edible('red')
+edible.peel()
+console.log(edible.isPeeled, edible.color)
+// Logs: true, 'red'
 ```
 
 
@@ -38,46 +60,20 @@ console.log(els) // 🍏
 #### Arguments
 
 
-##### + `arrayLike`: `Array-like`
+##### + `BaseClass`: `Class`
 
-The options object.
-
-
+The class definition to mix-in
 
 
+##### + `context`: `Object`
 
-#### Returns
-
-`any` The first element or the argument, undefined if empty array
-## castArray(castable)
+The context that has to include methods and props
 
 
-Cast an array-like object or single element to Array
+##### + `Arguments`: `any`
+
+to pass to the BaseClass constructor
 
 
 
 
-
-
-```javascript
-const elements = castArray(document.querySelectorAll('p')) // [p, p]
-const fruits = castArray(🍒) // [🍒]
-```
-
-
-
-
-#### Arguments
-
-
-##### + `castable`: `any`
-
-Array to cast
-
-
-
-
-
-#### Returns
-
-`Array` The array-like converted to Array, or an Array containing the element
