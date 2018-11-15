@@ -74,6 +74,12 @@ Array utils for okiba js
 ###### [`arrayOrOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#arrayoronearrayLike), [`castArray`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#castarraycastable)
 ---
 
+#### [class-utils](https://github.com/okiba-gang/okiba/tree/master/packages/class-utils)
+Utilities that operate on classes
+
+###### [`mixin`](https://github.com/okiba-gang/okiba/tree/master/packages/class-utils#mixinBaseClass-context-Arguments)
+---
+
 #### [component](https://github.com/okiba-gang/okiba/tree/master/packages/component)
 Manages a DOM component, binds UI and recursively binds child components.
 Can be extended or instantiated
@@ -150,7 +156,6 @@ Maps progress ovrer time, normalized between 0 and 1
 Set of useful functions to ease WebWorkers development
 
 ###### [`createWorker`](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils#createworkerfn)
-
 
 
 
