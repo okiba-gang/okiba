@@ -8,7 +8,7 @@ import {castArray} from '@okiba/arrays'
  * Selects a DOM Element, scoped to element
  *
  * @example
- * import {qs} from '@akiba/dom'
+ * import {qs} from '@okiba/dom'
  * const pear = qs('.pear')
  * console.log(pear) // [div.pear]
  *
@@ -25,7 +25,7 @@ export function qs(selector, element = document) {
  * Selects an array of DOM Elements, scoped to element
  *
  * @example
- * import {qsa} from '@akiba/dom'
+ * import {qsa} from '@okiba/dom'
  * const fruits = qsa('.fruit')
  * console.log(fruits) // [div.fruit, div.fruit]
  *
@@ -38,7 +38,7 @@ export function qsa(selector, element = document) {
   return castArray(element.querySelectorAll(selector))
 }
 
-function evt(source, type, handler, action) {
+function evt(source, type, handler, action, options) {
   if (!type || !handler) return false
 
   const elements = castArray(source)
@@ -47,7 +47,7 @@ function evt(source, type, handler, action) {
 
   for (let i = 0; i < elements.length; ++i) {
     for (let j = 0; j < types.length; ++j) {
-      elements[i][`${action}EventListener`](types[j], handlers[Math.min(j, handlers.length - 1)])
+      elements[i][`${action}EventListener`](types[j], handlers[Math.min(j, handlers.length - 1)], options)
     }
   }
 
@@ -77,8 +77,8 @@ function evt(source, type, handler, action) {
  *
  * @return {Boolean} Success of the binding
  */
-export function on(source, type, handler) {
-  return evt(source, type, handler, 'add')
+export function on(source, type, handler, options) {
+  return evt(source, type, handler, 'add', options)
 }
 
 /**
@@ -109,8 +109,8 @@ export function on(source, type, handler) {
  *
  * @return {Boolean} Success of the unbinding
  */
-export function off(source, type, handler) {
-  return evt(source, type, handler, 'remove')
+export function off(source, type, handler, options) {
+  return evt(source, type, handler, 'remove', options)
 }
 
 /**
