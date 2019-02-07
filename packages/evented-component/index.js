@@ -8,7 +8,7 @@
  * @example
  * // FetchButton.js
  *
- * import EventedComponent from '@okiba/EventedComponent'
+ * import EventedComponent from '@okiba/evented-component'
  * import {on, off} from '@okiba/dom'
  *
  * class FetchButton extends EventedComponent {
@@ -32,7 +32,7 @@
  * @example
  * // UIPiece.js
  *
- * import Component from '@okiba/Component'
+ * import Component from '@okiba/component'
  *
  * const components = {
  *   fetchButton: {selector: '.fetch-button', type: FetchButton}
