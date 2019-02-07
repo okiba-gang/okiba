@@ -25,7 +25,7 @@ Selects a DOM Element, scoped to element
 
 
 ```javascript
-import {qs} from '@akiba/dom'
+import {qs} from '@okiba/dom'
 const pear = qs('.pear')
 console.log(pear) // [div.pear]
 ```
@@ -63,7 +63,7 @@ Selects an array of DOM Elements, scoped to element
 
 
 ```javascript
-import {qsa} from '@akiba/dom'
+import {qsa} from '@okiba/dom'
 const fruits = qsa('.fruit')
 console.log(fruits) // [div.fruit, div.fruit]
 ```
