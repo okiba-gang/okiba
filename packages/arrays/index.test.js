@@ -1,13 +1,15 @@
 import {arrayOrOne, castArray} from './'
 import { JSDOM } from 'jsdom'
 
-const { document } = (new JSDOM('<p></p><p></p><p></p>')).window
+const { window } = (new JSDOM('<p></p><p></p><p></p>'))
+const { document } = window
 
 const array = ['0', '1']
 const singleArray = ['0']
 const single = '0'
 const nodeList = document.querySelectorAll('p')
 const nodeArray = Array.from(nodeList)
+global.HTMLElement = window.HTMLElement
 
 test('arrayOrOne, should return same array', done => {
   const res = arrayOrOne(array)

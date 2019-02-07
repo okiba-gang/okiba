@@ -12,6 +12,8 @@ const { window } = (new JSDOM(`<div>
 global.window = window
 global.document = window.document
 
+global.HTMLElement = window.HTMLElement
+
 test('qs should return a single element, defaulting to document', done => {
   const node = qs('.element')
   expect(node).toEqual(document.querySelector('.element'))

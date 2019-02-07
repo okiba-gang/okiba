@@ -9,6 +9,7 @@ const { window } = (new JSDOM(
 ))
 
 global.window = window
+global.HTMLElement = window.HTMLElement
 global.document = window.document
 const container = qs('.container')
 

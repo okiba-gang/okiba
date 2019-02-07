@@ -1,12 +1,17 @@
 import Component from './'
 import { JSDOM } from 'jsdom'
 
-const { document } = (new JSDOM(`<div class="component">
-    <div class="ui-element"></div>
-    <div class="inner-component"></div>
-    <div class="inner-component-multiple"></div>
-    <div class="inner-component-multiple"></div>
-  </div>`)).window
+
+const { window } = (new JSDOM(`<div class="component">
+<div class="ui-element"></div>
+<div class="inner-component"></div>
+<div class="inner-component-multiple"></div>
+<div class="inner-component-multiple"></div>
+</div>`))
+
+const { document } = window
+
+global.HTMLElement = window.HTMLElement
 
 class InnerComponent extends Component {
   onDestroy() {
