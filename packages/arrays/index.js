@@ -45,7 +45,8 @@ export function castArray(castable) {
 
   if (castable.length === void 0 ||
       typeof castable === 'string' ||
-      typeof castable === 'function'
+      typeof castable === 'function' ||
+      castable instanceof HTMLElement
   ) {
     return [castable]
   }
