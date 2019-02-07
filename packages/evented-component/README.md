@@ -12,7 +12,7 @@ inerithing both's method sets.
 ```javascript
 // FetchButton.js
 
-import EventedComponent from '@okiba/EventedComponent'
+import EventedComponent from '@okiba/evented-component'
 import {on, off} from '@okiba/dom'
 
 class FetchButton extends EventedComponent {
@@ -37,7 +37,7 @@ class FetchButton extends EventedComponent {
 ```javascript
 // UIPiece.js
 
-import Component from '@okiba/Component'
+import Component from '@okiba/component'
 
 const components = {
   fetchButton: {selector: '.fetch-button', type: FetchButton}
