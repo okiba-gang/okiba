@@ -15,16 +15,17 @@ const container = qs('.container')
 
 
 const startX = 10; const endX = 20
+const startY = 10; const endY = 20
 const touchStartEvent =
-  new window.TouchEvent('touchstart', {touches: [{clientX: startX}]})
+  new window.TouchEvent('touchstart', {touches: [{clientX: startX, clientY: startY}]})
 const touchMoveEvent =
-  new window.TouchEvent('touchmove', {touches: [{clientX: endX}]})
+  new window.TouchEvent('touchmove', {touches: [{clientX: endX, clientY: endY}]})
 const touchEndEvent = new window.TouchEvent('touchend')
 
 const mouseDownEvent =
-  new window.MouseEvent('mousedown', {clientX: startX})
+  new window.MouseEvent('mousedown', {clientX: startX, clientY: startY})
 const mouseMoveEvent =
-new window.MouseEvent('mousemove', {clientX: endX})
+new window.MouseEvent('mousemove', {clientX: endX, clientY: endY})
 const mouseUpEvent = new window.MouseEvent('mouseup')
 
 it('should add a `is-pointer-down` class when pointer is down', done => {
@@ -54,7 +55,9 @@ it('should emit an event with correct data when touch is dragged', done => {
   const callback = jest.fn(data => {
     expect(data).toEqual({
       deltaX: startX - endX,
-      clientX: endX
+      clientX: endX,
+      deltaY: startY - endY,
+      clientY: endY,
     })
 
     done()
@@ -74,7 +77,9 @@ it('should emit an event with correct data when mouse is dragged', done => {
   const callback = jest.fn(data => {
     expect(data).toEqual({
       deltaX: startX - endX,
-      clientX: endX
+      clientX: endX,
+      deltaY: startY - endY,
+      clientY: endY
     })
 
     done()
