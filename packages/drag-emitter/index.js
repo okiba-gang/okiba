@@ -14,8 +14,9 @@ import {on, off} from '@okiba/dom'
  * const dragEmitter = new DragEmitter(qs('.container'))
  * dragEmitter.on(
  *   'drag',
- *   (deltaX, clientX) => console.log(deltaX, clientX)
- * )
+ *   ({deltaX, clientX, deltaY, clientY}) => {
+ *     console.log(deltaX, clientX, deltaY, clientY)
+ *   }
  */
 class DragEmitter extends EventEmitter {
   constructor(el) {
@@ -43,34 +44,42 @@ class DragEmitter extends EventEmitter {
     if (!this.isPointerDown) return
 
     this.isPointerDown = false
-    this.pointerX = null
+    this.pointerX = this.pointerY = null
     this.el.classList.remove('is-pointer-down')
     this.emit('dragend')
   }
 
-  setPointerX(xCoord) {
-    if (this.pointerX) {
-      this.emitDrag(xCoord)
+  setPointerPos(xCoord, yCoord) {
+    if (this.pointerX || this.pointerY) {
+      this.emitDrag(xCoord, yCoord)
     }
 
     this.pointerX = xCoord
+    this.pointerY = yCoord
   }
 
-  emitDrag(xCoord) {
+  emitDrag(xCoord, yCoord) {
     this.emit('drag', {
       deltaX: this.pointerX - xCoord,
-      clientX: xCoord
+      clientX: xCoord,
+      deltaY: this.pointerY - yCoord,
+      clientY: yCoord
     })
   }
 
-
   onTouchStart(e) {
     this.setPointerDown()
-    this.setPointerX(e.touches[0].clientX)
+    this.setPointerPos(
+      e.touches[0].clientX,
+      e.touches[0].clientY
+    )
   }
 
   onTouchMove(e) {
-    this.setPointerX(e.touches[0].clientX)
+    this.setPointerPos(
+      e.touches[0].clientX,
+      e.touches[0].clientY,
+    )
   }
 
   onTouchEnd() {
@@ -79,12 +88,18 @@ class DragEmitter extends EventEmitter {
 
   onMouseDown(e) {
     this.setPointerDown()
-    this.setPointerX(e.clientX)
+    this.setPointerPos(
+      e.clientX,
+      e.clientY
+    )
   }
 
   onMouseMove(e) {
     if (this.isPointerDown) {
-      this.setPointerX(e.clientX)
+      this.setPointerPos(
+        e.clientX,
+        e.clientY
+      )
     }
   }
 
