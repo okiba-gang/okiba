@@ -30,8 +30,9 @@ import {qs} from '@okiba/dom'
 const dragEmitter = new DragEmitter(qs('.container'))
 dragEmitter.on(
   'drag',
-  (deltaX, clientX) => console.log(deltaX, clientX)
-)
+  ({deltaX, clientX, deltaY, clientY}) => {
+    console.log(deltaX, clientX, deltaY, clientY)
+  }
 ```
 
 
