@@ -43,13 +43,9 @@ export function castArray(castable) {
     return castable
   }
 
-  if (castable.length === void 0 ||
-      typeof castable === 'string' ||
-      typeof castable === 'function' ||
-      castable instanceof HTMLElement
-  ) {
-    return [castable]
+  if (castable.callee || castable instanceof NodeList) {
+    return Array.prototype.slice.call(castable)
   }
 
-  return Array.prototype.slice.call(castable)
+  return [castable]
 }
