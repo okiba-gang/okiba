@@ -52,11 +52,11 @@ import {arrayOrOne} from '@okiba/arrays'
 function bindUi(ui, el) {
   return Object.keys(ui).reduce(
     (hash, key) => {
-      const els = arrayOrOne(qsa(ui[key], el))
+      const els = arrayOrOne(qsa(ui[key].selector || ui[key], el))
 
       if (els) {
         hash[key] = els
-      } else {
+      } else if (!ui[key].optional) {
         throw new Error(`[!!] [Component] Cant't find UI element for selector: ${ui[key]}`)
       }
 
