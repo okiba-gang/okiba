@@ -13,6 +13,8 @@ global.window = window
 global.document = window.document
 
 global.HTMLElement = window.HTMLElement
+global.NodeList = window.NodeList
+global.DOMTokenList = window.DOMTokenList
 
 test('qs should return a single element, defaulting to document', done => {
   const node = qs('.element')

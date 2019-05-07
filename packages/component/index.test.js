@@ -12,7 +12,8 @@ const { window } = (new JSDOM(`<div class="component">
 const { document } = window
 
 global.HTMLElement = window.HTMLElement
-
+global.NodeList = window.NodeList
+global.DOMTokenList = window.DOMTokenList
 class InnerComponent extends Component {
   onDestroy() {
     this.isDestroyed = true
