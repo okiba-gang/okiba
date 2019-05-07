@@ -10,6 +10,8 @@ const single = '0'
 const nodeList = document.querySelectorAll('p')
 const nodeArray = Array.from(nodeList)
 global.HTMLElement = window.HTMLElement
+global.NodeList = window.NodeList
+global.DOMTokenList = window.DOMTokenList
 
 test('arrayOrOne, should return same array', done => {
   const res = arrayOrOne(array)
