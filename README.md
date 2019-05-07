@@ -71,7 +71,7 @@ ______
 #### [arrays](https://github.com/okiba-gang/okiba/tree/master/packages/arrays)
 Array utils for okiba js
 
-###### [`arrayOrOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#arrayoronearrayLike), [`castArray`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#castarraycastable)
+###### [`arrayOrOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#arrayoronearrayLike), [`castArray`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#castarraycastable), [`spliceOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#spliceonearray-index)
 ---
 
 #### [class-utils](https://github.com/okiba-gang/okiba/tree/master/packages/class-utils)

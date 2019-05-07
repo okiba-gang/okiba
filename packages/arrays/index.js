@@ -49,3 +49,17 @@ export function castArray(castable) {
 
   return [castable]
 }
+
+/**
+ * Removes an element from an array in-place without causing Garbage Collection
+ * @example
+ * const array = [🍎, 🍐, 🍌]
+ * spliceOne(array, 1)
+ * console.log(array) // Logs: [🍎, 🍌]
+ * @param {Array} array Array you want to remove an element from
+ * @param {Number} index The index of the element to remove
+ */
+export function spliceOne(array, index) {
+  for (let i = index, k = i + 1, n = array.length; k < n; i += 1, k += 1) {array[i] = array[k]}
+  --array.length
+}

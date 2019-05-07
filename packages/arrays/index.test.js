@@ -1,4 +1,4 @@
-import {arrayOrOne, castArray} from './'
+import {arrayOrOne, castArray, spliceOne} from './'
 import { JSDOM } from 'jsdom'
 
 const { window } = (new JSDOM('<p></p><p></p><p></p>'))
@@ -64,3 +64,18 @@ test('castArray, should return an array from array-like with the same elements i
   expect(res).toEqual(nodeArray)
   done()
 })
+
+test('spliceOne, should remove the specified element from an array', done => {
+  const input = ['a', 'b', 'c']
+  const target = 'b'
+
+  const index = input.indexOf(target)
+  const expected = [].concat(input)
+  expected.splice(index, 1)
+
+  const output = [].concat(input)
+  spliceOne(output, index)
+  expect(output).toEqual(expected)
+  done()
+})
+
