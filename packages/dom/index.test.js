@@ -1,20 +1,22 @@
-import {qs, qsa, on, off, eventCoords} from './'
+import {qs, qsa, on, off, eventCoords, getElements, offset} from './'
 
 import { JSDOM } from 'jsdom'
-const { window } = (new JSDOM(`<div>
+const { window } = (new JSDOM(`<body>
     <div class="element"></div>
     <div class="inner">
       <div class="element"></div>
     </div>
     <div class="element"></div>
     <div class="element"></div>
-</div>`, {url: 'https://example.org/'}))
+</body>`, {url: 'https://example.org/'}))
+
 global.window = window
 global.document = window.document
 
 global.HTMLElement = window.HTMLElement
 global.NodeList = window.NodeList
 global.DOMTokenList = window.DOMTokenList
+global.Node = window.Node
 
 test('qs should return a single element, defaulting to document', done => {
   const node = qs('.element')
@@ -154,3 +156,74 @@ test('eventCoords should return the same value for touch and mouse event', done 
   expect(results.mousedown).toEqual(coord)
   done()
 })
+
+test('getElements should return an array of elements when passed a string or array of strings', done => {
+  const elements = Array.from(document.querySelectorAll('.element'))
+  let result = getElements('.element')
+  expect(result).toEqual(elements)
+
+  result = getElements(['.element', '.inner'])
+  expect(result).toEqual(elements.concat(document.querySelector('.inner')))
+  done()
+})
+
+
+test('getElements should throw an error when passed invalid targets', done => {
+  expect(_ => {
+    console.log(getElements(123))
+  }).toThrow()
+  done()
+})
+
+test('getElements should return the input array if it\'s made of elements', done => {
+  const input = Array.from(document.querySelectorAll('.element'))
+  const output = getElements(input)
+  expect(output).toEqual(input)
+  done()
+})
+
+test('getElements should return an array of elements if it\'s given a NodeList', done => {
+  const elements = document.querySelectorAll('.element')
+  const input = Array.from(elements)
+  const output = getElements(elements)
+  expect(output).toEqual(input)
+  done()
+})
+
+
+test('getElements should return an array containing a single element when passed a Node', done => {
+  const element = document.querySelector('.element')
+  const input = [element]
+  const output = getElements(element)
+  expect(output).toEqual(input)
+  done()
+})
+
+
+test('getElements should ignore arrays of uncorrect types', done => {
+  const input = [1, 2, 3]
+
+  expect(_ => {
+    getElements(input)
+  }).toThrow()
+  done()
+})
+
+
+test('offset should calculate offsets of an element', done => {
+  const element = document.querySelector('.element')
+  const offsets = offset(element)
+  expect(offsets).toHaveProperty('top')
+  expect(offsets).toHaveProperty('left')
+  done()
+})
+
+
+test('offset should stop accumulating offsets at body level', done => {
+  const element = document.querySelector('body')
+  const offsets = offset(element)
+  expect(offsets).toHaveProperty('top')
+  expect(offsets).toHaveProperty('left')
+  done()
+})
+
