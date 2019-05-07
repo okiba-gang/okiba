@@ -24,7 +24,7 @@ class InnerComponentMultiple extends Component {}
 
 const app = new Component({
   el: document.querySelector('.component'),
-  ui: {element: '.ui-element'},
+  ui: {element: '.ui-element', optionalElement: {selector: '.ui-element-optional', optional: true}},
   components: {
     inner: {selector: '.inner-component', type: InnerComponent, options: {innerTestOption: true}},
     innerMultiple: {selector: '.inner-component-multiple', type: InnerComponentMultiple}
