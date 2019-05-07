@@ -9,7 +9,9 @@ const { window } = (new JSDOM(
 ))
 
 global.window = window
+global.DOMTokenList = window.DOMTokenList
 global.HTMLElement = window.HTMLElement
+global.NodeList = window.NodeList
 global.document = window.document
 const container = qs('.container')
 
@@ -95,10 +97,9 @@ it('should emit an event with correct data when mouse is dragged', done => {
 it('should ignore mouse events if pointer is not down', done => {
   global.window = container  // window mock has no mouse events
   const de = new DragEmitter(container)
-
   const callback = jest.fn()
-
   de.on('drag', callback)
+
   container.dispatchEvent(mouseMoveEvent)
   container.dispatchEvent(mouseUpEvent)
   global.window = window  // restore window mock
@@ -110,13 +111,10 @@ it('should ignore mouse events if pointer is not down', done => {
 it('should remove event listeners when destroyed', done => {
   global.window = container  // window mock has no mouse events
   const de = new DragEmitter(container)
-
   const callback = jest.fn()
-
   de.on('drag', callback)
   de.el.dispatchEvent(mouseDownEvent)
   de.destroy()
-
 
   container.dispatchEvent(mouseMoveEvent)
   container.dispatchEvent(mouseUpEvent)

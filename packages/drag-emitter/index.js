@@ -35,9 +35,9 @@ class DragEmitter extends EventEmitter {
     this.el = null
   }
 
-  setPointerDown({deltaX, deltaY}) {
-    this.pointerX = deltaX
-    this.pointerY = deltaY
+  setPointerDown({clientX, clientY}) {
+    this.pointerX = clientX
+    this.pointerY = clientY
 
     this.isPointerDown = true
     this.el.classList.add('is-pointer-down')
@@ -53,7 +53,7 @@ class DragEmitter extends EventEmitter {
   }
 
   setPointerPos(xCoord, yCoord) {
-    if (this.pointerX || this.pointerY) {
+    if (this.isPointerDown) {
       this.emitDrag(xCoord, yCoord)
     }
 
@@ -90,12 +90,10 @@ class DragEmitter extends EventEmitter {
   }
 
   onMouseMove(e) {
-    if (this.isPointerDown) {
-      this.setPointerPos(
-        e.clientX,
-        e.clientY
-      )
-    }
+    this.setPointerPos(
+      e.clientX,
+      e.clientY
+    )
   }
 
   onMouseUp() {
