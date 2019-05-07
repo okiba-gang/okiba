@@ -81,3 +81,37 @@ Array to cast
 #### Returns
 
 `Array` The array-like converted to Array, or an Array containing the element
+## spliceOne(array, index)
+
+
+Removes an element from an array in-place without causing Garbage Collection
+
+
+
+
+
+
+```javascript
+const array = [🍎, 🍐, 🍌]
+spliceOne(array, 1)
+console.log(array) // Logs: [🍎, 🍌]
+```
+
+
+
+
+#### Arguments
+
+
+##### + `array`: `Array`
+
+Array you want to remove an element from
+
+
+##### + `index`: `Number`
+
+The index of the element to remove
+
+
+
+
