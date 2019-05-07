@@ -90,7 +90,7 @@ Can be extended or instantiated
 #### [dom](https://github.com/okiba-gang/okiba/tree/master/packages/dom)
 Utilities to work with dom elements and selectors
 
-###### [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element), [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element), [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler), [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM)
+###### [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element), [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element), [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler), [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM), [`offset`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offsetel), [`getElements`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#getelementstarget)
 ---
 
 #### [drag-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter)

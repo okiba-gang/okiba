@@ -140,3 +140,79 @@ export function eventCoords(event) {
     clientY: coords.clientY,
   }
 }
+
+/**
+ * Gets top and left offsets of an element
+ *
+ * @example
+ * import {qs, offset} from '@okiba/dom'
+ * const el = qs('.something')
+ * const offsets = offset(el)
+ * console.log(offsets) // Logs: {top: 100, left: 100}
+ *
+ * @param {Element} el The element you want to get offsets of
+ *
+ * @return {Object} Object containing `top` and `left` offsets
+ */
+export function offset(el) {
+  let left = 0
+  let top = 0
+
+  while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+    left += el.offsetLeft - (el.tagName !== 'BODY' ? el.scrollLeft : 0)
+    top += el.offsetTop - (el.tagName !== 'BODY' ? el.scrollTop : 0)
+    el = el.offsetParent
+  }
+
+  return {
+    top,
+    left
+  }
+}
+
+
+/**
+ * Useful to normalize parameters accepted by modules which work with dom nodes.
+ * If you need to have an array of Elements and you want to accept any of: String, String array, Element, Element array
+ *
+ *
+ * @example
+ * import {qs, getElements} from '@okiba/dom'
+ * const els1 = getElements(['.some', '#thing']) // => [div.some, span#it]
+ *
+ * const el = qs('.element')
+ * const els2 = getElements(el) // => [el]
+ *
+ * @param {(String|String[]|Element|Element[])} target The target you want to be sure to obtain as an array of Elements
+ *
+ * @return {Element[]} An array of Elements
+ */
+export function getElements(target) {
+  let els
+
+  if (typeof target === 'string') {
+    els = qsa(target)
+  }
+
+  if (target instanceof Node) {
+    els = [target]
+  }
+
+  if (target instanceof NodeList) {
+    els = castArray(target)
+  }
+
+  if (target instanceof Array) {
+    if (target[0] instanceof Node) {
+      return target
+    } else if (typeof target[0] === 'string') {
+      els = target.reduce((acc, curr) => acc.concat(qsa(curr)), [])
+    }
+  }
+
+  if (!els) {
+    throw new Error('No target provided')
+  }
+
+  return els
+}

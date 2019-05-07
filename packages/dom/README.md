@@ -232,3 +232,73 @@ Event
 #### Returns
 
 `Object` Event position coordinates (clientX and ClientY)
+## offset(el)
+
+
+Gets top and left offsets of an element
+
+
+
+
+
+
+```javascript
+import {qs, offset} from '@okiba/dom'
+const el = qs('.something')
+const offsets = offset(el)
+console.log(offsets) // Logs: {top: 100, left: 100}
+```
+
+
+
+
+#### Arguments
+
+
+##### + `el`: `Element`
+
+The element you want to get offsets of
+
+
+
+
+
+#### Returns
+
+`Object` Object containing `top` and `left` offsets
+## getElements(target)
+
+
+Useful to normalize parameters accepted by modules which work with dom nodes.
+If you need to have an array of Elements and you want to accept any of: String, String array, Element, Element array
+
+
+
+
+
+
+```javascript
+import {qs, getElements} from '@okiba/dom'
+const els1 = getElements(['.some', '#thing']) // => [div.some, span#it]
+
+const el = qs('.element')
+const els2 = getElements(el) // => [el]
+```
+
+
+
+
+#### Arguments
+
+
+##### + `target`: `String` or  `Array.<String>` or  `Element` or  `Array.<Element>`
+
+The target you want to be sure to obtain as an array of Elements
+
+
+
+
+
+#### Returns
+
+`Array.<Element>` An array of Elements
