@@ -76,7 +76,7 @@ function bindComponents(components, el) {
 
       const els = arrayOrOne(qsa(selector, el))
       if (els) {
-        hash[key] = els.length
+        hash[key] = Array.isArray(els)
           ? els.map(n => new type({el: n, options}))
           : new type({el: els, options})
       } else if (!optional) {
