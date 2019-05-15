@@ -60,7 +60,7 @@ test('Component should throw if an ui element cannot be found', done => {
   done()
 })
 
-test('Component should throw if sub-components doesn\'t specify keys', done => {
+test('Component should throw if sub-components declaration is wrong', done => {
   function createMissingComponentsComponent() {
     return new Component({
       el: document.querySelector('.component'),
@@ -84,7 +84,7 @@ test('Component should throw if a component element cannot be found', done => {
   done()
 })
 
-test('Component should not throw if a component element cannot be found but have optional parameter', done => {
+test('Component should not throw if a component element cannot be found and has optional parameter', done => {
   function createMissingComponentsComponent() {
     return new Component({
       el: document.querySelector('.component'),
@@ -114,3 +114,4 @@ test('Component destroy should chain-call `onDestroy`', done => {
   expect(app.components.inner.isDestroyed).toBe(true)
   done()
 })
+

@@ -68,19 +68,18 @@ function bindUi(ui, el) {
 function bindComponents(components, el) {
   return Object.keys(components).reduce(
     (hash, key) => {
+      const {type, selector, options, optional} = components[key]
 
-      if (typeof key !== 'string') {
-        throw new Error(`[!!] [Component] Please provide valid keys for .${el.className} sub-components`)
+      if (typeof selector !== 'string' || !type) {
+        throw new Error(`[!!] [Component] Invalid component configuration for key: ${key}`)
       }
 
-      const {type, selector, options} = components[key]
-      const els = arrayOrOne(qsa(components[key].selector, el))
-
+      const els = arrayOrOne(qsa(selector, el))
       if (els) {
         hash[key] = els.length
           ? els.map(n => new type({el: n, options}))
           : new type({el: els, options})
-      } else if (!components[key].optional) {
+      } else if (!optional) {
         throw new Error(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
       }
 
