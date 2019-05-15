@@ -27,7 +27,7 @@ const app = new Component({
   ui: {element: '.ui-element', optionalElement: {selector: '.ui-element-optional', optional: true}},
   components: {
     inner: {selector: '.inner-component', type: InnerComponent, options: {innerTestOption: true}},
-    innerMultiple: {selector: '.inner-component-multiple', type: InnerComponentMultiple}
+    innerMultiple: {selector: '.inner-component-multiple', type: InnerComponentMultiple},
   },
   options: {
     testOption: true
@@ -60,14 +60,40 @@ test('Component should throw if an ui element cannot be found', done => {
   done()
 })
 
+test('Component should throw if sub-components declaration is wrong', done => {
+  function createMissingComponentsComponent() {
+    return new Component({
+      el: document.querySelector('.component'),
+      components: {selector: '.inner-component-multiple', type: InnerComponentMultiple}
+    })
+  }
+  expect(createMissingComponentsComponent).toThrow()
+  done()
+})
+
 test('Component should throw if a component element cannot be found', done => {
   function createMissingComponentsComponent() {
     return new Component({
       el: document.querySelector('.component'),
-      components: {selector: '.missing-el', type: InnerComponent}
+      components: {
+        missing: {selector: '.missing-el', type: InnerComponent}
+      }
     })
   }
   expect(createMissingComponentsComponent).toThrow()
+  done()
+})
+
+test('Component should not throw if a component element cannot be found and has optional parameter', done => {
+  function createMissingComponentsComponent() {
+    return new Component({
+      el: document.querySelector('.component'),
+      components: {
+        missing: {selector: '.missing-el', type: InnerComponent, optional: true}
+      }
+    })
+  }
+  expect(createMissingComponentsComponent).not.toThrow()
   done()
 })
 
