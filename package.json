@@ -8,6 +8,9 @@
     "version": "npm run build"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-jest": "^23.6.0",
