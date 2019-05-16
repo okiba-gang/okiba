@@ -1,6 +1,6 @@
 {
   "name": "@okiba/event-emitter",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "Simple Event Emitter okiba.js",
   "keywords": [
     "okiba",
@@ -11,6 +11,7 @@
     "emitter"
   ],
   "main": "index.js",
+  "browser": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
