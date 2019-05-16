@@ -8,3 +8,5 @@ exclude_patterns:
   - '**/*.test.js'
   - 'docs/'
   - 'packages/**/dist'
+  - rollup.config.js
+  - babel.config.js
