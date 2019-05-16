@@ -3,6 +3,7 @@
   "version": "0.0.11",
   "description": "Helper class used to normalize time on a duration between 0 and 1",
   "main": "index.js",
+  "browser": "./dist/index.esm.js",
   "keywords": [
     "okiba",
     "okiba.js",
@@ -19,7 +20,7 @@
     "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)"
   ],
   "dependencies": {
-    "@okiba/math": "file:../math"
+    "@okiba/math": "*"
   },
   "license": "MIT"
 }

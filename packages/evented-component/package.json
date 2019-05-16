@@ -10,6 +10,7 @@
     "event-emitter"
   ],
   "main": "index.js",
+  "browser": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
@@ -19,8 +20,8 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/component": "file:../component",
-    "@okiba/event-emitter": "file:../event-emitter"
+    "@okiba/component": "*",
+    "@okiba/event-emitter": "*"
   },
   "license": "MIT"
 }

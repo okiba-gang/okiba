@@ -3,12 +3,14 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "build": "rollup -c rollup.config.js",
     "docs": "node ./docs/generate.js"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "babel-jest": "^23.6.0",
-    "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0",
     "jsdoc-api": "^4.0.3",
     "jsdom": "^13.0.0",
@@ -17,7 +19,12 @@
     "lerna": "^3.13.4",
     "node-fetch": "^2.5.0",
     "nunjucks": "^3.2.0",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.12.1",
+    "rollup": "^1.11.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-uglify": "^6.0.2"
   },
   "jest": {
     "collectCoverage": true,

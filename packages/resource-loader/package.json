@@ -13,6 +13,7 @@
     "worker"
   ],
   "main": "index.js",
+  "browser": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
@@ -22,7 +23,7 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/worker-utils": "file:../worker-utils"
+    "@okiba/worker-utils": "*"
   },
   "license": "MIT"
 }

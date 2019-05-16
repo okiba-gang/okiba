@@ -11,6 +11,7 @@
     "drag-events"
   ],
   "main": "index.js",
+  "browser": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
@@ -20,7 +21,8 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/event-emitter": "file:../event-emitter"
+    "@okiba/event-emitter": "*",
+    "@okiba/dom": "*"
   },
   "license": "MIT"
 }

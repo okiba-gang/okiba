@@ -2,6 +2,8 @@
   "name": "@okiba/worker-utils",
   "version": "0.0.4",
   "description": "Utils to work with WebWorker",
+  "main": "index.js",
+  "browser": "./dist/index.esm.js",
   "keywords": [
     "okiba",
     "okibajs",
@@ -9,7 +11,6 @@
     "workers",
     "thread"
   ],
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
