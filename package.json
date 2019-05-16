@@ -7,9 +7,8 @@
     "docs": "node ./docs/generate.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
     "jsdoc-api": "^4.0.3",
@@ -30,6 +29,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "packages/**/*.{js}",
+      "!packages/**/dist/*.{js}",
       "!**/node_modules/**"
     ],
     "roots": [
