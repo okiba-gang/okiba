@@ -1,6 +1,6 @@
 {
   "name": "@okiba/worker-utils",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Utils to work with WebWorker",
   "main": "index.js",
   "browser": "./dist/index.esm.js",
