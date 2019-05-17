@@ -1,8 +1,5 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = global || self, factory(global.dom = {}));
-}(this, function (exports) { 'use strict';
+var Dom = (function (exports) {
+  'use strict';
 
   /**
    * @module arrays
@@ -263,6 +260,6 @@
   exports.qs = qs;
   exports.qsa = qsa;
 
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return exports;
 
-}));
+}({}));

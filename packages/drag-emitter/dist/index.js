@@ -1,8 +1,5 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global['drag-emitter'] = factory());
-}(this, function () { 'use strict';
+var DragEmitter = (function () {
+  'use strict';
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -460,4 +457,4 @@
 
   return DragEmitter;
 
-}));
+}());

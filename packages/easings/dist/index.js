@@ -1,8 +1,5 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(global = global || self, factory(global.easings = {}));
-}(this, function (exports) { 'use strict';
+var Easings = (function (exports) {
+	'use strict';
 
 	/**
 	 * @module  easings
@@ -65,6 +62,6 @@
 	exports.easeOutQuint = easeOutQuint;
 	exports.linear = linear;
 
-	Object.defineProperty(exports, '__esModule', { value: true });
+	return exports;
 
-}));
+}({}));
