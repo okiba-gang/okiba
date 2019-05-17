@@ -1,4 +1,4 @@
-var Easings = (function (exports) {
+var OkibaEasings = (function (exports) {
 	'use strict';
 
 	/**

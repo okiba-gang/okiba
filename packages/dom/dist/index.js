@@ -1,4 +1,4 @@
-var Dom = (function (exports) {
+var OkibaDom = (function (exports) {
   'use strict';
 
   /**

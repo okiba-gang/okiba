@@ -1,4 +1,4 @@
-var ClassUtils = (function (exports) {
+var OkibaClassUtils = (function (exports) {
   'use strict';
 
   function _setPrototypeOf(o, p) {

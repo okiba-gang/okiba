@@ -1,4 +1,4 @@
-var DragEmitter = (function () {
+var OkibaDragEmitter = (function () {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {

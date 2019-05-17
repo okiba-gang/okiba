@@ -1,4 +1,4 @@
-var Component = (function () {
+var OkibaComponent = (function () {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {
