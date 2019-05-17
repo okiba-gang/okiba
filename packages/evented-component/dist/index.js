@@ -1,4 +1,4 @@
-var EventedComponent = (function () {
+var OkibaEventedComponent = (function () {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {

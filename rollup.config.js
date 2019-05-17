@@ -8,11 +8,13 @@ import { uglify } from 'rollup-plugin-uglify'
 import {camelCase, upperFirst} from 'lodash'
 
 function makeConfig(pack) {
+  const name = `Okiba${upperFirst(camelCase(pack))}`
+
   return [
     {
       input: `packages/${pack}/index.js`,
       output: [{
-        name: upperFirst(camelCase(pack)),
+        name: name,
         file: `packages/${pack}/dist/index.js`,
         format: 'iife',
         globals: `okiba-${pack}`
@@ -26,7 +28,7 @@ function makeConfig(pack) {
     {
       input: `packages/${pack}/index.js`,
       output: [{
-        name: upperFirst(camelCase(pack)),
+        name: name,
         file: `packages/${pack}/dist/index.min.js`,
         format: 'iife'
       }],

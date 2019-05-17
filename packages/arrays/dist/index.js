@@ -1,4 +1,4 @@
-var Arrays = (function (exports) {
+var OkibaArrays = (function (exports) {
   'use strict';
 
   /**

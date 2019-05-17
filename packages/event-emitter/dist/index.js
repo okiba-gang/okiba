@@ -1,4 +1,4 @@
-var EventEmitter = (function () {
+var OkibaEventEmitter = (function () {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {
