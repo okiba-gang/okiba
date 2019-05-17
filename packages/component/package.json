@@ -1,6 +1,6 @@
 {
   "name": "@okiba/component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "DOM Component for okiba.js",
   "main": "index.js",
   "browser": "./dist/index.esm.js",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@okiba/arrays": "^1.0.1",
-    "@okiba/dom": "^1.0.1"
+    "@okiba/arrays": "^1.0.2",
+    "@okiba/dom": "^1.0.2"
   }
 }
