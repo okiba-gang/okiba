@@ -5,34 +5,36 @@ import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import { uglify } from 'rollup-plugin-uglify'
 
+import {camelCase, upperFirst} from 'lodash'
+
 function makeConfig(pack) {
   return [
     {
       input: `packages/${pack}/index.js`,
       output: [{
-        name: pack,
-        file: `packages/${pack}/dist/index.umd.js`,
-        format: 'umd',
+        name: upperFirst(camelCase(pack)),
+        file: `packages/${pack}/dist/index.js`,
+        format: 'iife',
         globals: `okiba-${pack}`
       }],
       plugins: [
         babel(),
-        resolve(), // so Rollup can find external dependencies
-        commonjs() // so Rollup can convert external deps to an ES module
+        resolve(),
+        commonjs()
       ]
     },
     {
       input: `packages/${pack}/index.js`,
       output: [{
-        name: pack,
-        file: `packages/${pack}/dist/index.umd.min.js`,
-        format: 'umd'
+        name: upperFirst(camelCase(pack)),
+        file: `packages/${pack}/dist/index.min.js`,
+        format: 'iife'
       }],
       plugins: [
         babel(),
         uglify({sourcemap: true}),
-        resolve(), // so Rollup can find external dependencies
-        commonjs() // so Rollup can convert external deps to an ES module
+        resolve(),
+        commonjs()
       ]
     },
     {
