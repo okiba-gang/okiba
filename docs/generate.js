@@ -5,8 +5,8 @@ nunjucks.configure({autoescape: false})
 
 const {model, modelPackage} = require('./model-data')
 
-const template = readFileSync('./docs/partials/readme-package.hbs', 'utf8')
-const templateRoot = readFileSync('./docs/partials/readme-root.hbs', 'utf8')
+const template = readFileSync('./docs/partials/readme-package.njk', 'utf8')
+const templateRoot = readFileSync('./docs/partials/readme-root.njk', 'utf8')
 
 const packages = readdirSync('./packages')
 
@@ -29,6 +29,8 @@ async function generate() {
       files: `./packages/${name}/index.js`
     }), baseData)
     packageData.pkgName = name
+    const packageJSON = JSON.parse(readFileSync(`./packages/${name}/package.json`))
+    packageData.version = packageJSON.version
     const markdown = nunjucks.renderString(template, packageData)
     writeFileSync(`./packages/${name}/README.md`, markdown)
 

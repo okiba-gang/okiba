@@ -25,8 +25,19 @@ urls.forEach(
 
 
 ### Installation
-```
+
+You can grab it as an `npm` package 
+```bash
 npm i --save @okiba/resource-loader
+```
+
+Or use it in the browser
+```html
+<!-- Minified -->
+<script src="https://unpkg.com/@okiba/resource-loader@0.1.2/dist/index.min.js"></script>
+
+<!-- Full -->
+<script src="https://unpkg.com/@okiba/resource-loader@0.1.2/dist/index.js"></script>
 ```
 
 

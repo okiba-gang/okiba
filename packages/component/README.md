@@ -56,8 +56,19 @@ const app = new Component({
 
 
 ### Installation
-```
+
+You can grab it as an `npm` package 
+```bash
 npm i --save @okiba/component
+```
+
+Or use it in the browser
+```html
+<!-- Minified -->
+<script src="https://unpkg.com/@okiba/component@1.0.2/dist/index.min.js"></script>
+
+<!-- Full -->
+<script src="https://unpkg.com/@okiba/component@1.0.2/dist/index.js"></script>
 ```
 
 

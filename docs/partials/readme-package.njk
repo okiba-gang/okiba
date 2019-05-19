@@ -20,8 +20,19 @@
 {% endif %}
 
 ### Installation
-```
+
+You can grab it as an `npm` package 
+```bash
 npm i --save @okiba/{{pkgName}}
+```
+
+Or use it in the browser
+```html
+<!-- Minified -->
+<script src="https://unpkg.com/@okiba/{{pkgName}}@{{version}}/dist/index.min.js"></script>
+
+<!-- Full -->
+<script src="https://unpkg.com/@okiba/{{pkgName}}@{{version}}/dist/index.js"></script>
 ```
 
 {% if todo %}

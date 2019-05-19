@@ -7,8 +7,19 @@ Emits drag events for all common pointers kinds (touch & mouse)
 
 
 ### Installation
-```
+
+You can grab it as an `npm` package 
+```bash
 npm i --save @okiba/drag-emitter
+```
+
+Or use it in the browser
+```html
+<!-- Minified -->
+<script src="https://unpkg.com/@okiba/drag-emitter@0.1.2/dist/index.min.js"></script>
+
+<!-- Full -->
+<script src="https://unpkg.com/@okiba/drag-emitter@0.1.2/dist/index.js"></script>
 ```
 
 

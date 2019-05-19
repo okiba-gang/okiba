@@ -29,8 +29,19 @@ requestAnimationFrame(loop)
 
 
 ### Installation
-```
+
+You can grab it as an `npm` package 
+```bash
 npm i --save @okiba/time-progress
+```
+
+Or use it in the browser
+```html
+<!-- Minified -->
+<script src="https://unpkg.com/@okiba/time-progress@1.0.2/dist/index.min.js"></script>
+
+<!-- Full -->
+<script src="https://unpkg.com/@okiba/time-progress@1.0.2/dist/index.js"></script>
 ```
 
 
