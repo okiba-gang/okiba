@@ -1,6 +1,6 @@
 {
   "name": "@okiba/resource-loader",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Class to fetch resources, prefers a separate thread",
   "keywords": [
     "okiba",
@@ -23,7 +23,7 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/worker-utils": "^0.1.3"
+    "@okiba/worker-utils": "^0.1.4"
   },
   "license": "MIT"
 }

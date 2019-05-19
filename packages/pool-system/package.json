@@ -1,6 +1,6 @@
 {
   "name": "@okiba/pool-system",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Class to manage dinamically a pool of system",
   "main": "index.js",
   "browser": "./dist/index.esm.js",

@@ -1,6 +1,6 @@
 {
   "name": "@okiba/evented-component",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Component with events",
   "keywords": [
     "okiba",
@@ -20,8 +20,8 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/component": "^1.0.3",
-    "@okiba/event-emitter": "^1.0.3"
+    "@okiba/component": "^1.0.4",
+    "@okiba/event-emitter": "^1.0.4"
   },
   "license": "MIT"
 }
