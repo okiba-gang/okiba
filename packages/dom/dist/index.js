@@ -1,33 +1,5 @@
-var OkibaDom = (function (exports) {
+var OkibaDom = (function (exports, arrays) {
   'use strict';
-
-  /**
-   * @module arrays
-   * @description Array utils for okiba js
-   */
-  /**
-   * Cast an array-like object or single element to Array
-   * @example
-   * const elements = castArray(document.querySelectorAll('p')) // [p, p]
-   * const fruits = castArray(🍒) // [🍒]
-   *
-   * @param {any} castable Array to cast
-   * @returns {Array} The array-like converted to Array, or an Array containing the element
-   */
-
-  function castArray(castable) {
-    if (castable === void 0) return castable;
-
-    if (castable instanceof Array) {
-      return castable;
-    }
-
-    if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList) {
-      return Array.prototype.slice.call(castable);
-    }
-
-    return [castable];
-  }
 
   /**
    * @module  dom
@@ -67,14 +39,14 @@ var OkibaDom = (function (exports) {
 
   function qsa(selector) {
     var element = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
-    return castArray(element.querySelectorAll(selector));
+    return arrays.castArray(element.querySelectorAll(selector));
   }
 
   function evt(source, type, handler, action, options) {
     if (!type || !handler) return false;
-    var elements = castArray(source);
-    var types = castArray(type);
-    var handlers = castArray(handler);
+    var elements = arrays.castArray(source);
+    var types = arrays.castArray(type);
+    var handlers = arrays.castArray(handler);
 
     for (var i = 0; i < elements.length; ++i) {
       for (var j = 0; j < types.length; ++j) {
@@ -232,7 +204,7 @@ var OkibaDom = (function (exports) {
     }
 
     if (target instanceof NodeList) {
-      els = castArray(target);
+      els = arrays.castArray(target);
     }
 
     if (target instanceof Array) {
@@ -262,4 +234,4 @@ var OkibaDom = (function (exports) {
 
   return exports;
 
-}({}));
+}({}, arrays));

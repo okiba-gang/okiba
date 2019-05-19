@@ -11,10 +11,8 @@
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^23.6.0",
-    "babel-preset-env": "^1.7.0",
-    "jest": "^23.6.0",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
     "jsdoc-api": "^4.0.3",
     "jsdom": "^13.0.0",
     "jsdom-global": "^3.0.2",
@@ -31,6 +29,9 @@
     "rollup-plugin-uglify": "^6.0.2"
   },
   "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
     "collectCoverage": true,
     "collectCoverageFrom": [
       "packages/**/*.{js}",
