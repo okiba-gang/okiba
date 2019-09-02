@@ -1,3 +1,5 @@
+import 'regenerator-runtime/runtime'
+
 import ResourceLoader from '@okiba/resource-loader'
 jest.useFakeTimers()
 

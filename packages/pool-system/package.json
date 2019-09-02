@@ -2,7 +2,7 @@
   "name": "@okiba/pool-system",
   "version": "1.0.4",
   "description": "Class to manage dinamically a pool of system",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "module": "./dist/index.esm.js",
   "repository": {
     "type": "git",

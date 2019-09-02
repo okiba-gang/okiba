@@ -2,7 +2,7 @@
   "name": "@okiba/time-progress",
   "version": "1.0.4",
   "description": "Helper class used to normalize time on a duration between 0 and 1",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "module": "./dist/index.esm.js",
   "keywords": [
     "okiba",

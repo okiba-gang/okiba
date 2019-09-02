@@ -2,7 +2,7 @@
   "name": "@okiba/dom",
   "version": "1.0.4",
   "description": "DOM helpers for okiba.js",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "module": "./dist/index.esm.js",
   "repository": {
     "type": "git",

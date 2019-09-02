@@ -2,7 +2,7 @@
   "name": "@okiba/evented-component",
   "version": "1.0.4",
   "description": "Component with events",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "module": "./dist/index.esm.js",
   "keywords": [
     "okiba",

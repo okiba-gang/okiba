@@ -1,3 +1,5 @@
+import 'regenerator-runtime/runtime'
+
 import TimeProgress from '@okiba/time-progress'
 jest.useFakeTimers()
 
@@ -58,7 +60,7 @@ it('should return 0 when time is elapsed in backward mode', async done => {
   now
     .mockReturnValueOnce(0)
     .mockReturnValueOnce(500)
-  
+
   global.performance = { now }
   const tp = new TimeProgress(400)
   tp.setProgress(1)
@@ -74,7 +76,7 @@ it('should go backward when reverse is called', async done => {
   now
     .mockReturnValueOnce(0)
     .mockReturnValueOnce(500)
-  
+
   global.performance = { now }
   const tp = new TimeProgress(400)
   tp.setProgress(1)

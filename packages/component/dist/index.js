@@ -29,6 +29,53 @@ var OkibaComponent = (function () {
    */
 
   /**
+   * Cast an array-like object or single element to Array
+   * @example
+   * const elements = castArray(document.querySelectorAll('p')) // [p, p]
+   * const fruits = castArray(🍒) // [🍒]
+   *
+   * @param {any} castable Array to cast
+   * @returns {Array} The array-like converted to Array, or an Array containing the element
+   */
+  function castArray(castable) {
+    if (castable === void 0) return castable;
+
+    if (castable instanceof Array) {
+      return castable;
+    }
+
+    if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList) {
+      return Array.prototype.slice.call(castable);
+    }
+
+    return [castable];
+  }
+  /**
+   * Selects an array of DOM Elements, scoped to element
+   *
+   * @example
+   * import {qsa} from '@okiba/dom'
+   * const fruits = qsa('.fruit')
+   * console.log(fruits) // [div.fruit, div.fruit]
+   *
+   * @param  {String}   selector            DOM Selector (tag, class, id, anything that can be passed to `querySelector` API)
+   * @param  {Element}  [element=document]  DOM Element to scope the selection query, only childs of that element will be tageted
+   *
+   * @return {Element[]} An array of DOM elements matching `selector`
+   */
+
+
+  function qsa(selector) {
+    var element = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+    return castArray(element.querySelectorAll(selector));
+  }
+
+  /**
+   * @module arrays
+   * @description Array utils for okiba js
+   */
+
+  /**
    * Return the first element if it only contains one
    * @example
    * const els = arrayOrOne([🍏, 🍌])
@@ -50,50 +97,6 @@ var OkibaComponent = (function () {
     }
 
     return arrayLike;
-  }
-  /**
-   * Cast an array-like object or single element to Array
-   * @example
-   * const elements = castArray(document.querySelectorAll('p')) // [p, p]
-   * const fruits = castArray(🍒) // [🍒]
-   *
-   * @param {any} castable Array to cast
-   * @returns {Array} The array-like converted to Array, or an Array containing the element
-   */
-
-
-  function castArray(castable) {
-    if (castable === void 0) return castable;
-
-    if (castable instanceof Array) {
-      return castable;
-    }
-
-    if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList) {
-      return Array.prototype.slice.call(castable);
-    }
-
-    return [castable];
-  }
-
-  /**
-   * Selects an array of DOM Elements, scoped to element
-   *
-   * @example
-   * import {qsa} from '@okiba/dom'
-   * const fruits = qsa('.fruit')
-   * console.log(fruits) // [div.fruit, div.fruit]
-   *
-   * @param  {String}   selector            DOM Selector (tag, class, id, anything that can be passed to `querySelector` API)
-   * @param  {Element}  [element=document]  DOM Element to scope the selection query, only childs of that element will be tageted
-   *
-   * @return {Element[]} An array of DOM elements matching `selector`
-   */
-
-
-  function qsa(selector) {
-    var element = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
-    return castArray(element.querySelectorAll(selector));
   }
 
   function bindUi(ui, el) {
