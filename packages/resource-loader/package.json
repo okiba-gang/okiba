@@ -25,5 +25,6 @@
   "dependencies": {
     "@okiba/worker-utils": "^0.1.5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "f92e6c5892fd24f3a5ecc107c901174c4ee77f9d"
 }

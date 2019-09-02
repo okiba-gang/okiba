@@ -15,5 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "@okiba/arrays": "^1.0.5"
-  }
+  },
+  "gitHead": "f92e6c5892fd24f3a5ecc107c901174c4ee77f9d"
 }
