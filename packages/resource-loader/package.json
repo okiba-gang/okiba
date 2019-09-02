@@ -1,6 +1,6 @@
 {
   "name": "@okiba/resource-loader",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Class to fetch resources, prefers a separate thread",
   "main": "./index.js",
   "module": "./dist/index.esm.js",
@@ -23,7 +23,7 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/worker-utils": "^0.1.4"
+    "@okiba/worker-utils": "^0.1.5"
   },
   "license": "MIT"
 }

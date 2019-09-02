@@ -1,6 +1,6 @@
 {
   "name": "@okiba/arrays",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Array helpers for okiba.js",
   "main": "./index.js",
   "module": "./dist/index.esm.js",
