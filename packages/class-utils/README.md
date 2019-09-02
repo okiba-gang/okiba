@@ -16,10 +16,10 @@ npm i --save @okiba/class-utils
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/class-utils@1.0.5/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/class-utils@1.0.6/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/class-utils@1.0.5/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/class-utils@1.0.6/dist/index.js"></script>
 ```
 
 
