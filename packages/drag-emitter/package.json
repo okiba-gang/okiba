@@ -2,6 +2,8 @@
   "name": "@okiba/drag-emitter",
   "version": "0.1.4",
   "description": "Unified drag events emitter for mouse and touch",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "keywords": [
     "okiba",
     "okibajs",
@@ -10,8 +12,6 @@
     "event-emitter",
     "drag-events"
   ],
-  "main": "index.js",
-  "browser": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"

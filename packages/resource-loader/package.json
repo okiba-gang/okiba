@@ -2,6 +2,8 @@
   "name": "@okiba/resource-loader",
   "version": "0.1.4",
   "description": "Class to fetch resources, prefers a separate thread",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "keywords": [
     "okiba",
     "okibajs",
@@ -12,8 +14,6 @@
     "web-worker",
     "worker"
   ],
-  "main": "index.js",
-  "browser": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"

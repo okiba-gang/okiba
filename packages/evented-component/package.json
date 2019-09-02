@@ -2,6 +2,8 @@
   "name": "@okiba/evented-component",
   "version": "1.0.4",
   "description": "Component with events",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "keywords": [
     "okiba",
     "okibajs",
@@ -9,8 +11,6 @@
     "events",
     "event-emitter"
   ],
-  "main": "index.js",
-  "browser": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"

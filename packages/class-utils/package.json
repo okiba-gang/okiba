@@ -2,8 +2,8 @@
   "name": "@okiba/class-utils",
   "version": "1.0.4",
   "description": "Utilities that operate on classes",
-  "main": "index.js",
-  "browser": "./dist/index.esm.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
