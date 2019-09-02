@@ -1,6 +1,6 @@
 {
   "name": "@okiba/dom",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "DOM helpers for okiba.js",
   "main": "./index.js",
   "module": "./dist/index.esm.js",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@okiba/arrays": "^1.0.6"
+    "@okiba/arrays": "^1.0.7"
   },
   "gitHead": "9b37c3daed041c83ea554e7eb1955bb351c9a32b"
 }
