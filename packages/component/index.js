@@ -166,9 +166,7 @@ class Component {
         ))
     }
 
-    if (this.onDestroy) {
-      this.onDestroy()
-    }
+    this.components = null
   }
 }
 
