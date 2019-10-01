@@ -5,6 +5,22 @@
 import {castArray} from '@okiba/arrays'
 
 /**
+ * Selects a DOM Element with a certain id
+ *
+ * @example
+ * import {byId} from '@okiba/dom'
+ * const apple = byId('apple')
+ * console.log(apple) // [div.apple]
+ *
+ * @param  {String}  id DOM id you are looking for
+ *
+ * @return {Element} A DOM Element matching `id`
+ */
+export function byId(id) {
+  return document.getElementById(id)
+}
+
+/**
  * Selects a DOM Element, scoped to element
  *
  * @example
