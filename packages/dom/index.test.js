@@ -1,4 +1,4 @@
-import {qs, qsa, on, off, eventCoords, getElements, offset} from './'
+import {byId, qs, qsa, on, off, eventCoords, getElements, offset} from './'
 
 import { JSDOM } from 'jsdom'
 const { window } = (new JSDOM(`<body>
@@ -8,6 +8,7 @@ const { window } = (new JSDOM(`<body>
     </div>
     <div class="element"></div>
     <div class="element"></div>
+    <div id="last" class="element"></div>
 </body>`, {url: 'https://example.org/'}))
 
 global.window = window
@@ -17,6 +18,12 @@ global.HTMLElement = window.HTMLElement
 global.NodeList = window.NodeList
 global.DOMTokenList = window.DOMTokenList
 global.Node = window.Node
+
+test('byId should return a single element', done => {
+  const node = byId('last')
+  expect(node).toEqual(document.getElementById('last'))
+  done()
+})
 
 test('qs should return a single element, defaulting to document', done => {
   const node = qs('.element')
