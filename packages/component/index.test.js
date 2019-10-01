@@ -111,7 +111,7 @@ test('Component should have options', done => {
 test('Component destroy should chain-call `onDestroy`', done => {
   app.destroy()
   expect(app.isDestroyed).toBe(true)
-  expect(app.components.inner.isDestroyed).toBe(true)
+  expect(app.components).toEqual(null)
   done()
 })
 

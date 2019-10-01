@@ -152,6 +152,10 @@ class Component {
    * and forward destruction to all child components
    */
   destroy() {
+    if (this.onDestroy) {
+      this.onDestroy()
+    }
+
     if (this.components) {
       Object.keys(this.components)
         .forEach(key => (this.components[key].length
@@ -162,9 +166,7 @@ class Component {
         ))
     }
 
-    if (this.onDestroy) {
-      this.onDestroy()
-    }
+    this.components = null
   }
 }
 
