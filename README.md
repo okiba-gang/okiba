@@ -1,5 +1,6 @@
 # Okiba
 
+[![Tests Status](https://github.com/okiba-gang/okiba/workflows/Run%20Tests/badge.svg)](https://github.com/okiba-gang/okiba/actions?workflow=Run+Tests)
 [![Maintainability](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/maintainability)](https://codeclimate.com/github/okiba-gang/okiba/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/test_coverage)](https://codeclimate.com/github/okiba-gang/okiba/test_coverage)
 🏅
