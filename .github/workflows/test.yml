@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    name: Run test suite and upload coverage results
+    name: Run test suite
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -23,7 +23,9 @@ jobs:
       - run: ./cc-test-reporter before-build
       - run: npm ci
       - run: npm test      
-      - run: echo $? && ./cc-test-reporter after-build --exit-code=$?
+        name: Running tests
+      - run: ./cc-test-reporter after-build --exit-code=$?
+        name: Uploading coverage
         env: 
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
