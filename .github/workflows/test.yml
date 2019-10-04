@@ -23,7 +23,7 @@ jobs:
       - run: ./cc-test-reporter before-build
       - run: npm ci
       - run: npm test      
-      - run: ./cc-test-reporter after-build --debug --exit-code=$? -r=$CC_TEST_REPORTER_ID
+      - run: echo $? && ./cc-test-reporter after-build --exit-code=$?
         env: 
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
