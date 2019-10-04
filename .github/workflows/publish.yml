@@ -18,7 +18,7 @@ jobs:
         name: Install dependencies
       - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
         name: Generate .npmrc 
-      - run: lerna publish
+      - run: ./node_modules/.bin/lerna publish
         name: Publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
