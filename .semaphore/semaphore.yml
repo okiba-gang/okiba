@@ -1,16 +1,48 @@
+# Use the latest stable version of Semaphore 2.0 YML syntax:
 version: v1.0
-name: First pipeline
+
+name: Testing
+
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
+
 blocks:
-  - name: Unit tests
+  - name: Install dependencies
     task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
+
       prologue:
         commands:
-          - npm install
+          - checkout
+          - nvm use 10
       jobs:
-        - name: Unit tests
+        - name: npm install and cache
           commands:
+            - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+            - npm install
+            - cache store client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json) node_modules
+            
+  - name: Test
+    task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
+      prologue:
+        commands:
+          - checkout
+          - nvm use 10
+          - node --version
+          - npm --version
+      jobs:
+        - name: Jest
+          commands:
+            - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
             - npm run test
