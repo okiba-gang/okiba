@@ -7,11 +7,10 @@ on:
   push:
     branches:
       - master
-      - feature/*
 
 jobs:
   test:
-    name: Run test suite
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -19,9 +18,13 @@ jobs:
         with:
           node-version: 12
       - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        name: Downloading CodeClimate reporter
       - run: chmod +x ./cc-test-reporter
+        name: Setting permissions
       - run: ./cc-test-reporter before-build
+        name: Preparing reporter
       - run: npm ci
+        name: Installing dependencies
       - run: npm test      
         name: Running tests
       - run: ./cc-test-reporter after-build --exit-code=$?
