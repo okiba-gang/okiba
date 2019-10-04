@@ -51,4 +51,5 @@ blocks:
           commands:
             - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
             - npm run test
-            - exitcode=$(if [ "$SEMAPHORE_THREAD_RESULT" == "passed" ]; then echo 0; else echo 1; fi) ./cc-test-reporter after-build --exit-code $exitcode
+            - exitcode=$(if [ "$SEMAPHORE_THREAD_RESULT" == "passed" ]; then echo 0; else echo 1; fi) 
+            - ./cc-test-reporter after-build --exit-code $exitcode
