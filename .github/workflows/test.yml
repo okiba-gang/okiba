@@ -24,4 +24,4 @@ jobs:
       - run: chmod +x ./cc-test-reporter
       - run: npm test
       - run: ./cc-test-reporter before-build
-      - run: ./cc-test-reporter after-build --exit-code -r=$CC_TEST_REPORTER_ID $?
+      - run: ./cc-test-reporter after-build --exit-code=$? -r=$CC_TEST_REPORTER_ID
