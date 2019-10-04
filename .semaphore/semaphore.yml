@@ -30,6 +30,8 @@ blocks:
             
   - name: Test
     task:
+      secrets:
+        - name: okiba-code-climate
       env_vars:
         - name: NODE_ENV
           value: test
@@ -38,6 +40,9 @@ blocks:
       prologue:
         commands:
           - checkout
+          - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          - chmod +x ./cc-test-reporter
+          - ./cc-test-reporter before-build
           - nvm use 10
           - node --version
           - npm --version
@@ -46,3 +51,4 @@ blocks:
           commands:
             - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
             - npm run test
+            - exitcode=$(if [ "$SEMAPHORE_THREAD_RESULT" == "passed" ]; then echo 0; else echo 1; fi) ./cc-test-reporter after-build --exit-code $exitcode
