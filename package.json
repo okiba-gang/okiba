@@ -34,8 +34,8 @@
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "packages/**/*.{js}",
-      "!packages/**/dist/*.{js}",
+      "packages/**/*.js",
+      "!packages/**/dist/*.js",
       "!**/node_modules/**"
     ],
     "roots": [
