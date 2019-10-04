@@ -18,12 +18,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-        env: 
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
       - run: chmod +x ./cc-test-reporter
       - run: ./cc-test-reporter before-build
       - run: npm ci
       - run: npm test      
-      - run: echo $CC_TEST_REPORTER_ID
       - run: ./cc-test-reporter after-build --debug --exit-code=$? -r=$CC_TEST_REPORTER_ID
+        env: 
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+
