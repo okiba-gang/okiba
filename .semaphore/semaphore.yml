@@ -51,5 +51,4 @@ blocks:
           commands:
             - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
             - npm test
-            - ls -la
-            - ./cc-test-reporter after-build -t lcov --debug --exit-code $?
+            - ./cc-test-reporter after-build --exit-code $?
