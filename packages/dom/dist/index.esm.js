@@ -5,6 +5,22 @@ import { castArray } from '@okiba/arrays';
  * @description Utilities to work with dom elements and selectors
  */
 /**
+ * Selects a DOM Element with a certain id
+ *
+ * @example
+ * import {byId} from '@okiba/dom'
+ * const apple = byId('apple')
+ * console.log(apple) // [div.apple]
+ *
+ * @param  {String}  id DOM id you are looking for
+ *
+ * @return {Element} A DOM Element matching `id`
+ */
+
+function byId(id) {
+  return document.getElementById(id);
+}
+/**
  * Selects a DOM Element, scoped to element
  *
  * @example
@@ -223,5 +239,5 @@ function getElements(target) {
   return els;
 }
 
-export { eventCoords, getElements, off, offset, on, qs, qsa };
+export { byId, eventCoords, getElements, off, offset, on, qs, qsa };
 //# sourceMappingURL=index.esm.js.map

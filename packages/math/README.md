@@ -68,6 +68,63 @@ Current position
 #### Returns
 
 `Number` The interpolated value
+## map(n, min1, max1, min2, max2)
+
+
+Maps a value between two ranges
+
+
+
+
+
+
+```javascript
+import {map} from '@okiba/math'
+
+const x = map(0.5, 0, 1, 0, 1000)
+console.log(x) // 500
+
+const y = map(0, -1, 1, -1000, 1000)
+console.log(y) // 0
+```
+
+
+
+
+#### Arguments
+
+
+##### + `n`: `Number`
+
+Value to map
+
+
+##### + `min1`: `Number`
+
+Source range minimum
+
+
+##### + `max1`: `Number`
+
+Source range maximum
+
+
+##### + `min2`: `Number`
+
+Target range minimum
+
+
+##### + `max2`: `Number`
+
+Target range maximum
+
+
+
+
+
+#### Returns
+
+`Number` Mapped value
 ## cap(n, min, max)
 
 

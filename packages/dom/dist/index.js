@@ -35,6 +35,22 @@ var OkibaDom = (function (exports) {
    * @description Utilities to work with dom elements and selectors
    */
   /**
+   * Selects a DOM Element with a certain id
+   *
+   * @example
+   * import {byId} from '@okiba/dom'
+   * const apple = byId('apple')
+   * console.log(apple) // [div.apple]
+   *
+   * @param  {String}  id DOM id you are looking for
+   *
+   * @return {Element} A DOM Element matching `id`
+   */
+
+  function byId(id) {
+    return document.getElementById(id);
+  }
+  /**
    * Selects a DOM Element, scoped to element
    *
    * @example
@@ -253,6 +269,7 @@ var OkibaDom = (function (exports) {
     return els;
   }
 
+  exports.byId = byId;
   exports.eventCoords = eventCoords;
   exports.getElements = getElements;
   exports.off = off;

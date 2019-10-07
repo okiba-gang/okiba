@@ -90,7 +90,7 @@ Can be extended or instantiated
 #### [dom](https://github.com/okiba-gang/okiba/tree/master/packages/dom)
 Utilities to work with dom elements and selectors
 
-###### [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element), [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element), [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler), [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM), [`offset`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offsetel), [`getElements`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#getelementstarget)
+###### [`byId`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#byidid), [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element), [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element), [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler), [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM), [`offset`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offsetel), [`getElements`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#getelementstarget)
 ---
 
 #### [drag-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter)
@@ -123,7 +123,7 @@ inerithing both's method sets.
 #### [math](https://github.com/okiba-gang/okiba/tree/master/packages/math)
 Collection of math functions
 
-###### [`lerp`](https://github.com/okiba-gang/okiba/tree/master/packages/math#lerpmin-max-fraction), [`cap`](https://github.com/okiba-gang/okiba/tree/master/packages/math#capn-min-max), [`distance`](https://github.com/okiba-gang/okiba/tree/master/packages/math#distancex1-x2), [`round`](https://github.com/okiba-gang/okiba/tree/master/packages/math#roundn-p)
+###### [`lerp`](https://github.com/okiba-gang/okiba/tree/master/packages/math#lerpmin-max-fraction), [`map`](https://github.com/okiba-gang/okiba/tree/master/packages/math#mapn-min1-max1-min2-max2), [`cap`](https://github.com/okiba-gang/okiba/tree/master/packages/math#capn-min-max), [`distance`](https://github.com/okiba-gang/okiba/tree/master/packages/math#distancex1-x2), [`round`](https://github.com/okiba-gang/okiba/tree/master/packages/math#roundn-p)
 ---
 
 #### [pool-system](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system)

@@ -25,6 +25,39 @@ Or use it in the browser
 
 
 
+## byId(id)
+
+
+Selects a DOM Element with a certain id
+
+
+
+
+
+
+```javascript
+import {byId} from '@okiba/dom'
+const apple = byId('apple')
+console.log(apple) // [div.apple]
+```
+
+
+
+
+#### Arguments
+
+
+##### + `id`: `String`
+
+DOM id you are looking for
+
+
+
+
+
+#### Returns
+
+`Element` A DOM Element matching `id`
 ## qs(selector, element)
 
 

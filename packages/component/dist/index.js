@@ -216,6 +216,10 @@ var OkibaComponent = (function () {
       value: function destroy() {
         var _this = this;
 
+        if (this.onDestroy) {
+          this.onDestroy();
+        }
+
         if (this.components) {
           Object.keys(this.components).forEach(function (key) {
             return (_this.components[key].length ? _this.components[key] : [_this.components[key]]).forEach(function (c) {
@@ -224,9 +228,7 @@ var OkibaComponent = (function () {
           });
         }
 
-        if (this.onDestroy) {
-          this.onDestroy();
-        }
+        this.components = null;
       }
     }]);
 
