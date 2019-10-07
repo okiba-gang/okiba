@@ -20,6 +20,29 @@ export function lerp(min, max, fraction) {
 }
 
 /**
+ * Maps a value between two ranges
+ * @param  {Number} n       Value to map
+ * @param  {Number} min1    Source range minimum
+ * @param  {Number} max1    Source range maximum
+ * @param  {Number} min2    Target range minimum
+ * @param  {Number} max2    Target range maximum
+ * @return {Number}         Mapped value
+ *
+ * @example
+ * import {map} from '@okiba/math'
+ *
+ * const x = map(0.5, 0, 1, 0, 1000)
+ * console.log(x) // 500
+ *
+ * const y = map(0, -1, 1, -1000, 1000)
+ * console.log(y) // 0
+ */
+export function map(n, min1, max1, min2, max2) {
+  return (n - min1) * (max2 - min2) / (max1 - min1) + min2
+}
+
+
+/**
  * Limit a value between a min and a max (inclusive)
  * @param  {Number} n   Value to cap
  * @param  {Number} min Minimum possible value
