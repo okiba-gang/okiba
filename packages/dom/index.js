@@ -232,3 +232,84 @@ export function getElements(target) {
 
   return els
 }
+
+function getMatcher() {
+  for (const k of [
+    'matchesSelector',
+    'mozMatchesSelector',
+    'msMatchesSelector',
+    'oMatchesSelector',
+    'webkitMatchesSelector'
+  ]) {
+    if (k in Element.prototype) return k
+  }
+}
+
+/**
+ * Checks if the given elemens has an ancestor which matches a selector
+ *
+ * @example
+ * import {delegate} from '@okiba/dom'
+ *
+ * const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+ *
+ * function disableNavigation() {
+ *   undelegate()
+ * }
+ *
+ * @param {Element} el Element to check
+ * @param {(String|Element)} target Selector to match
+ *
+ * @return {Boolean} Boolean of match found
+ */
+let matcher
+export function isChildOf(el, target) {
+  const isSelector = typeof target === 'string'
+  if (isSelector && !matcher) matcher = getMatcher()
+
+  let isMatching = false
+  // console.log(el, el.parentNode, target, matcher)
+  do {
+    isMatching = isSelector
+      ? el.matches && el[matcher](target)
+      : el === target
+    // console.log(el, el.parentNode, target, matcher)
+    el = el.parentNode
+  } while (!isMatching && el)
+
+  return isMatching
+}
+
+
+/**
+ * Delegate an event callback,
+ * it will be executed only if the event target has an ancestor which matches the given target
+ *
+ * @example
+ * import {delegate} from '@okiba/dom'
+ *
+ * const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+ *
+ * function disableNavigation() {
+ *   undelegate()
+ * }
+ *
+ * @param {(String|Element)} target Selector or Element to match
+ * @param {(String)} event Event to bind to
+ * @param {(String)} callback Function to be executed at match
+ * @param {(String)} options Options forwarded to `on`
+ *
+ * @return {Function} Function to be called to remove the delegated callback
+ */
+export function delegate(target, event, callback, options) {
+  function check(e) {
+    if (isChildOf(e.target, target)) {
+      callback(e)
+    }
+  }
+
+  on(window, event, check, options)
+  return function undelegate() {
+    off(window, event, check)
+  }
+}
