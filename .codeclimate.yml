@@ -2,6 +2,11 @@ plugins:
   eslint:
     enabled: true
 
+checks:
+  argument-count:
+    config:
+      threshold: 5
+
 exclude_patterns:
   - config/
   - '**/node_modules/'
