@@ -1,4 +1,4 @@
-import {byId, qs, qsa, on, off, eventCoords, getElements, offset} from './'
+import {byId, qs, qsa, on, off, eventCoords, getElements, offset, isChildOf, delegate} from './'
 
 import { JSDOM } from 'jsdom'
 const { window } = (new JSDOM(`<body>
@@ -8,6 +8,7 @@ const { window } = (new JSDOM(`<body>
     </div>
     <div class="element"></div>
     <div class="element"></div>
+    <div class="other"></div>
     <div id="last" class="element"></div>
 </body>`, {url: 'https://example.org/'}))
 
@@ -15,6 +16,7 @@ global.window = window
 global.document = window.document
 
 global.HTMLElement = window.HTMLElement
+global.Element = window.Element
 global.NodeList = window.NodeList
 global.DOMTokenList = window.DOMTokenList
 global.Node = window.Node
@@ -234,3 +236,70 @@ test('offset should stop accumulating offsets at body level', done => {
   done()
 })
 
+
+test('[isChildOf] should get an element\'s ancestor based on selector', done => {
+  const element = document.querySelector('.element')
+
+  expect(isChildOf(element, 'body')).toBeTruthy()
+  done()
+})
+
+test('[isChildOf] should get an element\' ancestor based on node', done => {
+  const element = document.querySelector('.element')
+
+  expect(isChildOf(element, document.body)).toBeTruthy()
+  done()
+})
+
+test('[isChildOf] should throw an error if no node is passed', done => {
+  const element = document.querySelector('.null')
+
+  expect(_ => isChildOf(element, 'body')).toThrow()
+  done()
+})
+
+
+test('[delegate] should handle and event happened in a child', done => {
+  const mock = jest.fn()
+  delegate('.element', 'click', mock)
+
+  qs('.element').dispatchEvent(new window.MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  }))
+
+  expect(mock).toBeCalled()
+  done()
+})
+
+
+test('[delegate] should not call delegate if element is not ancestor', done => {
+  const mock = jest.fn()
+  const undelegate = delegate('.element', 'click', mock)
+  undelegate()
+
+  qs('.element').dispatchEvent(new window.MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  }))
+
+  expect(mock).not.toBeCalled()
+  done()
+})
+
+test('[delegate] removing a delegate should void its reference', done => {
+  const mock = jest.fn()
+  const undelegate = delegate('.element', 'click', mock)
+  undelegate()
+
+  qs('.other').dispatchEvent(new window.MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  }))
+
+  expect(mock).not.toBeCalled()
+  done()
+})
