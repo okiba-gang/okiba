@@ -269,9 +269,84 @@ var OkibaDom = (function (exports) {
     return els;
   }
 
+  function getMatcher() {
+    for (var _i = 0, _arr = ['matchesSelector', 'mozMatchesSelector', 'msMatchesSelector', 'oMatchesSelector', 'webkitMatchesSelector']; _i < _arr.length; _i++) {
+      var k = _arr[_i];
+      if (k in Element.prototype) return k;
+    }
+  }
+  /**
+   * Checks if the given elemens has an ancestor which matches a selector
+   *
+   * @example
+   * import {delegate} from '@okiba/dom'
+   *
+   * const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+   *
+   * function disableNavigation() {
+   *   undelegate()
+   * }
+   *
+   * @param {Element} el Element to check
+   * @param {(String|Element)} target Selector to match
+   *
+   * @return {Boolean} Boolean of match found
+   */
+
+
+  var matcher;
+  function isChildOf(el, target) {
+    var isSelector = typeof target === 'string';
+    if (isSelector && !matcher) matcher = getMatcher();
+    var isMatching = false; // console.log(el, el.parentNode, target, matcher)
+
+    do {
+      isMatching = isSelector ? el.matches && el[matcher](target) : el === target; // console.log(el, el.parentNode, target, matcher)
+
+      el = el.parentNode;
+    } while (!isMatching && el);
+
+    return isMatching;
+  }
+  /**
+   * Delegate an event callback,
+   * it will be executed only if the event target has an ancestor which matches the given target
+   *
+   * @example
+   * import {delegate} from '@okiba/dom'
+   *
+   * const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+   *
+   * function disableNavigation() {
+   *   undelegate()
+   * }
+   *
+   * @param {(String|Element)} target Selector or Element to match
+   * @param {(String)} event Event to bind to
+   * @param {(String)} callback Function to be executed at match
+   * @param {(String)} options Options forwarded to `on`
+   *
+   * @return {Function} Function to be called to remove the delegated callback
+   */
+
+  function delegate(target, event, callback, options) {
+    function check(e) {
+      if (isChildOf(e.target, target)) {
+        callback(e);
+      }
+    }
+
+    on(window, event, check, options);
+    return function undelegate() {
+      off(window, event, check);
+    };
+  }
+
   exports.byId = byId;
+  exports.delegate = delegate;
   exports.eventCoords = eventCoords;
   exports.getElements = getElements;
+  exports.isChildOf = isChildOf;
   exports.off = off;
   exports.offset = offset;
   exports.on = on;

@@ -16,10 +16,10 @@ npm i --save @okiba/dom
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/dom@1.0.7/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/dom@1.0.9/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/dom@1.0.7/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/dom@1.0.9/dist/index.js"></script>
 ```
 
 
@@ -346,3 +346,98 @@ The target you want to be sure to obtain as an array of Elements
 #### Returns
 
 `Array.<Element>` An array of Elements
+## matcher(el, target)
+
+
+Checks if the given elemens has an ancestor which matches a selector
+
+
+
+
+
+
+```javascript
+import {delegate} from '@okiba/dom'
+
+const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+
+function disableNavigation() {
+  undelegate()
+}
+```
+
+
+
+
+#### Arguments
+
+
+##### + `el`: `Element`
+
+Element to check
+
+
+##### + `target`: `String` or  `Element`
+
+Selector to match
+
+
+
+
+
+#### Returns
+
+`Boolean` Boolean of match found
+## delegate(target, event, callback, options)
+
+
+Delegate an event callback,
+it will be executed only if the event target has an ancestor which matches the given target
+
+
+
+
+
+
+```javascript
+import {delegate} from '@okiba/dom'
+
+const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+
+function disableNavigation() {
+  undelegate()
+}
+```
+
+
+
+
+#### Arguments
+
+
+##### + `target`: `String` or  `Element`
+
+Selector or Element to match
+
+
+##### + `event`: `String`
+
+Event to bind to
+
+
+##### + `callback`: `String`
+
+Function to be executed at match
+
+
+##### + `options`: `String`
+
+Options forwarded to `on`
+
+
+
+
+
+#### Returns
+
+`function` Function to be called to remove the delegated callback
