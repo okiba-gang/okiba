@@ -16,6 +16,7 @@ global.window = window
 global.document = window.document
 
 global.HTMLElement = window.HTMLElement
+global.HTMLCollection = window.HTMLCollection
 global.Element = window.Element
 global.NodeList = window.NodeList
 global.DOMTokenList = window.DOMTokenList

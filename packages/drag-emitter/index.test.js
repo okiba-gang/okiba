@@ -11,6 +11,7 @@ const { window } = (new JSDOM(
 global.window = window
 global.DOMTokenList = window.DOMTokenList
 global.HTMLElement = window.HTMLElement
+global.HTMLCollection = window.HTMLCollection
 global.NodeList = window.NodeList
 global.document = window.document
 const container = qs('.container')

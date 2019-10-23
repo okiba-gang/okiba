@@ -14,6 +14,8 @@ const { document } = window
 global.HTMLElement = window.HTMLElement
 global.NodeList = window.NodeList
 global.DOMTokenList = window.DOMTokenList
+global.HTMLCollection = window.HTMLCollection
+
 class InnerComponent extends Component {
   onDestroy() {
     this.isDestroyed = true
