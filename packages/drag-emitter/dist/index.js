@@ -1,5 +1,7 @@
-var OkibaDragEmitter = (function () {
+var OkibaDragEmitter = (function (EventEmitter, dom) {
   'use strict';
+
+  EventEmitter = EventEmitter && EventEmitter.hasOwnProperty('default') ? EventEmitter['default'] : EventEmitter;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -68,262 +70,6 @@ var OkibaDragEmitter = (function () {
     }
 
     return _assertThisInitialized(self);
-  }
-
-  function _classCallCheck$1(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties$1(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass$1(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$1(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$1(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _slicedToArray(arr, i) {
-    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-  }
-
-  function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-
-  function _iterableToArrayLimit(arr, i) {
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance");
-  }
-  /**
-   * @module EventEmitter
-   * @description Emits events that can be listened and unlistened to
-   * @example
-   * import EventEmitter from '@okiba/event-emitter'
-   * const emitter = new EventEmitter
-   * emitter.on('log', console.log)
-   * emitter.emit('log', 'Silence is deprecated')
-   * // Logs: 'Silence is deprecated'
-   *
-   * emitter.off('log', console.log)
-   * emitter.emit('log', 'Will not run')
-   * // ...Nothing happens
-   */
-
-
-  var EventEmitter =
-  /*#__PURE__*/
-  function () {
-    function EventEmitter() {
-      _classCallCheck$1(this, EventEmitter);
-
-      this.hs = {};
-    }
-    /**
-     * Sets an event listener for an event type
-     * @param  {String} name    Event type
-     * @param  {Function} handler Callback to be fired when that event occours
-     */
-
-
-    _createClass$1(EventEmitter, [{
-      key: "on",
-      value: function on(name, handler) {
-        (this.hs[name] || (this.hs[name] = [])).push(handler);
-      }
-      /**
-       * Unsets an event listener for an event type
-       * @param  {String} name    Event type
-       * @param  {Function} handler Callback previously registered for that event type
-       */
-
-    }, {
-      key: "off",
-      value: function off(name, handler) {
-        if (!this.hs[name]) return;
-        var i = this.hs[name].indexOf(handler);
-        if (i < 0) return;
-        this.hs[name].splice(i, 1);
-      }
-      /**
-       * Triggers an event with optional data attached.
-       * All listeners will be triggered in registration order.
-       * Custom data will be passed to them as a parameter
-       * @param  {String} name Event type
-       * @param  {Object} [data] Custom data to be passed to the handlers
-       */
-
-    }, {
-      key: "emit",
-      value: function emit(name, data) {
-        if (!this.hs || !this.hs[name]) return;
-
-        for (var i = 0; i < this.hs[name].length; ++i) {
-          this.hs[name][i](data);
-        }
-      }
-      /**
-       * Removes all event listeners and deletes the handlers object
-       */
-
-    }, {
-      key: "destroy",
-      value: function destroy() {
-        var _this = this;
-
-        Object.entries(this.hs).forEach(function (_ref) {
-          var _ref2 = _slicedToArray(_ref, 2),
-              name = _ref2[0],
-              handlers = _ref2[1];
-
-          return handlers.forEach(function (handler) {
-            return _this.off(name, handler);
-          });
-        });
-        delete this.hs;
-      }
-    }]);
-
-    return EventEmitter;
-  }();
-
-  /**
-   * @module arrays
-   * @description Array utils for okiba js
-   */
-  /**
-   * Cast an array-like object or single element to Array
-   * @example
-   * const elements = castArray(document.querySelectorAll('p')) // [p, p]
-   * const fruits = castArray(🍒) // [🍒]
-   *
-   * @param {any} castable Array to cast
-   * @returns {Array} The array-like converted to Array, or an Array containing the element
-   */
-
-
-  function castArray(castable) {
-    if (castable === void 0) return castable;
-
-    if (castable instanceof Array) {
-      return castable;
-    }
-
-    if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList) {
-      return Array.prototype.slice.call(castable);
-    }
-
-    return [castable];
-  }
-
-  function evt(source, type, handler, action, options) {
-    if (!type || !handler) return false;
-    var elements = castArray(source);
-    var types = castArray(type);
-    var handlers = castArray(handler);
-
-    for (var i = 0; i < elements.length; ++i) {
-      for (var j = 0; j < types.length; ++j) {
-        elements[i]["".concat(action, "EventListener")](types[j], handlers[Math.min(j, handlers.length - 1)], options);
-      }
-    }
-
-    return true;
-  }
-  /**
-   * Attaches an event listener to a DOM Element, or an array of.
-   *
-   * @example
-   * import {qsa, on} from '@okiba/dom'
-   * const buttons = qsa('.button')
-   *
-   * on(buttons, 'click', onClick)
-   * on(buttons, ['mouseenter', 'mouseleve'], onMouseChange)
-   *
-   * // adds `onClick` to 'click' and `onMouseChange` to both 'mouseenter' and 'mouseleave'
-   * on(buttons, ['click', mouseenter', 'mouseleve'], [onClick, onMouseChange])
-   *
-   * @param {(Element|Element[])} [window] source
-   * the element which will trigger the event
-   * @param {(String|String[])} type
-   * the event name to bind. Or an array of
-   * @param {(Function|Function[])} handler
-   * the callback to be fired at the event. If an array is supplied the handlers will be bound in order,
-   * if there are less handlers than event types, the last handler is bound to all remaining events.
-   *
-   * @return {Boolean} Success of the binding
-   */
-
-
-  function on(source, type, handler, options) {
-    return evt(source, type, handler, 'add', options);
-  }
-  /**
-   * Detached an event listener from a DOM Element, or an array of.
-   *
-   * @example
-   * import {qs, off} from '@okiba/dom'
-   * const button = qs('.button')
-   *
-   * button.addEventListener('click', onButtonClick)
-   * // or okiba's `on` on(button, 'click')
-   *
-   * off(button, 'click', onButtonClick)
-   *
-   * // removes `onMouseChange` from both 'mouseenter' and 'mouseleave'
-   * off(buttons, ['mouseenter', 'mouseleve'], onMouseChange)
-   *
-   * // removes `onClick` from 'click' and `onMouseChange` from both 'mouseenter' and 'mouseleave'
-   * off(buttons, ['click', mouseenter', 'mouseleve'], [onClick, onMouseChange])
-   *
-   * @param {(Element|Element[])} [window] source
-   * Element which will trigger the event
-   * @param {(String|String[])} type
-   * Event name to unbind. Or an array of
-   * @param {(Function|Function[])} handler
-   * Callback bound to the event. If an array is supplied the handlers will be unbound in order,
-   * if there are less handlers than event types, the last handler is unbound from all remaining events.
-   *
-   * @return {Boolean} Success of the unbinding
-   */
-
-
-  function off(source, type, handler, options) {
-    return evt(source, type, handler, 'remove', options);
   }
 
   /**
@@ -443,22 +189,22 @@ var OkibaDragEmitter = (function () {
     }, {
       key: "listen",
       value: function listen() {
-        on(this.el, 'touchstart', this.onTouchStart);
-        on(window, 'touchmove', this.onTouchMove);
-        on(window, 'touchend', this.onTouchEnd);
-        on(this.el, 'mousedown', this.onMouseDown);
-        on(window, 'mousemove', this.onMouseMove);
-        on(window, 'mouseup', this.onMouseUp);
+        dom.on(this.el, 'touchstart', this.onTouchStart);
+        dom.on(window, 'touchmove', this.onTouchMove);
+        dom.on(window, 'touchend', this.onTouchEnd);
+        dom.on(this.el, 'mousedown', this.onMouseDown);
+        dom.on(window, 'mousemove', this.onMouseMove);
+        dom.on(window, 'mouseup', this.onMouseUp);
       }
     }, {
       key: "unlisten",
       value: function unlisten() {
-        off(this.el, 'touchstart', this.onTouchStart);
-        off(window, 'touchmove', this.onTouchMove);
-        off(window, 'touchend', this.onTouchEnd);
-        off(this.el, 'mousedown', this.onMouseDown);
-        off(window, 'mousemove', this.onMouseMove);
-        off(window, 'mouseup', this.onMouseUp);
+        dom.off(this.el, 'touchstart', this.onTouchStart);
+        dom.off(window, 'touchmove', this.onTouchMove);
+        dom.off(window, 'touchend', this.onTouchEnd);
+        dom.off(this.el, 'mousedown', this.onMouseDown);
+        dom.off(window, 'mousemove', this.onMouseMove);
+        dom.off(window, 'mouseup', this.onMouseUp);
       }
     }, {
       key: "autoBind",
@@ -477,4 +223,4 @@ var OkibaDragEmitter = (function () {
 
   return DragEmitter;
 
-}());
+}(EventEmitter, dom));

@@ -1,4 +1,4 @@
-var OkibaComponent = (function () {
+var OkibaComponent = (function (arrays) {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {
@@ -27,30 +27,6 @@ var OkibaComponent = (function () {
    * @module arrays
    * @description Array utils for okiba js
    */
-
-  /**
-   * Return the first element if it only contains one
-   * @example
-   * const els = arrayOrOne([🍏, 🍌])
-   * console.log(els) // [🍏, 🍌]
-   *
-   * const els = arrayOrOne([🍏])
-   * console.log(els) // 🍏
-   *
-   * @param {Array-like} arrayLike The options object.
-   * @returns {any} The first element or the argument, undefined if empty array
-   */
-  function arrayOrOne(arrayLike) {
-    if (arrayLike === void 0 || arrayLike.length === 0) {
-      return void 0;
-    }
-
-    if (arrayLike.length === 1) {
-      return arrayLike[0];
-    }
-
-    return arrayLike;
-  }
   /**
    * Cast an array-like object or single element to Array
    * @example
@@ -69,7 +45,7 @@ var OkibaComponent = (function () {
       return castable;
     }
 
-    if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList) {
+    if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList || castable instanceof HTMLCollection) {
       return Array.prototype.slice.call(castable);
     }
 
@@ -98,7 +74,7 @@ var OkibaComponent = (function () {
 
   function bindUi(ui, el) {
     return Object.keys(ui).reduce(function (hash, key) {
-      var els = arrayOrOne(qsa(ui[key].selector || ui[key], el));
+      var els = arrays.arrayOrOne(qsa(ui[key].selector || ui[key], el));
 
       if (els) {
         hash[key] = els;
@@ -122,7 +98,7 @@ var OkibaComponent = (function () {
         throw new Error("[!!] [Component] Invalid component configuration for key: ".concat(key));
       }
 
-      var els = arrayOrOne(qsa(selector, el));
+      var els = arrays.arrayOrOne(qsa(selector, el));
 
       if (els) {
         hash[key] = Array.isArray(els) ? els.map(function (n) {
@@ -237,4 +213,4 @@ var OkibaComponent = (function () {
 
   return Component;
 
-}());
+}(arrays));

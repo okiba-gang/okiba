@@ -43,7 +43,7 @@ export function castArray(castable) {
     return castable
   }
 
-  if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList) {
+  if (castable.callee || castable instanceof NodeList || castable instanceof DOMTokenList || castable instanceof HTMLCollection) {
     return Array.prototype.slice.call(castable)
   }
 
