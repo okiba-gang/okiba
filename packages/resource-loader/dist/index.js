@@ -1,4 +1,4 @@
-var OkibaResourceLoader = (function (workerUtils) {
+var OkibaResourceLoader = (function () {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {
@@ -23,6 +23,20 @@ var OkibaResourceLoader = (function (workerUtils) {
     return Constructor;
   }
 
+  /**
+   * @module worker-utils
+   * @description Set of useful functions to ease WebWorkers development
+   */
+
+  /**
+    * Creates a web worker starting from a function
+    * @param  {Function} fn function to be included in the worker script, will be self-invoked
+    * @return {WebWorker}        worker running the passed script
+    */
+  function createWorker(code) {
+    return new Worker(URL.createObjectURL(new Blob([code])));
+  }
+
   var workerScript = "\n  onmessage = ({data}) => {\n      self.fetch(data.url, {mode: 'cors'})\n        .then(r =>\n          postMessage({url: data.url, value: r.ok})\n        )\n        .catch(_ =>\n          postMessage({url: data.url, value: false})\n        )\n    }\n";
 
   var ResourceLoader =
@@ -34,7 +48,7 @@ var OkibaResourceLoader = (function (workerUtils) {
       this.cache = {};
 
       if (window.Worker) {
-        this.worker = workerUtils.createWorker(workerScript);
+        this.worker = createWorker(workerScript);
       }
     }
     /**
@@ -100,4 +114,4 @@ var OkibaResourceLoader = (function (workerUtils) {
 
   return ResourceLoader;
 
-}(workerUtils));
+}());

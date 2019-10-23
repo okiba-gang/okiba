@@ -1,4 +1,4 @@
-var OkibaComponent = (function (arrays) {
+var OkibaComponent = (function () {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {
@@ -27,6 +27,30 @@ var OkibaComponent = (function (arrays) {
    * @module arrays
    * @description Array utils for okiba js
    */
+
+  /**
+   * Return the first element if it only contains one
+   * @example
+   * const els = arrayOrOne([🍏, 🍌])
+   * console.log(els) // [🍏, 🍌]
+   *
+   * const els = arrayOrOne([🍏])
+   * console.log(els) // 🍏
+   *
+   * @param {Array-like} arrayLike The options object.
+   * @returns {any} The first element or the argument, undefined if empty array
+   */
+  function arrayOrOne(arrayLike) {
+    if (arrayLike === void 0 || arrayLike.length === 0) {
+      return void 0;
+    }
+
+    if (arrayLike.length === 1) {
+      return arrayLike[0];
+    }
+
+    return arrayLike;
+  }
   /**
    * Cast an array-like object or single element to Array
    * @example
@@ -74,7 +98,7 @@ var OkibaComponent = (function (arrays) {
 
   function bindUi(ui, el) {
     return Object.keys(ui).reduce(function (hash, key) {
-      var els = arrays.arrayOrOne(qsa(ui[key].selector || ui[key], el));
+      var els = arrayOrOne(qsa(ui[key].selector || ui[key], el));
 
       if (els) {
         hash[key] = els;
@@ -98,7 +122,7 @@ var OkibaComponent = (function (arrays) {
         throw new Error("[!!] [Component] Invalid component configuration for key: ".concat(key));
       }
 
-      var els = arrays.arrayOrOne(qsa(selector, el));
+      var els = arrayOrOne(qsa(selector, el));
 
       if (els) {
         hash[key] = Array.isArray(els) ? els.map(function (n) {
@@ -213,4 +237,4 @@ var OkibaComponent = (function (arrays) {
 
   return Component;
 
-}(arrays));
+}());

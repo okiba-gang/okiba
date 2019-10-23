@@ -12,6 +12,7 @@ const nodeArray = Array.from(nodeList)
 global.HTMLElement = window.HTMLElement
 global.NodeList = window.NodeList
 global.DOMTokenList = window.DOMTokenList
+global.HTMLCollection = window.HTMLCollection
 
 test('arrayOrOne, should return same array', done => {
   const res = arrayOrOne(array)
