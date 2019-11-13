@@ -8,7 +8,7 @@ Utilities to work with dom elements and selectors
 
 ### Installation
 
-You can grab it as an `npm` package 
+You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/dom
 ```
@@ -346,10 +346,10 @@ The target you want to be sure to obtain as an array of Elements
 #### Returns
 
 `Array.<Element>` An array of Elements
-## matcher(el, target)
+## isChildOf(el, target)
 
 
-Checks if the given elemens has an ancestor which matches a selector
+Checks if the given element has an ancestor which matches a selector
 
 
 
@@ -357,13 +357,17 @@ Checks if the given elemens has an ancestor which matches a selector
 
 
 ```javascript
-import {delegate} from '@okiba/dom'
+/**
+ * <div id="ancestor">
+ *    <div id="el"></div>
+ * </div>
+*/
 
-const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+import {byId, isChildOf} from '@okiba/dom'
 
-function disableNavigation() {
-  undelegate()
-}
+const gotAncestor = isChildOf(byId('el'), '#ancestor')
+
+console.log(gotAncestor) // true
 ```
 
 

@@ -90,7 +90,7 @@ Can be extended or instantiated
 #### [dom](https://github.com/okiba-gang/okiba/tree/master/packages/dom)
 Utilities to work with dom elements and selectors
 
-###### [`byId`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#byidid), [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element), [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element), [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler), [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM), [`offset`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offsetel), [`getElements`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#getelementstarget), [`matcher`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#matcherel-target), [`delegate`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#delegatetarget-event-callback-options)
+###### [`byId`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#byidid), [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element), [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element), [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler), [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM), [`offset`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offsetel), [`getElements`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#getelementstarget), [`isChildOf`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#isChildOfel-target), [`delegate`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#delegatetarget-event-callback-options)
 ---
 
 #### [drag-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter)
@@ -102,7 +102,7 @@ Emits drag events for all common pointers kinds (touch & mouse)
 #### [easings](https://github.com/okiba-gang/okiba/tree/master/packages/easings)
 Collection of easings to alter a value
 
-###### 
+######
 ---
 
 #### [event-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter)

@@ -246,16 +246,17 @@ function getMatcher() {
 }
 
 /**
- * Checks if the given elemens has an ancestor which matches a selector
+ * Checks if the given element has an ancestor which matches a selector
  *
  * @example
- * import {delegate} from '@okiba/dom'
+ * <div id="ancestor">
+ *    <div id="el"></div>
+ * </div>
  *
- * const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
+ * import {byId, isChildOf} from '@okiba/dom'
  *
- * function disableNavigation() {
- *   undelegate()
- * }
+ * const gotAncestor = isChildOf(byId('el'), '#ancestor')
+ * console.log(gotAncestor) // true
  *
  * @param {Element} el Element to check
  * @param {(String|Element)} target Selector to match
