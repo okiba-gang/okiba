@@ -7,6 +7,9 @@
     "docs": "node ./docs/generate.js",
     "version": "npm run build && npm run docs"
   },
+  "engines": {
+    "node": ">=10.17.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
