@@ -16,10 +16,10 @@ npm i --save @okiba/search
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/search@1.0.9/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/search@1.0.10/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/search@1.0.9/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/search@1.0.10/dist/index.js"></script>
 ```
 
 
