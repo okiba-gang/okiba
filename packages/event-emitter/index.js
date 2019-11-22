@@ -24,8 +24,8 @@ class EventEmitter {
    */
   on(name, handler) {
     (
-      this.hs[name] || (this.hs[name] = [])
-    ).push(handler)
+      this.hs[name] || (this.hs[name] = new Map())
+    ).set(handler, handler)
   }
 
   /**
@@ -35,11 +35,7 @@ class EventEmitter {
    */
   off(name, handler) {
     if (!this.hs[name]) return
-
-    const i = this.hs[name].indexOf(handler)
-    if (i < 0) return
-
-    this.hs[name].splice(i, 1)
+    this.hs[name].delete(handler)
   }
 
   /**
@@ -51,22 +47,16 @@ class EventEmitter {
    */
   emit(name, data) {
     if (!this.hs || !this.hs[name]) return
-
-    for (let i = 0; i < this.hs[name].length; ++i) {
-      this.hs[name][i](data)
-    }
+    this.hs[name].forEach(handler => handler(data))
   }
 
   /**
    * Removes all event listeners and deletes the handlers object
    */
   destroy() {
-    Object.entries(this.hs)
-      .forEach(
-        ([name, handlers]) =>
-          handlers.forEach(
-            handler => this.off(name, handler)
-          )
+    Object.keys(this.hs)
+      .forEach((name) =>
+        this.hs[name].clear()
       )
 
     delete this.hs
