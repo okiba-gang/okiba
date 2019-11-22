@@ -1,6 +1,6 @@
 {
   "name": "@okiba/evented-component",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "Component with events",
   "main": "./index.js",
   "module": "./dist/index.esm.js",
@@ -20,8 +20,8 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/component": "^1.0.10",
-    "@okiba/event-emitter": "^1.0.9"
+    "@okiba/component": "^1.0.11",
+    "@okiba/event-emitter": "^1.1.0"
   },
   "license": "MIT",
   "gitHead": "9b37c3daed041c83ea554e7eb1955bb351c9a32b"
