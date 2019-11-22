@@ -1,6 +1,6 @@
 {
   "name": "@okiba/search",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Search functions used in okiba.js",
   "main": "./index.js",
   "module": "./dist/index.esm.js",

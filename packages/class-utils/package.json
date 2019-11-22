@@ -1,6 +1,6 @@
 {
   "name": "@okiba/class-utils",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Utilities that operate on classes",
   "main": "./index.js",
   "module": "./dist/index.esm.js",
