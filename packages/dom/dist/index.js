@@ -15,7 +15,6 @@ var OkibaDom = (function (exports) {
    * @returns {Array} The array-like converted to Array, or an Array containing the element
    */
 
-
   function castArray(castable) {
     if (castable === void 0) return castable;
 

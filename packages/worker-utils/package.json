@@ -3,7 +3,7 @@
   "version": "0.1.11",
   "description": "Utils to work with WebWorker",
   "main": "./index.js",
-  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.min.js",
   "keywords": [
     "okiba",
     "okibajs",

@@ -3,7 +3,7 @@
   "version": "0.1.11",
   "description": "Class to fetch resources, prefers a separate thread",
   "main": "./index.js",
-  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.min.js",
   "keywords": [
     "okiba",
     "okibajs",

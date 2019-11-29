@@ -63,6 +63,11 @@ No line makes it into `master` if the overall code quality gets degraded.
 
 _We could state that our API is 100% documented, but we still have no tests in place to back this metric up... so we don't 🤡_
 
+
+###### Untranspiled code. 🛑
+
+Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
+
 ______
 
 ## Full API List:

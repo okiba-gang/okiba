@@ -5,6 +5,12 @@ Manages loading of resources trough fetch to boost caching.
 Transparently relies on a WebWorker if possible to load on a separate thread.
 
 
+###### Untranspiled code. 🛑
+
+Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
+
+__
+
 
 
 ```javascript
@@ -26,7 +32,7 @@ urls.forEach(
 
 ### Installation
 
-You can grab it as an `npm` package 
+You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/resource-loader
 ```

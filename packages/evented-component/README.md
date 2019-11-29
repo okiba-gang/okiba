@@ -7,6 +7,12 @@ composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/pac
 inerithing both's method sets.
 
 
+###### Untranspiled code. 🛑
+
+Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
+
+__
+
 
 
 ```javascript
@@ -64,7 +70,7 @@ class UIPiece extends Component {
 
 ### Installation
 
-You can grab it as an `npm` package 
+You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/evented-component
 ```

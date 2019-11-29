@@ -70,27 +70,6 @@ var OkibaDragEmitter = (function () {
     return _assertThisInitialized(self);
   }
 
-  function _classCallCheck$1(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties$1(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass$1(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$1(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$1(Constructor, staticProps);
-    return Constructor;
-  }
   /**
    * @module EventEmitter
    * @description Emits events that can be listened and unlistened to
@@ -105,13 +84,11 @@ var OkibaDragEmitter = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-
-
   var EventEmitter =
   /*#__PURE__*/
   function () {
     function EventEmitter() {
-      _classCallCheck$1(this, EventEmitter);
+      _classCallCheck(this, EventEmitter);
 
       this.hs = {};
     }
@@ -122,7 +99,7 @@ var OkibaDragEmitter = (function () {
      */
 
 
-    _createClass$1(EventEmitter, [{
+    _createClass(EventEmitter, [{
       key: "on",
       value: function on(name, handler) {
         (this.hs[name] || (this.hs[name] = new Map())).set(handler, handler);
@@ -188,7 +165,6 @@ var OkibaDragEmitter = (function () {
    * @returns {Array} The array-like converted to Array, or an Array containing the element
    */
 
-
   function castArray(castable) {
     if (castable === void 0) return castable;
 
@@ -202,6 +178,11 @@ var OkibaDragEmitter = (function () {
 
     return [castable];
   }
+
+  /**
+   * @module  dom
+   * @description Utilities to work with dom elements and selectors
+   */
 
   function evt(source, type, handler, action, options) {
     if (!type || !handler) return false;
@@ -273,7 +254,6 @@ var OkibaDragEmitter = (function () {
    *
    * @return {Boolean} Success of the unbinding
    */
-
 
   function off(source, type, handler, options) {
     return evt(source, type, handler, 'remove', options);

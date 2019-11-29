@@ -41,11 +41,9 @@ var OkibaTimeProgress = (function () {
    * console.log(progress) // 1
    */
 
-
   function cap(n, min, max) {
     return Math.min(Math.max(n, min), max);
   }
-
   var roundMap = {};
   /**
    * Round a number with given precision, with memoized powers

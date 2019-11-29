@@ -61,7 +61,6 @@ var OkibaComponent = (function () {
    * @returns {Array} The array-like converted to Array, or an Array containing the element
    */
 
-
   function castArray(castable) {
     if (castable === void 0) return castable;
 
@@ -77,6 +76,10 @@ var OkibaComponent = (function () {
   }
 
   /**
+   * @module  dom
+   * @description Utilities to work with dom elements and selectors
+   */
+  /**
    * Selects an array of DOM Elements, scoped to element
    *
    * @example
@@ -90,7 +93,6 @@ var OkibaComponent = (function () {
    * @return {Element[]} An array of DOM elements matching `selector`
    */
 
-
   function qsa(selector) {
     var element = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
     return castArray(element.querySelectorAll(selector));
@@ -98,11 +100,16 @@ var OkibaComponent = (function () {
 
   function bindUi(ui, el) {
     return Object.keys(ui).reduce(function (hash, key) {
-      var els = arrayOrOne(qsa(ui[key].selector || ui[key], el));
+      var _ui$key = ui[key],
+          _ui$key$optional = _ui$key.optional,
+          optional = _ui$key$optional === void 0 ? false : _ui$key$optional,
+          _ui$key$asArray = _ui$key.asArray,
+          asArray = _ui$key$asArray === void 0 ? false : _ui$key$asArray;
+      var els = qsa(ui[key].selector || ui[key], el);
 
-      if (els) {
-        hash[key] = els;
-      } else if (!ui[key].optional) {
+      if (els.length) {
+        hash[key] = asArray ? els : arrayOrOne(els);
+      } else if (!optional) {
         throw new Error("[!!] [Component] Cant't find UI element for selector: ".concat(ui[key]));
       }
 
@@ -116,15 +123,21 @@ var OkibaComponent = (function () {
           type = _components$key.type,
           selector = _components$key.selector,
           options = _components$key.options,
-          optional = _components$key.optional;
+          _components$key$ghost = _components$key.ghost,
+          ghost = _components$key$ghost === void 0 ? false : _components$key$ghost,
+          _components$key$optio = _components$key.optional,
+          optional = _components$key$optio === void 0 ? false : _components$key$optio,
+          _components$key$asArr = _components$key.asArray,
+          asArray = _components$key$asArr === void 0 ? false : _components$key$asArr;
 
-      if (typeof selector !== 'string' || !type) {
+      if (typeof selector !== 'string' && !ghost || !type) {
         throw new Error("[!!] [Component] Invalid component configuration for key: ".concat(key));
       }
 
-      var els = arrayOrOne(qsa(selector, el));
+      var els = ghost ? [el] : qsa(selector, el);
 
-      if (els) {
+      if (els.length) {
+        els = asArray ? els : arrayOrOne(els);
         hash[key] = Array.isArray(els) ? els.map(function (n) {
           return new type({
             el: n,
@@ -166,6 +179,12 @@ var OkibaComponent = (function () {
    *     type: Slider,
    *     // Options hash
    *     options: {fullScreen: true}
+   *   }
+   *  viewProgress: {
+   *     // Bind ViewProgress component on parent Component dom node
+   *     ghost: true,
+   *     // Component class, extending Okiba Component
+   *     type: ViewProgress
    *   }
    * }
    * ```

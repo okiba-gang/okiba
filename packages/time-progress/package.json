@@ -3,7 +3,7 @@
   "version": "1.0.11",
   "description": "Helper class used to normalize time on a duration between 0 and 1",
   "main": "./index.js",
-  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.min.js",
   "keywords": [
     "okiba",
     "okiba.js",

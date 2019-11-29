@@ -13,6 +13,7 @@ const { document } = window
 
 global.HTMLElement = window.HTMLElement
 global.NodeList = window.NodeList
+global.Node = window.Node
 global.DOMTokenList = window.DOMTokenList
 global.HTMLCollection = window.HTMLCollection
 
@@ -21,6 +22,8 @@ class InnerComponent extends Component {
     this.isDestroyed = true
   }
 }
+
+class GhostComponent extends Component {}
 
 class InnerComponentMultiple extends Component {}
 
@@ -50,11 +53,28 @@ test('Component should have correct ui', done => {
   done()
 })
 
+test('GhostComponent should be attached on the same el of the parent Component', done => {
+  const testComponent = new Component({
+    el: document.querySelector('.component'),
+    components: {
+      ghostComponent: {
+        ghost: true,
+        type: GhostComponent
+      }
+    }
+  })
+
+  expect(testComponent.components.ghostComponent.el).toEqual(document.querySelector('.component'))
+  done()
+})
+
 test('Component should throw if an ui element cannot be found', done => {
   function createMissingUIComponent() {
     return new Component({
       el: document.querySelector('.component'),
-      ui: {missingEl: '.missing-el'}
+      ui: {
+        missingEl: {selector: '.missing-el', optional: false}
+      }
     })
   }
 
@@ -78,7 +98,7 @@ test('Component should throw if a component element cannot be found', done => {
     return new Component({
       el: document.querySelector('.component'),
       components: {
-        missing: {selector: '.missing-el', type: InnerComponent}
+        missing: {selector: '.missing-el', type: InnerComponent, optional: false}
       }
     })
   }
@@ -96,6 +116,51 @@ test('Component should not throw if a component element cannot be found and has 
     })
   }
   expect(createMissingComponentsComponent).not.toThrow()
+  done()
+})
+
+test('Component should have this.ui[key] as single element when asArray is false (default)', done => {
+  const testComponent = new Component({
+    el: document.querySelector('.component'),
+    ui: {
+      element: { selector: '.ui-element' },
+    }
+  })
+  expect(testComponent.ui.element instanceof Node)
+  done()
+})
+
+test('Component should have this.ui[key] as an Array when asArray is true', done => {
+  const testComponent = new Component({
+    el: document.querySelector('.component'),
+    ui: {
+      element: { selector: '.ui-element', asArray: true },
+    }
+  })
+  expect(Array.isArray(testComponent.ui.element))
+  done()
+})
+
+
+test('Component should have this.components[key] as single element when asArray is false (default)', done => {
+  const testComponent = new Component({
+    el: document.querySelector('.component'),
+    components: {
+      inner: {selector: '.inner-component', type: InnerComponent}
+    }
+  })
+  expect(testComponent.components.inner instanceof InnerComponent)
+  done()
+})
+
+test('Component should have this.components[key] as an Array when asArray is true', done => {
+  const testComponent = new Component({
+    el: document.querySelector('.component'),
+    components: {
+      inner: {selector: '.inner-component', type: InnerComponent, asArray: true}
+    }
+  })
+  expect(Array.isArray(testComponent.components.inner))
   done()
 })
 

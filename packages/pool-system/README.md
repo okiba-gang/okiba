@@ -5,6 +5,12 @@ Manages a dinamically grown pool of DOM Elements
 import PoolSystem from '@okiba/pool-system'
 
 
+###### Untranspiled code. 🛑
+
+Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
+
+__
+
 
 
 ```javascript
@@ -21,7 +27,7 @@ const pool = new PoolSystem(container, createEl)
 
 ### Installation
 
-You can grab it as an `npm` package 
+You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/pool-system
 ```

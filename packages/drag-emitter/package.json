@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "Unified drag events emitter for mouse and touch",
   "main": "./index.js",
-  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.min.js",
   "keywords": [
     "okiba",
     "okibajs",

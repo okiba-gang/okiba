@@ -4,6 +4,12 @@
 Emits events that can be listened and unlistened to
 
 
+###### Untranspiled code. 🛑
+
+Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
+
+__
+
 
 
 ```javascript
@@ -22,7 +28,7 @@ emitter.emit('log', 'Will not run')
 
 ### Installation
 
-You can grab it as an `npm` package 
+You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/event-emitter
 ```

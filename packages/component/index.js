@@ -52,11 +52,11 @@ import {arrayOrOne} from '@okiba/arrays'
 function bindUi(ui, el) {
   return Object.keys(ui).reduce(
     (hash, key) => {
-      const els = arrayOrOne(qsa(ui[key].selector || ui[key], el))
-
-      if (els) {
-        hash[key] = els
-      } else if (!ui[key].optional) {
+      const {optional = false, asArray = false} = ui[key]
+      const els = qsa(ui[key].selector || ui[key], el)
+      if (els.length) {
+        hash[key] = asArray ? els : arrayOrOne(els)
+      } else if (!optional) {
         throw new Error(`[!!] [Component] Cant't find UI element for selector: ${ui[key]}`)
       }
 
@@ -68,14 +68,16 @@ function bindUi(ui, el) {
 function bindComponents(components, el) {
   return Object.keys(components).reduce(
     (hash, key) => {
-      const {type, selector, options, optional} = components[key]
+      const {type, selector, options, ghost = false, optional = false, asArray = false} = components[key]
 
-      if (typeof selector !== 'string' || !type) {
+      if ((typeof selector !== 'string' && !ghost) || !type) {
         throw new Error(`[!!] [Component] Invalid component configuration for key: ${key}`)
       }
 
-      const els = arrayOrOne(qsa(selector, el))
-      if (els) {
+      let els = ghost ? [el] : qsa(selector, el)
+
+      if (els.length) {
+        els = asArray ? els : arrayOrOne(els)
         hash[key] = Array.isArray(els)
           ? els.map(n => new type({el: n, options}))
           : new type({el: els, options})
@@ -114,6 +116,12 @@ function bindComponents(components, el) {
  *     // Options hash
  *     options: {fullScreen: true}
  *   }
+ *  viewProgress: {
+ *     // Bind ViewProgress component on parent Component dom node
+ *     ghost: true,
+ *     // Component class, extending Okiba Component
+ *     type: ViewProgress
+ *   }
  * }
  * ```
  *
@@ -123,6 +131,7 @@ function bindComponents(components, el) {
  * ```
  * @param   {Object}    [{options}]         Custom options passed to the component
  */
+
 class Component {
   constructor(args) {
     this.el = args.el

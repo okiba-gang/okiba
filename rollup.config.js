@@ -39,15 +39,15 @@ function makeConfig(pack) {
         commonjs()
       ]
     },
-    {
-      input: `packages/${pack}/index.js`,
-      plugins: [
-        babel()
-      ],
-      output: [
-        { file: `packages/${pack}/dist/index.esm.js`, format: 'es', exports: 'named', sourcemap: true}
-      ]
-    }
+    // {
+    //   input: `packages/${pack}/index.js`,
+    //   plugins: [
+    //     babel()
+    //   ],
+    //   output: [
+    //     { file: `packages/${pack}/dist/index.esm.js`, format: 'es', exports: 'named', sourcemap: true}
+    //   ]
+    // }
   ]
 }
 

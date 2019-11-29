@@ -4,6 +4,12 @@
 Maps progress ovrer time, normalized between 0 and 1
 
 
+###### Untranspiled code. 🛑
+
+Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
+
+__
+
 
 
 ```javascript
@@ -30,7 +36,7 @@ requestAnimationFrame(loop)
 
 ### Installation
 
-You can grab it as an `npm` package 
+You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/time-progress
 ```

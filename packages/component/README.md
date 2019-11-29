@@ -5,6 +5,12 @@ Manages a DOM component, binds UI and recursively binds child components.
 Can be extended or instantiated
 
 
+###### Untranspiled code. 🛑
+
+Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
+
+__
+
 
 
 ```javascript
@@ -57,7 +63,7 @@ const app = new Component({
 
 ### Installation
 
-You can grab it as an `npm` package 
+You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/component
 ```
@@ -122,6 +128,12 @@ Components hash for childs to bind, keys are names and values are component init
     type: Slider,
     // Options hash
     options: {fullScreen: true}
+  }
+ viewProgress: {
+    // Bind ViewProgress component on parent Component dom node
+    ghost: true,
+    // Component class, extending Okiba Component
+    type: ViewProgress
   }
 }
 ```
