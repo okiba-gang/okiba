@@ -2,8 +2,8 @@
   "name": "@okiba/drag-emitter",
   "version": "0.2.2",
   "description": "Unified drag events emitter for mouse and touch",
-  "main": "./index.js",
-  "browser": "./dist/index.min.js",
+  "main": "./dist/index.min.js",
+  "module": "./index.js",
   "keywords": [
     "okiba",
     "okibajs",

@@ -35,10 +35,10 @@ npm i --save @okiba/pool-system
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/pool-system@1.0.11/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/pool-system@1.0.12/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/pool-system@1.0.11/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/pool-system@1.0.12/dist/index.js"></script>
 ```
 
 

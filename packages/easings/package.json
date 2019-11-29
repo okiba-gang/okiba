@@ -2,8 +2,8 @@
   "name": "@okiba/easings",
   "version": "1.0.12",
   "description": "Easings functions used in okiba.js",
-  "main": "./index.js",
-  "browser": "./dist/index.min.js",
+  "main": "./dist/index.min.js",
+  "module": "./index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
