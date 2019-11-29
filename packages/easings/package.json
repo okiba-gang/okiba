@@ -1,6 +1,6 @@
 {
   "name": "@okiba/easings",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Easings functions used in okiba.js",
   "main": "./dist/index.min.js",
   "module": "./index.js",

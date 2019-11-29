@@ -1,6 +1,6 @@
 {
   "name": "@okiba/worker-utils",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Utils to work with WebWorker",
   "main": "./dist/index.min.js",
   "module": "./index.js",
