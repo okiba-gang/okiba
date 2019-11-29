@@ -1,6 +1,6 @@
 {
   "name": "@okiba/resource-loader",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Class to fetch resources, prefers a separate thread",
   "main": "./index.js",
   "browser": "./dist/index.min.js",
@@ -23,7 +23,7 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/worker-utils": "^0.1.11"
+    "@okiba/worker-utils": "^0.1.12"
   },
   "license": "MIT",
   "gitHead": "7155fe8d356edd7ce0bb1823fd7d243b29b24245"
