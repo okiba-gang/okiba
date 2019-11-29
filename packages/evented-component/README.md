@@ -78,10 +78,10 @@ npm i --save @okiba/evented-component
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/evented-component@1.1.3/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/evented-component@1.1.4/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/evented-component@1.1.3/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/evented-component@1.1.4/dist/index.js"></script>
 ```
 
 

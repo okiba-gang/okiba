@@ -44,10 +44,10 @@ npm i --save @okiba/time-progress
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/time-progress@1.0.13/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/time-progress@1.0.14/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/time-progress@1.0.13/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/time-progress@1.0.14/dist/index.js"></script>
 ```
 
 
