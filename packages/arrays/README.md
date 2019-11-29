@@ -22,10 +22,10 @@ npm i --save @okiba/arrays
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/arrays@1.0.12/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/arrays@1.0.13/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/arrays@1.0.12/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/arrays@1.0.13/dist/index.js"></script>
 ```
 
 

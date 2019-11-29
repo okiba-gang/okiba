@@ -2,8 +2,7 @@
   "name": "@okiba/arrays",
   "version": "1.0.13",
   "description": "Array helpers for okiba.js",
-  "main": "./dist/index.min.js",
-  "module": "./index.js",
+  "main": "./index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"

@@ -2,8 +2,7 @@
   "name": "@okiba/resource-loader",
   "version": "0.1.13",
   "description": "Class to fetch resources, prefers a separate thread",
-  "main": "./dist/index.min.js",
-  "module": "./index.js",
+  "main": "./index.js",
   "keywords": [
     "okiba",
     "okibajs",
