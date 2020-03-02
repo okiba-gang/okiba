@@ -352,10 +352,51 @@ The target you want to be sure to obtain as an array of Elements
 #### Returns
 
 `Array.<Element>` An array of Elements
-## matcher(el, target)
+## matches(el, selectors)
 
 
-Checks if the given elemens has an ancestor which matches a selector
+Checks if an element matches at least one in a list of selectors.
+
+
+
+
+
+
+```javascript
+import {matches} from '@okiba/dom'
+
+const isInternal = !!matches(a, '.internal')
+//...
+const match = matches(myDiv, ['.red', '.green', '.blue])
+myDiv.style.backgroundColor = match.replace('.', '')
+```
+
+
+
+
+#### Arguments
+
+
+##### + `el`: `Element`
+
+Element to check
+
+
+##### + `selectors`: `String` or  `Array`
+
+Selector (ora array thereof) which the element should match
+
+
+
+
+
+#### Returns
+
+`String` First matching selector, `null` if there was no match
+## isChildOf(el, target)
+
+
+Checks if the given element has an ancestor which matches a selector
 
 
 
@@ -385,7 +426,7 @@ Element to check
 
 ##### + `target`: `String` or  `Element`
 
-Selector to match
+Selector to match or Element checked for parent relationship
 
 
 
@@ -397,8 +438,8 @@ Selector to match
 ## delegate(target, event, callback, options)
 
 
-Delegate an event callback,
-it will be executed only if the event target has an ancestor which matches the given target
+Delegate an event callback.
+It will be executed only if the event target has an ancestor which matches the given target
 
 
 
