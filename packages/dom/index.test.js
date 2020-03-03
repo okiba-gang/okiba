@@ -1,4 +1,4 @@
-import {byId, qs, qsa, on, off, eventCoords, getElements, offset, isChildOf, delegate} from './'
+import {byId, qs, qsa, on, off, eventCoords, getElements, offset, isChildOf, delegate, matches} from './'
 
 import { JSDOM } from 'jsdom'
 const { window } = (new JSDOM(`<body>
@@ -8,7 +8,7 @@ const { window } = (new JSDOM(`<body>
     </div>
     <div class="element"></div>
     <div class="element"></div>
-    <div class="other"></div>
+    <div class="other whatever"></div>
     <div id="last" class="element"></div>
 </body>`, {url: 'https://example.org/'}))
 
@@ -256,6 +256,22 @@ test('[isChildOf] should throw an error if no node is passed', done => {
   const element = document.querySelector('.null')
 
   expect(_ => isChildOf(element, 'body')).toThrow()
+  done()
+})
+
+test('[matches] should return the first matching selector', done => {
+  const selector = '.whatever'
+  const element = document.querySelector(['.wathever', '.other'])
+  const match = matches(element, selector)
+  expect(match).toEqual(selector)
+  done()
+})
+
+test('[matches] should default to an empty array and return falsey', done => {
+  const selector = '.whatever'
+  const element = document.querySelector(['.wathever', '.other'])
+  const match = matches(element)
+  expect(match).toEqual(void 0)
   done()
 })
 

@@ -3,6 +3,7 @@
  * @description Utilities to work with dom elements and selectors
  */
 import {castArray} from '@okiba/arrays'
+import { getMatcher, eventBuilder } from './utils'
 
 /**
  * Selects a DOM Element with a certain id
@@ -54,22 +55,6 @@ export function qsa(selector, element = document) {
   return castArray(element.querySelectorAll(selector))
 }
 
-function evt(source, type, handler, action, options) {
-  if (!type || !handler) return false
-
-  const elements = castArray(source)
-  const types = castArray(type)
-  const handlers = castArray(handler)
-
-  for (let i = 0; i < elements.length; ++i) {
-    for (let j = 0; j < types.length; ++j) {
-      elements[i][`${action}EventListener`](types[j], handlers[Math.min(j, handlers.length - 1)], options)
-    }
-  }
-
-  return true
-}
-
 /**
  * Attaches an event listener to a DOM Element, or an array of.
  *
@@ -94,7 +79,7 @@ function evt(source, type, handler, action, options) {
  * @return {Boolean} Success of the binding
  */
 export function on(source, type, handler, options) {
-  return evt(source, type, handler, 'add', options)
+  return eventBuilder(source, type, handler, 'add', options)
 }
 
 /**
@@ -126,7 +111,7 @@ export function on(source, type, handler, options) {
  * @return {Boolean} Success of the unbinding
  */
 export function off(source, type, handler, options) {
-  return evt(source, type, handler, 'remove', options)
+  return eventBuilder(source, type, handler, 'remove', options)
 }
 
 /**
@@ -233,20 +218,33 @@ export function getElements(target) {
   return els
 }
 
-function getMatcher() {
-  for (const k of [
-    'matchesSelector',
-    'mozMatchesSelector',
-    'msMatchesSelector',
-    'oMatchesSelector',
-    'webkitMatchesSelector'
-  ]) {
-    if (k in Element.prototype) return k
-  }
+
+/**
+ * Checks if an element matches at least one in a list of selectors.
+ *
+ * @example
+ * import {matches} from '@okiba/dom'
+ *
+ * const isInternal = !!matches(a, '.internal')
+ * //...
+ * const match = matches(myDiv, ['.red', '.green', '.blue])
+ * myDiv.style.backgroundColor = match.replace('.', '')
+ *
+ * @param {Element} el Element to check
+ * @param {(String|Array)} selectors Selector (ora array thereof) which the element should match
+ *
+ * @return {String|null} First matching selector, `null` if there was no match
+ */
+export function matches(el, selectors = []) {
+  const matcher = getMatcher()
+  return castArray(selectors)
+    .find(selector => {
+      return el[matcher] && el[matcher](selector)
+    })
 }
 
 /**
- * Checks if the given elemens has an ancestor which matches a selector
+ * Checks if the given element has an ancestor which matches a selector
  *
  * @example
  * import {delegate} from '@okiba/dom'
@@ -258,22 +256,19 @@ function getMatcher() {
  * }
  *
  * @param {Element} el Element to check
- * @param {(String|Element)} target Selector to match
+ * @param {(String|Element)} target Selector to match or Element checked for parent relationship
  *
  * @return {Boolean} Boolean of match found
  */
-let matcher
 export function isChildOf(el, target) {
   const isSelector = typeof target === 'string'
-  if (isSelector && !matcher) matcher = getMatcher()
-
   let isMatching = false
-  // console.log(el, el.parentNode, target, matcher)
+
   do {
     isMatching = isSelector
-      ? el.matches && el[matcher](target)
+      ? matches(el, target)
       : el === target
-    // console.log(el, el.parentNode, target, matcher)
+
     el = el.parentNode
   } while (!isMatching && el)
 
@@ -282,8 +277,8 @@ export function isChildOf(el, target) {
 
 
 /**
- * Delegate an event callback,
- * it will be executed only if the event target has an ancestor which matches the given target
+ * Delegate an event callback.
+ * It will be executed only if the event target has an ancestor which matches the given target
  *
  * @example
  * import {delegate} from '@okiba/dom'
