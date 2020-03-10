@@ -276,6 +276,18 @@ test('[matches] should default to an empty array and return falsey', done => {
 })
 
 
+
+test('[matches] should match parent selectors', done => {
+  const target = '.inner'
+  const child = `${target} .element`
+  const element = document.querySelector(child)
+  const match = matches(element, '.inner', true)
+  expect(match).toEqual('.inner')
+  done()
+})
+
+
+
 test('[delegate] should handle and event happened in a child', done => {
   const mock = jest.fn()
   delegate('.element', 'click', mock)
