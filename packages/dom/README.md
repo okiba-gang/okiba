@@ -352,7 +352,7 @@ The target you want to be sure to obtain as an array of Elements
 #### Returns
 
 `Array.<Element>` An array of Elements
-## matches(el, selectors)
+## matches(el, selectors, testAncestors)
 
 
 Checks if an element matches at least one in a list of selectors.
@@ -385,6 +385,11 @@ Element to check
 ##### + `selectors`: `String` or  `Array`
 
 Selector (ora array thereof) which the element should match
+
+
+##### + `testAncestors`: `Boolean`
+
+If true, extends match test upward in the ancestors
 
 
 
