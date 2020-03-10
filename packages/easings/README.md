@@ -29,10 +29,10 @@ npm i --save @okiba/easings
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/easings@1.0.14/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/easings@1.0.15/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/easings@1.0.14/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/easings@1.0.15/dist/index.js"></script>
 ```
 
 

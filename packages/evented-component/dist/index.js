@@ -244,9 +244,7 @@ var OkibaEventedComponent = (function () {
    */
 
 
-  var Component =
-  /*#__PURE__*/
-  function () {
+  var Component = /*#__PURE__*/function () {
     function Component(args) {
       _classCallCheck(this, Component);
 
@@ -315,9 +313,7 @@ var OkibaEventedComponent = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-  var EventEmitter =
-  /*#__PURE__*/
-  function () {
+  var EventEmitter = /*#__PURE__*/function () {
     function EventEmitter() {
       _classCallCheck(this, EventEmitter);
 
@@ -382,9 +378,7 @@ var OkibaEventedComponent = (function () {
     return EventEmitter;
   }();
 
-  var EventedComponent =
-  /*#__PURE__*/
-  function (_Component) {
+  var EventedComponent = /*#__PURE__*/function (_Component) {
     _inherits(EventedComponent, _Component);
 
     function EventedComponent(args) {

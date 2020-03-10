@@ -37,9 +37,7 @@ var OkibaEventEmitter = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-  var EventEmitter =
-  /*#__PURE__*/
-  function () {
+  var EventEmitter = /*#__PURE__*/function () {
     function EventEmitter() {
       _classCallCheck(this, EventEmitter);
 

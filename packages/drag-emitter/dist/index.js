@@ -84,9 +84,7 @@ var OkibaDragEmitter = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-  var EventEmitter =
-  /*#__PURE__*/
-  function () {
+  var EventEmitter = /*#__PURE__*/function () {
     function EventEmitter() {
       _classCallCheck(this, EventEmitter);
 
@@ -180,11 +178,10 @@ var OkibaDragEmitter = (function () {
   }
 
   /**
-   * @module  dom
-   * @description Utilities to work with dom elements and selectors
+   * Generic event add/removal factory
    */
 
-  function evt(source, type, handler, action, options) {
+  function eventBuilder(source, type, handler, action, options) {
     if (!type || !handler) return false;
     var elements = castArray(source);
     var types = castArray(type);
@@ -198,6 +195,11 @@ var OkibaDragEmitter = (function () {
 
     return true;
   }
+
+  /**
+   * @module  dom
+   * @description Utilities to work with dom elements and selectors
+   */
   /**
    * Attaches an event listener to a DOM Element, or an array of.
    *
@@ -222,9 +224,8 @@ var OkibaDragEmitter = (function () {
    * @return {Boolean} Success of the binding
    */
 
-
   function on(source, type, handler, options) {
-    return evt(source, type, handler, 'add', options);
+    return eventBuilder(source, type, handler, 'add', options);
   }
   /**
    * Detached an event listener from a DOM Element, or an array of.
@@ -256,7 +257,7 @@ var OkibaDragEmitter = (function () {
    */
 
   function off(source, type, handler, options) {
-    return evt(source, type, handler, 'remove', options);
+    return eventBuilder(source, type, handler, 'remove', options);
   }
 
   /**
@@ -273,9 +274,7 @@ var OkibaDragEmitter = (function () {
    *   }
    */
 
-  var DragEmitter =
-  /*#__PURE__*/
-  function (_EventEmitter) {
+  var DragEmitter = /*#__PURE__*/function (_EventEmitter) {
     _inherits(DragEmitter, _EventEmitter);
 
     function DragEmitter(el) {

@@ -197,9 +197,7 @@ var OkibaComponent = (function () {
    */
 
 
-  var Component =
-  /*#__PURE__*/
-  function () {
+  var Component = /*#__PURE__*/function () {
     function Component(args) {
       _classCallCheck(this, Component);
 

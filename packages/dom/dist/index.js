@@ -30,6 +30,44 @@ var OkibaDom = (function (exports) {
   }
 
   /**
+   * Memo used to cache properties and methods trough the module
+   */
+
+  var memo = {};
+  function getMatcher() {
+    if (!memo.matcher) {
+      for (var _i = 0, _arr = ['matchesSelector', 'mozMatchesSelector', 'msMatchesSelector', 'oMatchesSelector', 'webkitMatchesSelector']; _i < _arr.length; _i++) {
+        var k = _arr[_i];
+
+        if (k in Element.prototype) {
+          memo.matcher = k;
+          break;
+        }
+      }
+    }
+
+    return memo.matcher;
+  }
+  /**
+   * Generic event add/removal factory
+   */
+
+  function eventBuilder(source, type, handler, action, options) {
+    if (!type || !handler) return false;
+    var elements = castArray(source);
+    var types = castArray(type);
+    var handlers = castArray(handler);
+
+    for (var i = 0; i < elements.length; ++i) {
+      for (var j = 0; j < types.length; ++j) {
+        elements[i]["".concat(action, "EventListener")](types[j], handlers[Math.min(j, handlers.length - 1)], options);
+      }
+    }
+
+    return true;
+  }
+
+  /**
    * @module  dom
    * @description Utilities to work with dom elements and selectors
    */
@@ -85,21 +123,6 @@ var OkibaDom = (function (exports) {
     var element = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
     return castArray(element.querySelectorAll(selector));
   }
-
-  function evt(source, type, handler, action, options) {
-    if (!type || !handler) return false;
-    var elements = castArray(source);
-    var types = castArray(type);
-    var handlers = castArray(handler);
-
-    for (var i = 0; i < elements.length; ++i) {
-      for (var j = 0; j < types.length; ++j) {
-        elements[i]["".concat(action, "EventListener")](types[j], handlers[Math.min(j, handlers.length - 1)], options);
-      }
-    }
-
-    return true;
-  }
   /**
    * Attaches an event listener to a DOM Element, or an array of.
    *
@@ -124,9 +147,8 @@ var OkibaDom = (function (exports) {
    * @return {Boolean} Success of the binding
    */
 
-
   function on(source, type, handler, options) {
-    return evt(source, type, handler, 'add', options);
+    return eventBuilder(source, type, handler, 'add', options);
   }
   /**
    * Detached an event listener from a DOM Element, or an array of.
@@ -158,7 +180,7 @@ var OkibaDom = (function (exports) {
    */
 
   function off(source, type, handler, options) {
-    return evt(source, type, handler, 'remove', options);
+    return eventBuilder(source, type, handler, 'remove', options);
   }
   /**
    *
@@ -267,15 +289,42 @@ var OkibaDom = (function (exports) {
 
     return els;
   }
+  /**
+   * Checks if an element matches at least one in a list of selectors.
+   *
+   * @example
+   * import {matches} from '@okiba/dom'
+   *
+   * const isInternal = !!matches(a, '.internal')
+   * //...
+   * const match = matches(myDiv, ['.red', '.green', '.blue])
+   * myDiv.style.backgroundColor = match.replace('.', '')
+   *
+   * @param {Element} el Element to check
+   * @param {(String|Array)} selectors Selector (ora array thereof) which the element should match
+   * @param {Boolean} testAncestors If true, extends match test upward in the ancestors
+   *
+   * @return {String|null} First matching selector, `null` if there was no match
+   */
 
-  function getMatcher() {
-    for (var _i = 0, _arr = ['matchesSelector', 'mozMatchesSelector', 'msMatchesSelector', 'oMatchesSelector', 'webkitMatchesSelector']; _i < _arr.length; _i++) {
-      var k = _arr[_i];
-      if (k in Element.prototype) return k;
+  function matches(el) {
+    var selectors = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var testAncestors = arguments.length > 2 ? arguments[2] : undefined;
+    var matcher = getMatcher();
+    var matched = castArray(selectors).find(function (selector) {
+      return el[matcher] && el[matcher](selector);
+    });
+
+    if (!matched && testAncestors) {
+      matched = castArray(selectors).find(function (selector) {
+        return isChildOf(el, selector);
+      });
     }
+
+    return matched;
   }
   /**
-   * Checks if the given elemens has an ancestor which matches a selector
+   * Checks if the given element has an ancestor which matches a selector
    *
    * @example
    * import {delegate} from '@okiba/dom'
@@ -287,29 +336,25 @@ var OkibaDom = (function (exports) {
    * }
    *
    * @param {Element} el Element to check
-   * @param {(String|Element)} target Selector to match
+   * @param {(String|Element)} target Selector to match or Element checked for parent relationship
    *
    * @return {Boolean} Boolean of match found
    */
 
-
-  var matcher;
   function isChildOf(el, target) {
     var isSelector = typeof target === 'string';
-    if (isSelector && !matcher) matcher = getMatcher();
-    var isMatching = false; // console.log(el, el.parentNode, target, matcher)
+    var isMatching = false;
 
     do {
-      isMatching = isSelector ? el.matches && el[matcher](target) : el === target; // console.log(el, el.parentNode, target, matcher)
-
+      isMatching = isSelector ? matches(el, target) : el === target;
       el = el.parentNode;
     } while (!isMatching && el);
 
     return isMatching;
   }
   /**
-   * Delegate an event callback,
-   * it will be executed only if the event target has an ancestor which matches the given target
+   * Delegate an event callback.
+   * It will be executed only if the event target has an ancestor which matches the given target
    *
    * @example
    * import {delegate} from '@okiba/dom'
@@ -346,6 +391,7 @@ var OkibaDom = (function (exports) {
   exports.eventCoords = eventCoords;
   exports.getElements = getElements;
   exports.isChildOf = isChildOf;
+  exports.matches = matches;
   exports.off = off;
   exports.offset = offset;
   exports.on = on;
