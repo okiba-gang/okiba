@@ -232,17 +232,6 @@ export function getElements(target) {
  *
  * @param {Element} el Element to check
  * @param {(String|Array)} selectors Selector (ora array thereof) which the element should match
-<<<<<<< HEAD
- *
- * @return {String|null} First matching selector, `null` if there was no match
- */
-export function matches(el, selectors = []) {
-  const matcher = getMatcher()
-  return castArray(selectors)
-    .find(selector => {
-      return el[matcher] && el[matcher](selector)
-    })
-=======
  * @param {Boolean} testAncestors If true, extends match test upward in the ancestors
  *
  * @return {String|null} First matching selector, `null` if there was no match
@@ -256,7 +245,6 @@ export function matches(el, selectors = [], testAncestors) {
   }
 
   return matched
->>>>>>> 0390688aa1d878b6ef1883202218bcbf685de0b7
 }
 
 /**
