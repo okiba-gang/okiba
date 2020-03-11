@@ -107,12 +107,11 @@ var OkibaComponent = (function () {
           asArray = _ui$key$asArray === void 0 ? false : _ui$key$asArray;
       var els = qsa(ui[key].selector || ui[key], el);
 
-      if (els.length) {
-        hash[key] = asArray ? els : arrayOrOne(els);
-      } else if (!optional) {
+      if (!optional && els.length === 0) {
         throw new Error("[!!] [Component] Cant't find UI element for selector: ".concat(ui[key]));
       }
 
+      hash[key] = asArray ? els : arrayOrOne(els);
       return hash;
     }, {});
   }
@@ -136,8 +135,13 @@ var OkibaComponent = (function () {
 
       var els = ghost ? [el] : qsa(selector, el);
 
-      if (els.length) {
-        els = asArray ? els : arrayOrOne(els);
+      if (!optional && (!els || els.length === 0)) {
+        throw new Error("[!!] [Component] Cant't find node with selector ".concat(selector, " for sub-component: ").concat(key));
+      }
+
+      els = asArray ? els : arrayOrOne(els);
+
+      if (els) {
         hash[key] = Array.isArray(els) ? els.map(function (n) {
           return new type({
             el: n,
@@ -147,8 +151,6 @@ var OkibaComponent = (function () {
           el: els,
           options: options
         });
-      } else if (!optional) {
-        throw new Error("[!!] [Component] Cant't find node with selector ".concat(selector, " for sub-component: ").concat(key));
       }
 
       return hash;
@@ -197,7 +199,9 @@ var OkibaComponent = (function () {
    */
 
 
-  var Component = /*#__PURE__*/function () {
+  var Component =
+  /*#__PURE__*/
+  function () {
     function Component(args) {
       _classCallCheck(this, Component);
 

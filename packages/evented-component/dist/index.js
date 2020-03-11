@@ -154,12 +154,11 @@ var OkibaEventedComponent = (function () {
           asArray = _ui$key$asArray === void 0 ? false : _ui$key$asArray;
       var els = qsa(ui[key].selector || ui[key], el);
 
-      if (els.length) {
-        hash[key] = asArray ? els : arrayOrOne(els);
-      } else if (!optional) {
+      if (!optional && els.length === 0) {
         throw new Error("[!!] [Component] Cant't find UI element for selector: ".concat(ui[key]));
       }
 
+      hash[key] = asArray ? els : arrayOrOne(els);
       return hash;
     }, {});
   }
@@ -183,8 +182,13 @@ var OkibaEventedComponent = (function () {
 
       var els = ghost ? [el] : qsa(selector, el);
 
-      if (els.length) {
-        els = asArray ? els : arrayOrOne(els);
+      if (!optional && (!els || els.length === 0)) {
+        throw new Error("[!!] [Component] Cant't find node with selector ".concat(selector, " for sub-component: ").concat(key));
+      }
+
+      els = asArray ? els : arrayOrOne(els);
+
+      if (els) {
         hash[key] = Array.isArray(els) ? els.map(function (n) {
           return new type({
             el: n,
@@ -194,8 +198,6 @@ var OkibaEventedComponent = (function () {
           el: els,
           options: options
         });
-      } else if (!optional) {
-        throw new Error("[!!] [Component] Cant't find node with selector ".concat(selector, " for sub-component: ").concat(key));
       }
 
       return hash;
@@ -244,7 +246,9 @@ var OkibaEventedComponent = (function () {
    */
 
 
-  var Component = /*#__PURE__*/function () {
+  var Component =
+  /*#__PURE__*/
+  function () {
     function Component(args) {
       _classCallCheck(this, Component);
 
@@ -313,7 +317,9 @@ var OkibaEventedComponent = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-  var EventEmitter = /*#__PURE__*/function () {
+  var EventEmitter =
+  /*#__PURE__*/
+  function () {
     function EventEmitter() {
       _classCallCheck(this, EventEmitter);
 
@@ -378,7 +384,9 @@ var OkibaEventedComponent = (function () {
     return EventEmitter;
   }();
 
-  var EventedComponent = /*#__PURE__*/function (_Component) {
+  var EventedComponent =
+  /*#__PURE__*/
+  function (_Component) {
     _inherits(EventedComponent, _Component);
 
     function EventedComponent(args) {
