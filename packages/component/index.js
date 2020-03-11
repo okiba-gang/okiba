@@ -54,11 +54,12 @@ function bindUi(ui, el) {
     (hash, key) => {
       const {optional = false, asArray = false} = ui[key]
       const els = qsa(ui[key].selector || ui[key], el)
-      if (els.length) {
-        hash[key] = asArray ? els : arrayOrOne(els)
-      } else if (!optional) {
+
+      if (!optional && els.length === 0) {
         throw new Error(`[!!] [Component] Cant't find UI element for selector: ${ui[key]}`)
       }
+
+      hash[key] = asArray ? els : arrayOrOne(els)
 
       return hash
     }, {}
@@ -76,13 +77,16 @@ function bindComponents(components, el) {
 
       let els = ghost ? [el] : qsa(selector, el)
 
-      if (els.length) {
-        els = asArray ? els : arrayOrOne(els)
+      if (!optional && (!els || els.length === 0)) {
+        throw new Error(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
+      }
+
+      els = asArray ? els : arrayOrOne(els)
+
+      if (els) {
         hash[key] = Array.isArray(els)
           ? els.map(n => new type({el: n, options}))
           : new type({el: els, options})
-      } else if (!optional) {
-        throw new Error(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
       }
 
       return hash
