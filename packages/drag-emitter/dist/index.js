@@ -84,7 +84,9 @@ var OkibaDragEmitter = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-  var EventEmitter = /*#__PURE__*/function () {
+  var EventEmitter =
+  /*#__PURE__*/
+  function () {
     function EventEmitter() {
       _classCallCheck(this, EventEmitter);
 
@@ -274,7 +276,9 @@ var OkibaDragEmitter = (function () {
    *   }
    */
 
-  var DragEmitter = /*#__PURE__*/function (_EventEmitter) {
+  var DragEmitter =
+  /*#__PURE__*/
+  function (_EventEmitter) {
     _inherits(DragEmitter, _EventEmitter);
 
     function DragEmitter(el) {
