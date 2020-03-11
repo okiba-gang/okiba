@@ -69,7 +69,7 @@ function bindUi(ui, el) {
 function bindComponents(components, el) {
   return Object.keys(components).reduce(
     (hash, key) => {
-      const {type, selector, options, ghost = false, optional = false, asArray = false} = components[key]
+      const {type, selector, ghost = false, optional = false, asArray = false, ...config} = components[key]
 
       if ((typeof selector !== 'string' && !ghost) || !type) {
         throw new Error(`[!!] [Component] Invalid component configuration for key: ${key}`)
@@ -85,8 +85,8 @@ function bindComponents(components, el) {
 
       if (els) {
         hash[key] = Array.isArray(els)
-          ? els.map(n => new type({el: n, options}))
-          : new type({el: els, options})
+          ? els.map(n => new type({...config, el: n}))
+          : new type({...config, el: els})
       }
 
       return hash
