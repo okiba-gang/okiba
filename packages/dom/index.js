@@ -248,19 +248,17 @@ export function matches(el, selectors = [], testAncestors) {
 }
 
 /**
- * Checks if the given element has an ancestor which matches a selector
+ * Check if a given element is child of another. The target to match can be an element, selector, or array of selectors.
  *
  * @example
- * import {delegate} from '@okiba/dom'
+ * import {isChildOf} from '@okiba/dom'
  *
- * const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
- *
- * function disableNavigation() {
- *   undelegate()
- * }
+ * const isChildOfAnchor = isChildOf(myNode, 'a')
+ * //... or
+ * const isInsideButton = isChildOf(myNode, myButton)
  *
  * @param {Element} el Element to check
- * @param {(String|Element)} target Selector to match or Element checked for parent relationship
+ * @param {(Element|String|String[])} target Selector to match or Element checked for parent relationship
  *
  * @return {Boolean} Boolean of match found
  */
@@ -276,7 +274,7 @@ export function isChildOf(el, target) {
     el = el.parentNode
   } while (!isMatching && el)
 
-  return isMatching
+  return !!isMatching
 }
 
 

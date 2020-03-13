@@ -401,7 +401,7 @@ If true, extends match test upward in the ancestors
 ## isChildOf(el, target)
 
 
-Checks if the given element has an ancestor which matches a selector
+Check if a given element is child of another. The target to match can be an element, selector, or array of selectors.
 
 
 
@@ -409,13 +409,11 @@ Checks if the given element has an ancestor which matches a selector
 
 
 ```javascript
-import {delegate} from '@okiba/dom'
+import {isChildOf} from '@okiba/dom'
 
-const undelegate = delegate('a.internal-navigation', 'click', onNavigationClick, {capture: true})
-
-function disableNavigation() {
-  undelegate()
-}
+const isChildOfAnchor = isChildOf(myNode, 'a')
+//... or
+const isInsideButton = isChildOf(myNode, myButton)
 ```
 
 
@@ -429,7 +427,7 @@ function disableNavigation() {
 Element to check
 
 
-##### + `target`: `String` or  `Element`
+##### + `target`: `Element` or  `String` or  `Array.<String>`
 
 Selector to match or Element checked for parent relationship
 
