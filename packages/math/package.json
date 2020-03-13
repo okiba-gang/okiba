@@ -1,6 +1,6 @@
 {
   "name": "@okiba/math",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Math functions used in okiba.js",
   "main": "./index.js",
   "repository": {
