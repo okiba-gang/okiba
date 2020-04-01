@@ -52,10 +52,10 @@ import {arrayOrOne} from '@okiba/arrays'
 function bindUi(ui, el) {
   return Object.keys(ui).reduce(
     (hash, key) => {
-      const {optional = false, asArray = false} = ui[key]
+      const {required = false, asArray = false} = ui[key]
       const els = qsa(ui[key].selector || ui[key], el)
 
-      if (!optional && els.length === 0) {
+      if (required && els.length === 0) {
         throw new Error(`[!!] [Component] Cant't find UI element for selector: ${ui[key]}`)
       }
 
@@ -69,7 +69,7 @@ function bindUi(ui, el) {
 function bindComponents(components, el) {
   return Object.keys(components).reduce(
     (hash, key) => {
-      const {type, selector, ghost = false, optional = false, asArray = false, ...config} = components[key]
+      const {type, selector, ghost = false, required = false, asArray = false, ...config} = components[key]
 
       if ((typeof selector !== 'string' && !ghost) || !type) {
         throw new Error(`[!!] [Component] Invalid component configuration for key: ${key}`)
@@ -77,7 +77,7 @@ function bindComponents(components, el) {
 
       let els = ghost ? [el] : qsa(selector, el)
 
-      if (!optional && (!els || els.length === 0)) {
+      if (required && (!els || els.length === 0)) {
         throw new Error(`[!!] [Component] Cant't find node with selector ${selector} for sub-component: ${key}`)
       }
 
@@ -102,6 +102,8 @@ function bindComponents(components, el) {
  * UI hash where keys are name and values are selectors
  * ```javascript
  * { buttonNext: '#buttonNext' }
+ * // or
+ * { buttonNext: selector: '#buttonNext', asArray: true, required: true }
  * ```
  * Becomes:
  * ```javascript
@@ -118,14 +120,21 @@ function bindComponents(components, el) {
  *     // Component class, extending Okiba Component
  *     type: Slider,
  *     // Options hash
- *     options: {fullScreen: true}
+ *     options: {fullScreen: true},
+ *     // Required component, default is false
+ *     required: true
  *   }
- *  viewProgress: {
- *     // Bind ViewProgress component on parent Component dom node
- *     ghost: true,
- *     // Component class, extending Okiba Component
- *     type: ViewProgress
- *   }
+  *  viewProgress: {
+  *     // Bind ViewProgress component on parent Component dom node
+  *     ghost: true,
+  *     // Component class, extending Okiba Component
+  *     type: ViewProgress
+  *   },
+  *   buttons: {
+  *     selector: 'button',
+  *     type: Button,
+  *     asArray: true,
+  *   }
  * }
  * ```
  *

@@ -29,7 +29,7 @@ class InnerComponentMultiple extends Component {}
 
 const app = new Component({
   el: document.querySelector('.component'),
-  ui: {element: '.ui-element', optionalElement: {selector: '.ui-element-optional', optional: true}},
+  ui: {element: '.ui-element'},
   components: {
     inner: {selector: '.inner-component', type: InnerComponent, options: {innerTestOption: true}},
     innerMultiple: {selector: '.inner-component-multiple', type: InnerComponentMultiple},
@@ -73,7 +73,7 @@ test('Component should throw if an ui element cannot be found', done => {
     return new Component({
       el: document.querySelector('.component'),
       ui: {
-        missingEl: {selector: '.missing-el', optional: false}
+        missingEl: {selector: '.missing-el', required: true}
       }
     })
   }
@@ -93,12 +93,12 @@ test('Component should throw if sub-components declaration is wrong', done => {
   done()
 })
 
-test('Component should throw if a component element cannot be found', done => {
+test('Component should throw if a component element cannot be found and is required', done => {
   function createMissingComponentsComponent() {
     return new Component({
       el: document.querySelector('.component'),
       components: {
-        missing: {selector: '.missing-el', type: InnerComponent, optional: false}
+        missing: {selector: '.missing-el', type: InnerComponent, required: true}
       }
     })
   }
@@ -106,12 +106,12 @@ test('Component should throw if a component element cannot be found', done => {
   done()
 })
 
-test('Component should not throw if a component element cannot be found and has optional parameter', done => {
+test('Component should not throw if a component element cannot be found and doesn\'t have required parameter', done => {
   function createMissingComponentsComponent() {
     return new Component({
       el: document.querySelector('.component'),
       components: {
-        missing: {selector: '.missing-el', type: InnerComponent, optional: true}
+        missing: {selector: '.missing-el', type: InnerComponent}
       }
     })
   }
