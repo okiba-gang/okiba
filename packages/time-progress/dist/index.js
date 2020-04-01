@@ -92,7 +92,9 @@ var OkibaTimeProgress = (function () {
    */
 
 
-  var TimeProgress = /*#__PURE__*/function () {
+  var TimeProgress =
+  /*#__PURE__*/
+  function () {
     function TimeProgress() {
       var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 400;
 

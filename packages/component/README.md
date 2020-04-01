@@ -71,10 +71,10 @@ npm i --save @okiba/component
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/component@1.0.18/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/component@1.0.19/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/component@1.0.18/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/component@1.0.19/dist/index.js"></script>
 ```
 
 
@@ -109,6 +109,8 @@ DOM Element to be bound
 UI hash where keys are name and values are selectors
 ```javascript
 { buttonNext: '#buttonNext' }
+// or
+{ buttonNext: selector: '#buttonNext', asArray: true, required: true }
 ```
 Becomes:
 ```javascript
@@ -127,13 +129,20 @@ Components hash for childs to bind, keys are names and values are component init
     // Component class, extending Okiba Component
     type: Slider,
     // Options hash
-    options: {fullScreen: true}
+    options: {fullScreen: true},
+    // Required component, default is false
+    required: true
   }
  viewProgress: {
     // Bind ViewProgress component on parent Component dom node
     ghost: true,
     // Component class, extending Okiba Component
     type: ViewProgress
+  },
+  buttons: {
+    selector: 'button',
+    type: Button,
+    asArray: true,
   }
 }
 ```

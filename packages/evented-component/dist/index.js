@@ -57,13 +57,13 @@ var OkibaEventedComponent = (function () {
       var source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
+        ownKeys(source, true).forEach(function (key) {
           _defineProperty(target, key, source[key]);
         });
       } else if (Object.getOwnPropertyDescriptors) {
         Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
       } else {
-        ownKeys(Object(source)).forEach(function (key) {
+        ownKeys(source).forEach(function (key) {
           Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
         });
       }
@@ -233,13 +233,13 @@ var OkibaEventedComponent = (function () {
   function bindUi(ui, el) {
     return Object.keys(ui).reduce(function (hash, key) {
       var _ui$key = ui[key],
-          _ui$key$optional = _ui$key.optional,
-          optional = _ui$key$optional === void 0 ? false : _ui$key$optional,
+          _ui$key$required = _ui$key.required,
+          required = _ui$key$required === void 0 ? false : _ui$key$required,
           _ui$key$asArray = _ui$key.asArray,
           asArray = _ui$key$asArray === void 0 ? false : _ui$key$asArray;
       var els = qsa(ui[key].selector || ui[key], el);
 
-      if (!optional && els.length === 0) {
+      if (required && els.length === 0) {
         throw new Error("[!!] [Component] Cant't find UI element for selector: ".concat(ui[key]));
       }
 
@@ -255,11 +255,11 @@ var OkibaEventedComponent = (function () {
           selector = _components$key.selector,
           _components$key$ghost = _components$key.ghost,
           ghost = _components$key$ghost === void 0 ? false : _components$key$ghost,
-          _components$key$optio = _components$key.optional,
-          optional = _components$key$optio === void 0 ? false : _components$key$optio,
+          _components$key$requi = _components$key.required,
+          required = _components$key$requi === void 0 ? false : _components$key$requi,
           _components$key$asArr = _components$key.asArray,
           asArray = _components$key$asArr === void 0 ? false : _components$key$asArr,
-          config = _objectWithoutProperties(_components$key, ["type", "selector", "ghost", "optional", "asArray"]);
+          config = _objectWithoutProperties(_components$key, ["type", "selector", "ghost", "required", "asArray"]);
 
       if (typeof selector !== 'string' && !ghost || !type) {
         throw new Error("[!!] [Component] Invalid component configuration for key: ".concat(key));
@@ -267,7 +267,7 @@ var OkibaEventedComponent = (function () {
 
       var els = ghost ? [el] : qsa(selector, el);
 
-      if (!optional && (!els || els.length === 0)) {
+      if (required && (!els || els.length === 0)) {
         throw new Error("[!!] [Component] Cant't find node with selector ".concat(selector, " for sub-component: ").concat(key));
       }
 
@@ -294,6 +294,8 @@ var OkibaEventedComponent = (function () {
    * UI hash where keys are name and values are selectors
    * ```javascript
    * { buttonNext: '#buttonNext' }
+   * // or
+   * { buttonNext: selector: '#buttonNext', asArray: true, required: true }
    * ```
    * Becomes:
    * ```javascript
@@ -310,14 +312,21 @@ var OkibaEventedComponent = (function () {
    *     // Component class, extending Okiba Component
    *     type: Slider,
    *     // Options hash
-   *     options: {fullScreen: true}
+   *     options: {fullScreen: true},
+   *     // Required component, default is false
+   *     required: true
    *   }
-   *  viewProgress: {
-   *     // Bind ViewProgress component on parent Component dom node
-   *     ghost: true,
-   *     // Component class, extending Okiba Component
-   *     type: ViewProgress
-   *   }
+    *  viewProgress: {
+    *     // Bind ViewProgress component on parent Component dom node
+    *     ghost: true,
+    *     // Component class, extending Okiba Component
+    *     type: ViewProgress
+    *   },
+    *   buttons: {
+    *     selector: 'button',
+    *     type: Button,
+    *     asArray: true,
+    *   }
    * }
    * ```
    *
@@ -329,7 +338,9 @@ var OkibaEventedComponent = (function () {
    */
 
 
-  var Component = /*#__PURE__*/function () {
+  var Component =
+  /*#__PURE__*/
+  function () {
     function Component(args) {
       _classCallCheck(this, Component);
 
@@ -398,7 +409,9 @@ var OkibaEventedComponent = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-  var EventEmitter = /*#__PURE__*/function () {
+  var EventEmitter =
+  /*#__PURE__*/
+  function () {
     function EventEmitter() {
       _classCallCheck(this, EventEmitter);
 
@@ -463,7 +476,9 @@ var OkibaEventedComponent = (function () {
     return EventEmitter;
   }();
 
-  var EventedComponent = /*#__PURE__*/function (_Component) {
+  var EventedComponent =
+  /*#__PURE__*/
+  function (_Component) {
     _inherits(EventedComponent, _Component);
 
     function EventedComponent(args) {
