@@ -1,6 +1,6 @@
 {
   "name": "@okiba/arrays",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Array helpers for okiba.js",
   "main": "./index.js",
   "repository": {

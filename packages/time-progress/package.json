@@ -1,6 +1,6 @@
 {
   "name": "@okiba/time-progress",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Helper class used to normalize time on a duration between 0 and 1",
   "main": "./index.js",
   "keywords": [
@@ -19,7 +19,7 @@
     "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)"
   ],
   "dependencies": {
-    "@okiba/math": "^1.0.17"
+    "@okiba/math": "^1.0.18"
   },
   "license": "MIT",
   "gitHead": "222d513b852490989ec50d2da81e636c9c3fcbf1"
