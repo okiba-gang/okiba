@@ -39,9 +39,7 @@ var OkibaResourceLoader = (function () {
 
   var workerScript = "\n  onmessage = ({data}) => {\n      self.fetch(data.url, {mode: 'cors'})\n        .then(r =>\n          postMessage({url: data.url, value: r.ok})\n        )\n        .catch(_ =>\n          postMessage({url: data.url, value: false})\n        )\n    }\n";
 
-  var ResourceLoader =
-  /*#__PURE__*/
-  function () {
+  var ResourceLoader = /*#__PURE__*/function () {
     function ResourceLoader() {
       _classCallCheck(this, ResourceLoader);
 
