@@ -22,10 +22,10 @@ npm i --save @okiba/dom
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/dom@1.0.18/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/dom@1.0.19/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/dom@1.0.18/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/dom@1.0.19/dist/index.js"></script>
 ```
 
 

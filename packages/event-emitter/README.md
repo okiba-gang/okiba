@@ -36,10 +36,10 @@ npm i --save @okiba/event-emitter
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/event-emitter@1.1.7/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/event-emitter@1.1.8/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/event-emitter@1.1.7/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/event-emitter@1.1.8/dist/index.js"></script>
 ```
 
 
