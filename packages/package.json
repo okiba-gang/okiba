@@ -1,0 +1,38 @@
+{
+  "name": "@okiba/core",
+  "version": "0.0.1",
+  "description": "A complete collection of Okiba core features",
+  "keywords": [
+    "okiba",
+    "okibajs"
+  ],
+  "contributors": [
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)",
+    "Andrea Fiadone <andrea.fiadone@caffeina.com> (https://github.com/fiadone)",
+    "Lorenzo Girardi <lorenzo.girardi@caffeina.com> (https://github.com/liqueflies/)"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "gitHead": "222d513b852490989ec50d2da81e636c9c3fcbf1",
+  "dependencies": {
+    "@okiba/arrays": "^1.0.20",
+    "@okiba/class-utils": "^1.0.20",
+    "@okiba/component": "^2.0.2",
+    "@okiba/dom": "^1.0.21",
+    "@okiba/drag-emitter": "^0.2.10",
+    "@okiba/easings": "^1.0.20",
+    "@okiba/event-emitter": "^1.1.10",
+    "@okiba/evented-component": "^2.0.3",
+    "@okiba/functions": "^1.0.2",
+    "@okiba/math": "^1.0.20",
+    "@okiba/pool-system": "^1.0.20",
+    "@okiba/resource-loader": "^0.1.20",
+    "@okiba/search": "^1.0.20",
+    "@okiba/time-progress": "^1.0.20",
+    "@okiba/worker-utils": "^0.1.20"
+  }
+}

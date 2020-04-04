@@ -52,6 +52,11 @@ function makeConfig(pack) {
 }
 
 const configs = fs.readdirSync('./packages')
-  .reduce((acc, pack) => acc.concat(makeConfig(pack)), [])
+  .reduce((acc, pack) => {
+    if (pack !== 'node_modules' && pack !== 'package.json') {
+      acc = acc.concat(makeConfig(pack))
+    }
+    return acc
+  }, [])
 
 export default configs
