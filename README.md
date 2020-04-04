@@ -125,6 +125,12 @@ inerithing both's method sets.
 ###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#on), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#off), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#emit), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#destroy)
 ---
 
+#### [functions](https://github.com/okiba-gang/okiba/tree/master/packages/functions)
+A collection of contextless utility functions
+
+###### [`debounce`](https://github.com/okiba-gang/okiba/tree/master/packages/functions#debouncecallback-latency-timer)
+---
+
 #### [math](https://github.com/okiba-gang/okiba/tree/master/packages/math)
 Collection of math functions
 
