@@ -1,6 +1,6 @@
 {
   "name": "@okiba/core",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "A complete collection of Okiba core features",
   "keywords": [
     "okiba",
@@ -22,10 +22,10 @@
     "@okiba/class-utils": "^1.0.20",
     "@okiba/component": "^2.0.2",
     "@okiba/dom": "^1.0.21",
-    "@okiba/drag-emitter": "^0.2.10",
+    "@okiba/drag-emitter": "^0.2.11",
     "@okiba/easings": "^1.0.20",
-    "@okiba/event-emitter": "^1.1.10",
-    "@okiba/evented-component": "^2.0.3",
+    "@okiba/event-emitter": "^1.1.11",
+    "@okiba/evented-component": "^2.0.4",
     "@okiba/functions": "^1.0.3",
     "@okiba/math": "^1.0.20",
     "@okiba/pool-system": "^1.0.20",
