@@ -1,4 +1,17 @@
-import {byId, qs, qsa, on, off, eventCoords, getElements, offset, isChildOf, delegate, matches} from './'
+import {
+  byId,
+  qs,
+  qsa,
+  on,
+  off,
+  eventCoords,
+  getElements,
+  offset,
+  isChildOf,
+  delegate,
+  matches,
+  createCustomEvent
+} from './'
 
 import { JSDOM } from 'jsdom'
 const { window } = (new JSDOM(`<body>
@@ -287,8 +300,7 @@ test('[matches] should match parent selectors', done => {
 })
 
 
-
-test('[delegate] should handle and event happened in a child', done => {
+test('[delegate] should handle if an event binded on window happened in a child', done => {
   const mock = jest.fn()
   delegate('.element', 'click', mock)
 
@@ -302,6 +314,19 @@ test('[delegate] should handle and event happened in a child', done => {
   done()
 })
 
+test('[delegate] should handle if an event binded on document.body happened in a child', done => {
+  const mock = jest.fn()
+  delegate('.element', 'click', mock, null, document.body)
+
+  qs('.element').dispatchEvent(new window.MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  }))
+
+  expect(mock).toBeCalled()
+  done()
+})
 
 test('[delegate] should not call delegate if element is not ancestor', done => {
   const mock = jest.fn()
@@ -318,7 +343,7 @@ test('[delegate] should not call delegate if element is not ancestor', done => {
   done()
 })
 
-test('[delegate] removing a delegate should void its reference', done => {
+test('[delegate] removing a delegation from window should void its reference', done => {
   const mock = jest.fn()
   const undelegate = delegate('.element', 'click', mock)
   undelegate()
@@ -330,5 +355,34 @@ test('[delegate] removing a delegate should void its reference', done => {
   }))
 
   expect(mock).not.toBeCalled()
+  done()
+})
+
+test('[delegate] removing a delegation from document.body should void its reference', done => {
+  const mock = jest.fn()
+  const undelegate = delegate('.element', 'click', mock, null, document.body)
+  undelegate()
+
+  qs('.other').dispatchEvent(new window.MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  }))
+
+  expect(mock).not.toBeCalled()
+  done()
+})
+
+test('[createCustomEvent] should create a custom event instance with supported CustomEvent', done => {
+  const customEvent = createCustomEvent('test')
+  expect(customEvent).toBeInstanceOf(window.CustomEvent)
+  done()
+})
+
+test('[createCustomEvent] should create a custom event instance with unsupported CustomEvent', done => {
+  const instanceType = window.CustomEvent
+  window.CustomEvent = null
+  const customEvent = createCustomEvent('test')
+  expect(customEvent).toBeInstanceOf(instanceType)
   done()
 })

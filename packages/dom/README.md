@@ -438,7 +438,7 @@ Selector to match or Element checked for parent relationship
 #### Returns
 
 `Boolean` Boolean of match found
-## delegate(target, event, callback, options)
+## delegate(target, event, callback, options, context)
 
 
 Delegate an event callback.
@@ -475,14 +475,19 @@ Selector or Element to match
 Event to bind to
 
 
-##### + `callback`: `String`
+##### + `callback`: `function`
 
 Function to be executed at match
 
 
-##### + `options`: `String`
+##### + `options`: `Object` or  `Boolean`
 
-Options forwarded to `on`
+Options to be to `on`
+
+
+##### + `context`: `Window` or  `HTMLDocument` or  `HTMLElement`
+
+Delegation root element
 
 
 
@@ -491,3 +496,57 @@ Options forwarded to `on`
 #### Returns
 
 `function` Function to be called to remove the delegated callback
+## createCustomEvent(type, options)
+
+
+Custom event factory.
+Creates a cross-browsers compatible custom event instance
+
+
+
+
+
+
+```javascript
+import {createCustomEvent} from '@okiba/dom'
+
+const enemy = document.getElementById('enemy')
+const shinobiAttack = createCustomEvent('shinobi-attack', {
+ detail: { damage: 3 }
+})
+
+enemy.setAttribute('data-life-points', 100)
+
+enemy.addEventListener('shinobi-attack', e => {
+ const currentLifePoints = enemy.getAttribute('data-life-points')
+ const updatedlifePoints = Math.max(0, currentLifePoints - e.detail.damage)
+ enemy.setAttribute('data-life-points', updatedlifePoints)
+})
+
+enemy.dispatchEvent(shinobiAttack)
+
+console.log(enemy.getAttribute('data-life-points')) // Logs: 97
+```
+
+
+
+
+#### Arguments
+
+
+##### + `type`: `String`
+
+The custom event type
+
+
+##### + `options`: `Object`
+
+The custom event options
+
+
+
+
+
+#### Returns
+
+`CustomEvent` The custom event instance

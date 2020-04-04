@@ -57,13 +57,13 @@ var OkibaEventedComponent = (function () {
       var source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
-        ownKeys(source, true).forEach(function (key) {
+        ownKeys(Object(source), true).forEach(function (key) {
           _defineProperty(target, key, source[key]);
         });
       } else if (Object.getOwnPropertyDescriptors) {
         Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
       } else {
-        ownKeys(source).forEach(function (key) {
+        ownKeys(Object(source)).forEach(function (key) {
           Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
         });
       }
@@ -208,10 +208,6 @@ var OkibaEventedComponent = (function () {
   }
 
   /**
-   * @module  dom
-   * @description Utilities to work with dom elements and selectors
-   */
-  /**
    * Selects an array of DOM Elements, scoped to element
    *
    * @example
@@ -338,9 +334,7 @@ var OkibaEventedComponent = (function () {
    */
 
 
-  var Component =
-  /*#__PURE__*/
-  function () {
+  var Component = /*#__PURE__*/function () {
     function Component(args) {
       _classCallCheck(this, Component);
 
@@ -409,9 +403,7 @@ var OkibaEventedComponent = (function () {
    * emitter.emit('log', 'Will not run')
    * // ...Nothing happens
    */
-  var EventEmitter =
-  /*#__PURE__*/
-  function () {
+  var EventEmitter = /*#__PURE__*/function () {
     function EventEmitter() {
       _classCallCheck(this, EventEmitter);
 
@@ -476,9 +468,7 @@ var OkibaEventedComponent = (function () {
     return EventEmitter;
   }();
 
-  var EventedComponent =
-  /*#__PURE__*/
-  function (_Component) {
+  var EventedComponent = /*#__PURE__*/function (_Component) {
     _inherits(EventedComponent, _Component);
 
     function EventedComponent(args) {
