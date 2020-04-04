@@ -53,7 +53,7 @@ function makeConfig(pack) {
 
 const configs = fs.readdirSync('./packages')
   .reduce((acc, pack) => {
-    if (pack !== 'node_modules' && pack !== 'package.json') {
+    if (pack !== 'node_modules' && pack !== 'package.json' && pack !== 'README.md') {
       acc = acc.concat(makeConfig(pack))
     }
     return acc
