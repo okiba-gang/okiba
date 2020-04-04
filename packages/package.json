@@ -1,6 +1,6 @@
 {
   "name": "@okiba/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A complete collection of Okiba core features",
   "keywords": [
     "okiba",
@@ -27,7 +27,7 @@
     "@okiba/easings": "^1.0.20",
     "@okiba/event-emitter": "^1.1.10",
     "@okiba/evented-component": "^2.0.3",
-    "@okiba/functions": "^1.0.2",
+    "@okiba/functions": "^1.0.3",
     "@okiba/math": "^1.0.20",
     "@okiba/pool-system": "^1.0.20",
     "@okiba/resource-loader": "^0.1.20",
