@@ -131,7 +131,7 @@ Custom data to be passed to the handlers
 ## hasListeners(type)
 
 
-Checks if the given event has registered callbacks
+Checks if the given event has at least one registered callback
 
 
 

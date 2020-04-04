@@ -84,7 +84,7 @@ var OkibaEventEmitter = (function () {
         });
       }
       /**
-       * Checks if the given event has registered callbacks
+       * Checks if the given event has at least one registered callback
        * @param {String} type The event type
        */
 
