@@ -1,6 +1,55 @@
 var OkibaDom = (function (exports) {
   'use strict';
 
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
+  }
+
   /**
    * @module arrays
    * @description Array utils for okiba js
@@ -67,10 +116,6 @@ var OkibaDom = (function (exports) {
     return true;
   }
 
-  /**
-   * @module  dom
-   * @description Utilities to work with dom elements and selectors
-   */
   /**
    * Selects a DOM Element with a certain id
    *
@@ -383,8 +428,56 @@ var OkibaDom = (function (exports) {
       off(window, event, check);
     };
   }
+  /**
+   * Custom event factory.
+   * Creates a cross-browsers compatible custom event instance
+   *
+   * @param {String} type The custom event type
+   * @param {Object} options The custom event options
+   *
+   * @example
+   * import {createCustomEvent} from '@okiba/dom'
+   *
+   * const enemy = document.getElementById('enemy')
+   * const shinobiAttack = createCustomEvent('shinobi-attack', {
+   *  detail: { damage: 3 }
+   * })
+   *
+   * enemy.setAttribute('data-life-points', 100)
+   *
+   * enemy.addEventListener('shinobi-attack', e => {
+   *  const currentLifePoints = enemy.getAttribute('data-life-points')
+   *  const updatedlifePoints = Math.max(0, currentLifePoints - e.detail.damage)
+   *  enemy.setAttribute('data-life-points', updatedlifePoints)
+   * })
+   *
+   * enemy.dispatchEvent(shinobiAttack)
+   *
+   * console.log(enemy.getAttribute('data-life-points')) // Logs: 97
+   *
+   * @return {CustomEvent} The custom event instance
+   */
+
+  function createCustomEvent(type) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var config = _objectSpread2({
+      bubbles: false,
+      cancelable: false,
+      detail: null
+    }, options);
+
+    if (typeof window.CustomEvent === 'function') {
+      return new window.CustomEvent(type, config);
+    }
+
+    var event = document.createEvent('CustomEvent');
+    event.initCustomEvent(type, config.bubbles, config.cancelable, config.detail);
+    return event;
+  }
 
   exports.byId = byId;
+  exports.createCustomEvent = createCustomEvent;
   exports.delegate = delegate;
   exports.eventCoords = eventCoords;
   exports.getElements = getElements;

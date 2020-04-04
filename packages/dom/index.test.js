@@ -1,4 +1,17 @@
-import {byId, qs, qsa, on, off, eventCoords, getElements, offset, isChildOf, delegate, matches} from './'
+import {
+  byId,
+  qs,
+  qsa,
+  on,
+  off,
+  eventCoords,
+  getElements,
+  offset,
+  isChildOf,
+  delegate,
+  matches,
+  createCustomEvent
+} from './'
 
 import { JSDOM } from 'jsdom'
 const { window } = (new JSDOM(`<body>
@@ -21,6 +34,7 @@ global.Element = window.Element
 global.NodeList = window.NodeList
 global.DOMTokenList = window.DOMTokenList
 global.Node = window.Node
+global.CustomEvent = window.CustomEvent
 
 test('byId should return a single element', done => {
   const node = byId('last')
@@ -330,5 +344,11 @@ test('[delegate] removing a delegate should void its reference', done => {
   }))
 
   expect(mock).not.toBeCalled()
+  done()
+})
+
+test('[createCustomEvent] should create a custom event instance', done => {
+  const customEvent = createCustomEvent('test')
+  expect(customEvent).toBeInstanceOf(CustomEvent)
   done()
 })

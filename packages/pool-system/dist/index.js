@@ -37,9 +37,7 @@ var OkibaPoolSystem = (function () {
    *
    * const pool = new PoolSystem(container, createEl)
    */
-  var PoolSystem =
-  /*#__PURE__*/
-  function () {
+  var PoolSystem = /*#__PURE__*/function () {
     /**
      * @param {Object} parent DOM Element used as container for all pool elements.
      * @param {Function} createEl Function that creates an istance the element you want to add to the pool.
