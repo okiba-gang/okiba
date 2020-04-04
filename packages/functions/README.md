@@ -22,10 +22,10 @@ npm i --save @okiba/functions
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/functions@1.0.0/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/functions/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/functions@1.0.0/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/functions/dist/index.js"></script>
 ```
 
 

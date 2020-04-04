@@ -22,10 +22,10 @@ npm i --save @okiba/drag-emitter
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/drag-emitter@0.2.8/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/drag-emitter/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/drag-emitter@0.2.8/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/drag-emitter/dist/index.js"></script>
 ```
 
 

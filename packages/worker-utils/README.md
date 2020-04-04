@@ -22,10 +22,10 @@ npm i --save @okiba/worker-utils
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/worker-utils@0.1.18/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/worker-utils/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/worker-utils@0.1.18/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/worker-utils/dist/index.js"></script>
 ```
 
 

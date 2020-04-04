@@ -40,10 +40,10 @@ npm i --save @okiba/resource-loader
 Or use it in the browser
 ```html
 <!-- Minified -->
-<script src="https://unpkg.com/@okiba/resource-loader@0.1.18/dist/index.min.js"></script>
+<script src="https://unpkg.com/@okiba/resource-loader/dist/index.min.js"></script>
 
 <!-- Full -->
-<script src="https://unpkg.com/@okiba/resource-loader@0.1.18/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/resource-loader/dist/index.js"></script>
 ```
 
 
