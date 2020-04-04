@@ -17,7 +17,6 @@
     "type": "git",
     "url": "git@github.com:okiba-gang/okiba.git"
   },
-  "gitHead": "222d513b852490989ec50d2da81e636c9c3fcbf1",
   "dependencies": {
     "@okiba/arrays": "^1.0.20",
     "@okiba/class-utils": "^1.0.20",
