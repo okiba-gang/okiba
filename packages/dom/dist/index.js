@@ -409,23 +409,26 @@ var OkibaDom = (function (exports) {
    * }
    *
    * @param {(String|Element)} target Selector or Element to match
-   * @param {(String)} event Event to bind to
-   * @param {(String)} callback Function to be executed at match
-   * @param {(String)} options Options forwarded to `on`
+   * @param {String} event Event to bind to
+   * @param {Function} callback Function to be executed at match
+   * @param {(Object|Boolean)} options Options to be to `on`
+   * @param {(Window|HTMLDocument|HTMLElement)} context Delegation root element
    *
    * @return {Function} Function to be called to remove the delegated callback
    */
 
   function delegate(target, event, callback, options) {
+    var context = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : window;
+
     function check(e) {
       if (isChildOf(e.target, target)) {
         callback(e);
       }
     }
 
-    on(window, event, check, options);
+    on(context, event, check, options);
     return function undelegate() {
-      off(window, event, check);
+      off(context, event, check);
     };
   }
   /**

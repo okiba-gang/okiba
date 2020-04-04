@@ -438,7 +438,7 @@ Selector to match or Element checked for parent relationship
 #### Returns
 
 `Boolean` Boolean of match found
-## delegate(target, event, callback, options)
+## delegate(target, event, callback, options, context)
 
 
 Delegate an event callback.
@@ -475,14 +475,19 @@ Selector or Element to match
 Event to bind to
 
 
-##### + `callback`: `String`
+##### + `callback`: `function`
 
 Function to be executed at match
 
 
-##### + `options`: `String`
+##### + `options`: `Object` or  `Boolean`
 
-Options forwarded to `on`
+Options to be to `on`
+
+
+##### + `context`: `Window` or  `HTMLDocument` or  `HTMLElement`
+
+Delegation root element
 
 
 
