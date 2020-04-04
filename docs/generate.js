@@ -45,6 +45,7 @@ async function generate() {
 
   // await writeFileSync('./debug/data-root-dump.js', JSON.stringify(rootData))
   const markdown = nunjucks.renderString(templateRoot, baseData)
+  writeFileSync('./packages/README.md', markdown)
   writeFileSync('./README.md', markdown)
 }
 
