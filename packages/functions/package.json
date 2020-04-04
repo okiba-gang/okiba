@@ -1,6 +1,6 @@
 {
   "name": "@okiba/functions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility helpers for okiba.js",
   "main": "./index.js",
   "repository": {

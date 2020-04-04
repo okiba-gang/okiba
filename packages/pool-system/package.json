@@ -1,6 +1,6 @@
 {
   "name": "@okiba/pool-system",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Class to manage dinamically a pool of system",
   "main": "./index.js",
   "repository": {
