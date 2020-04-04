@@ -128,6 +128,28 @@ Custom data to be passed to the handlers
 
 
 
+## hasListeners(type)
+
+
+Checks if the given event has registered callbacks
+
+
+
+
+
+
+
+#### Arguments
+
+
+##### + `type`: `String`
+
+The event type
+
+
+
+
+
 ## destroy()
 
 
