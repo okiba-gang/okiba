@@ -84,6 +84,16 @@ var OkibaEventEmitter = (function () {
         });
       }
       /**
+       * Checks if the given event has registered callbacks
+       * @param {String} type The event type
+       */
+
+    }, {
+      key: "hasListeners",
+      value: function hasListeners(type) {
+        return this.hs.hasOwnProperty(type) && this.hs[type].size > 0;
+      }
+      /**
        * Removes all event listeners and deletes the handlers object
        */
 

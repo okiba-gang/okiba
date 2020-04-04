@@ -42,6 +42,21 @@ it('should not remove an handler if reference is wrong', done => {
   done()
 })
 
+it('should have at least one callback for "test-event" event', done => {
+  const ee = new EventEmitter()
+  ee.on('test-event', () => null)
+  const ls = ee.hasListeners('test-event')
+  expect(ls).toBe(true)
+  done()
+})
+
+it('should not have any callback for "test-event" event', done => {
+  const ee = new EventEmitter()
+  const ls = ee.hasListeners('test-event')
+  expect(ls).toBe(false)
+  done()
+})
+
 it('should not call listeners after destroy', done => {
   const ee = new EventEmitter()
   const spy = jest.fn()
