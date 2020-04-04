@@ -25,7 +25,7 @@ async function asyncForEach(array, callback) {
 
 async function generate() {
   await asyncForEach(packages, async name => {
-    if (name === 'node_modules' || name === 'package.json') return
+    if (name === 'node_modules' || name === 'package.json' || name === 'README.md') return
     const packageData = model(await jsdoc.explain({
       files: `./packages/${name}/index.js`
     }), baseData)

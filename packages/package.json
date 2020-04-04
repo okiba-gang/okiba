@@ -33,5 +33,6 @@
     "@okiba/search": "^1.0.20",
     "@okiba/time-progress": "^1.0.20",
     "@okiba/worker-utils": "^0.1.20"
-  }
+  },
+  "gitHead": "6439884a78f0d1abf01cad1621c12835f783dcd6"
 }
