@@ -1,6 +1,6 @@
 {
   "name": "@okiba/class-utils",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Utilities that operate on classes",
   "main": "./index.js",
   "repository": {
