@@ -11,7 +11,7 @@ exclude_patterns:
   - config/
   - '**/node_modules/'
   - '**/*.test.js'
-  - 'docs/'
+  - 'bin/'
   - 'packages/**/dist'
   - rollup.config.js
   - babel.config.js

@@ -12,6 +12,9 @@
     "Andrea Fiadone <andrea.fiadone@caffeina.com> (https://github.com/fiadone)",
     "Lorenzo Girardi <lorenzo.girardi@caffeina.com> (https://github.com/liqueflies/)"
   ],
+  "bin": {
+    "core": "index.js"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",

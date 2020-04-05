@@ -4,8 +4,9 @@
   "scripts": {
     "test": "jest",
     "build": "rollup -c rollup.config.js",
-    "docs": "node ./docs/generate.js",
-    "version": "npm run docs"
+    "docs": "node ./bin/readme/generate.js",
+    "manifest": "node ./bin/manifest.js",
+    "version": "npm run manifest && npm run docs"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",

@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages",
+    "bundle",
     "packages/*"
   ],
   "version": "independent"

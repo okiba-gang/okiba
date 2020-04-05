@@ -1,4 +1,4 @@
-# Okiba
+# Okiba Core
 
 [![Tests Status](https://github.com/okiba-gang/okiba/workflows/Tests/badge.svg)](https://github.com/okiba-gang/okiba/actions?workflow=Tests)
 [![Maintainability](https://api.codeclimate.com/v1/badges/29a8700f940f1019e52e/maintainability)](https://codeclimate.com/github/okiba-gang/okiba/maintainability)
@@ -67,15 +67,15 @@ ______
 
 ## Installation
 
-You can grab all okiba core packages as an unique `npm` package
+You can grab all Okiba Core packages by using npx installer:
 ```bash
-npm i --save @okiba/core
+npx @okiba/core
 ```
 
 ## Usage
 
 #### Untranspiled code 🛑
-Okiba UI packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
+Okiba Core packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
 For example, using Babel with Webpack, you should prevent imports from okiba to be excluded from transpilation, like follows:
 
 ```javascript

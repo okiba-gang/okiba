@@ -16,27 +16,23 @@ const easedProgress = easeInQuad(progress)
 
 ### Installation
 
-You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/easings
 ```
-or you can grab it from core
-```bash
-npm i --save @okiba/core
-```
-```javascript
-import easings from '@okiba/core/easings'
-```
 
-Or use it in the browser
+Or import it directly in the browser
 ```html
 <script type="module" src="https://unpkg.com/@okiba/easings/index.js"></script>
 ```
 
 ## Usage
 
+```javascript
+import easings from '@okiba/easings'
+```
+
 #### Untranspiled code 🛑
-Okiba UI packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
+Okiba Core packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
 For example, using Babel with Webpack, you should prevent imports from okiba to be excluded from transpilation, like follows:
 
 ```javascript

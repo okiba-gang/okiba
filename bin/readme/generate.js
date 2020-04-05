@@ -5,13 +5,13 @@ nunjucks.configure({autoescape: false})
 
 const {model, modelPackage} = require('./model-data')
 
-const template = readFileSync('./docs/partials/readme-package.njk', 'utf8')
-const templateRoot = readFileSync('./docs/partials/readme-root.njk', 'utf8')
+const template = readFileSync('./bin/readme/partials/readme-package.njk', 'utf8')
+const templateRoot = readFileSync('./bin/readme/partials/readme-root.njk', 'utf8')
 
 const packages = readdirSync('./packages')
 
 const baseData = {
-  name: 'Okiba',
+  name: 'Okiba Core',
   description: '',
   packages: [],
   url: 'https://github.com/okiba-gang/okiba/tree/master/packages/'
@@ -45,8 +45,8 @@ async function generate() {
 
   // await writeFileSync('./debug/data-root-dump.js', JSON.stringify(rootData))
   const markdown = nunjucks.renderString(templateRoot, baseData)
-  writeFileSync('./packages/README.md', markdown)
   writeFileSync('./README.md', markdown)
+  writeFileSync('./bundle/README.md', markdown)
 }
 
 generate()

@@ -1,0 +1,19 @@
+{
+  "packages": [
+    "@okiba/arrays",
+    "@okiba/class-utils",
+    "@okiba/component",
+    "@okiba/dom",
+    "@okiba/drag-emitter",
+    "@okiba/easings",
+    "@okiba/event-emitter",
+    "@okiba/evented-component",
+    "@okiba/functions",
+    "@okiba/math",
+    "@okiba/pool-system",
+    "@okiba/resource-loader",
+    "@okiba/search",
+    "@okiba/time-progress",
+    "@okiba/worker-utils"
+  ]
+}
