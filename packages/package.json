@@ -1,6 +1,6 @@
 {
   "name": "@okiba/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A complete collection of Okiba core features",
   "keywords": [
     "okiba",
@@ -18,21 +18,21 @@
     "url": "git@github.com:okiba-gang/okiba.git"
   },
   "dependencies": {
-    "@okiba/arrays": "^1.0.20",
-    "@okiba/class-utils": "^1.0.20",
-    "@okiba/component": "^2.0.2",
-    "@okiba/dom": "^1.0.21",
-    "@okiba/drag-emitter": "^0.2.11",
-    "@okiba/easings": "^1.0.20",
-    "@okiba/event-emitter": "^1.1.11",
-    "@okiba/evented-component": "^2.0.4",
-    "@okiba/functions": "^1.0.3",
-    "@okiba/math": "^1.0.20",
-    "@okiba/pool-system": "^1.0.20",
-    "@okiba/resource-loader": "^0.1.20",
-    "@okiba/search": "^1.0.20",
-    "@okiba/time-progress": "^1.0.20",
-    "@okiba/worker-utils": "^0.1.20"
+    "@okiba/arrays": "^1.0.21",
+    "@okiba/class-utils": "^1.0.21",
+    "@okiba/component": "^2.0.3",
+    "@okiba/dom": "^1.0.22",
+    "@okiba/drag-emitter": "^0.2.12",
+    "@okiba/easings": "^1.0.21",
+    "@okiba/event-emitter": "^1.1.12",
+    "@okiba/evented-component": "^2.0.5",
+    "@okiba/functions": "^1.0.4",
+    "@okiba/math": "^1.0.21",
+    "@okiba/pool-system": "^1.0.21",
+    "@okiba/resource-loader": "^0.1.21",
+    "@okiba/search": "^1.0.21",
+    "@okiba/time-progress": "^1.0.21",
+    "@okiba/worker-utils": "^0.1.21"
   },
   "gitHead": "6439884a78f0d1abf01cad1621c12835f783dcd6"
 }

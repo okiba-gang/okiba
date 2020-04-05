@@ -1,6 +1,6 @@
 {
   "name": "@okiba/component",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "DOM Component for okiba.js",
   "main": "./index.js",
   "repository": {
@@ -13,8 +13,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@okiba/arrays": "^1.0.20",
-    "@okiba/dom": "^1.0.21"
+    "@okiba/arrays": "^1.0.21",
+    "@okiba/dom": "^1.0.22"
   },
   "gitHead": "222d513b852490989ec50d2da81e636c9c3fcbf1"
 }

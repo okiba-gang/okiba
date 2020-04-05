@@ -1,6 +1,6 @@
 {
   "name": "@okiba/drag-emitter",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Unified drag events emitter for mouse and touch",
   "main": "./index.js",
   "keywords": [
@@ -20,8 +20,8 @@
     "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)"
   ],
   "dependencies": {
-    "@okiba/dom": "^1.0.21",
-    "@okiba/event-emitter": "^1.1.11"
+    "@okiba/dom": "^1.0.22",
+    "@okiba/event-emitter": "^1.1.12"
   },
   "license": "MIT",
   "gitHead": "222d513b852490989ec50d2da81e636c9c3fcbf1"
