@@ -32,14 +32,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/event-emitter
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import event-emitter from '@okiba/core/event-emitter'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/event-emitter/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/event-emitter/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/event-emitter/index.js"></script>
 ```
 
 

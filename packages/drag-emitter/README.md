@@ -18,14 +18,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/drag-emitter
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import drag-emitter from '@okiba/core/drag-emitter'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/drag-emitter/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/drag-emitter/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/drag-emitter/index.js"></script>
 ```
 
 

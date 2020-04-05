@@ -27,18 +27,21 @@ __
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/{{pkgName}}
+```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import {{pkgName}} from '@okiba/core/{{pkgName}}'
 ```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/{{pkgName}}/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/{{pkgName}}/dist/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/{{pkgName}}/index.js"></script>
 ```
 
 {% if todo %}

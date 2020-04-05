@@ -36,14 +36,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/resource-loader
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import resource-loader from '@okiba/core/resource-loader'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/resource-loader/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/resource-loader/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/resource-loader/index.js"></script>
 ```
 
 

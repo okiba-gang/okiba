@@ -18,14 +18,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/class-utils
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import class-utils from '@okiba/core/class-utils'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/class-utils/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/class-utils/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/class-utils/index.js"></script>
 ```
 
 

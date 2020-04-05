@@ -70,6 +70,13 @@ Okiba is transpiled for browser usage only. If you use it in production, **don't
 
 ______
 
+## Installation
+
+You can grab all okiba core packages as an unique `npm` package
+```bash
+npm i --save @okiba/core
+```
+
 ## Full API List:
 
 

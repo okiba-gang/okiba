@@ -18,14 +18,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/math
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import math from '@okiba/core/math'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/math/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/math/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/math/index.js"></script>
 ```
 
 

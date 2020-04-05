@@ -18,14 +18,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/worker-utils
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import worker-utils from '@okiba/core/worker-utils'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/worker-utils/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/worker-utils/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/worker-utils/index.js"></script>
 ```
 
 

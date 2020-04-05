@@ -18,14 +18,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/arrays
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import arrays from '@okiba/core/arrays'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/arrays/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/arrays/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/arrays/index.js"></script>
 ```
 
 

@@ -25,14 +25,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/easings
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import easings from '@okiba/core/easings'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/easings/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/easings/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/easings/index.js"></script>
 ```
 
 

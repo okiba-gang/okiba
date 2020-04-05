@@ -18,14 +18,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/dom
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import dom from '@okiba/core/dom'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/dom/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/dom/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/dom/index.js"></script>
 ```
 
 

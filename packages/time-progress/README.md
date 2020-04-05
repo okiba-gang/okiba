@@ -40,14 +40,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/time-progress
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import time-progress from '@okiba/core/time-progress'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/time-progress/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/time-progress/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/time-progress/index.js"></script>
 ```
 
 

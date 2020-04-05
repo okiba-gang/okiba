@@ -74,14 +74,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/evented-component
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import evented-component from '@okiba/core/evented-component'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/evented-component/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/evented-component/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/evented-component/index.js"></script>
 ```
 
 

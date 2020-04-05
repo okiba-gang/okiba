@@ -5,7 +5,7 @@
     "test": "jest",
     "build": "rollup -c rollup.config.js",
     "docs": "node ./docs/generate.js",
-    "version": "npm run build && npm run docs"
+    "version": "npm run docs"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",

@@ -67,14 +67,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/component
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import component from '@okiba/core/component'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/component/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/component/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/component/index.js"></script>
 ```
 
 

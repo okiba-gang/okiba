@@ -31,14 +31,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/pool-system
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import pool-system from '@okiba/core/pool-system'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/pool-system/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/pool-system/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/pool-system/index.js"></script>
 ```
 
 

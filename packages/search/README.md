@@ -18,14 +18,17 @@ You can grab it as an `npm` package
 ```bash
 npm i --save @okiba/search
 ```
+or you can grab it from core
+```bash
+npm i --save @okiba/core
+```
+```javascript
+import search from '@okiba/core/search'
+```
 
 Or use it in the browser
 ```html
-<!-- Minified -->
-<script src="https://unpkg.com/@okiba/search/dist/index.min.js"></script>
-
-<!-- Full -->
-<script src="https://unpkg.com/@okiba/search/dist/index.js"></script>
+<script src="https://unpkg.com/@okiba/search/index.js"></script>
 ```
 
 
