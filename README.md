@@ -96,98 +96,121 @@ For example, using Babel with Webpack, you should prevent imports from okiba to 
 
 #### [arrays](https://github.com/okiba-gang/okiba/tree/master/packages/arrays)
 Array utils for okiba js
-
 ###### [`arrayOrOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#arrayoronearrayLike), [`castArray`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#castarraycastable), [`spliceOne`](https://github.com/okiba-gang/okiba/tree/master/packages/arrays#spliceonearray-index)
+
 ---
+
 
 #### [class-utils](https://github.com/okiba-gang/okiba/tree/master/packages/class-utils)
 Utilities that operate on classes
-
 ###### [`mixin`](https://github.com/okiba-gang/okiba/tree/master/packages/class-utils#mixinBaseClass-context-Arguments)
+
 ---
+
 
 #### [component](https://github.com/okiba-gang/okiba/tree/master/packages/component)
 Manages a DOM component, binds UI and recursively binds child components.
 Can be extended or instantiated
-
 ###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/component#componentargs-el-ui-components-options), [`onDestroy`](https://github.com/okiba-gang/okiba/tree/master/packages/component#ondestroy), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/component#destroy)
+
 ---
+
 
 #### [dom](https://github.com/okiba-gang/okiba/tree/master/packages/dom)
 Utilities to work with dom elements and selectors
-
 ###### [`byId`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#byidid), [`qs`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsselector-element), [`qsa`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#qsaselector-element), [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#onwindow-type-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offwindow-type-handler), [`eventCoords`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#eventcoordsDOM), [`offset`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#offsetel), [`getElements`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#getelementstarget), [`matches`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#matchesel-selectors-testAncestors), [`isChildOf`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#ischildofel-target), [`delegate`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#delegatetarget-event-callback-options-context), [`createCustomEvent`](https://github.com/okiba-gang/okiba/tree/master/packages/dom#createcustomeventtype-options)
+
 ---
+
 
 #### [drag-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter)
 Emits drag events for all common pointers kinds (touch & mouse)
-
 ###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter#dragemitterel), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/drag-emitter#destroy)
+
 ---
+
 
 #### [easings](https://github.com/okiba-gang/okiba/tree/master/packages/easings)
 Collection of easings to alter a value
-
 ###### 
+
 ---
+
 
 #### [event-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter)
 Emits events that can be listened and unlistened to
-
 ###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#onname-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#offname-handler), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emitname-data), [`hasListeners`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#haslistenerstype), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#destroy)
+
 ---
+
 
 #### [evented-component](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component)
 A component that has events.
 Extends [Component](https://github.com/okiba-gang/okiba/tree/master/packages/component) and
 composes with [EventEmitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter),
 inerithing both's method sets.
-
 ###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#on), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#off), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#emit), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/evented-component#destroy)
+
 ---
+
 
 #### [functions](https://github.com/okiba-gang/okiba/tree/master/packages/functions)
 A collection of contextless utility functions
-
 ###### [`debounce`](https://github.com/okiba-gang/okiba/tree/master/packages/functions#debouncecallback-latency-timer)
+
 ---
+
 
 #### [math](https://github.com/okiba-gang/okiba/tree/master/packages/math)
 Collection of math functions
-
 ###### [`lerp`](https://github.com/okiba-gang/okiba/tree/master/packages/math#lerpmin-max-fraction), [`map`](https://github.com/okiba-gang/okiba/tree/master/packages/math#mapn-min1-max1-min2-max2), [`cap`](https://github.com/okiba-gang/okiba/tree/master/packages/math#capn-min-max), [`distance`](https://github.com/okiba-gang/okiba/tree/master/packages/math#distancex1-x2), [`round`](https://github.com/okiba-gang/okiba/tree/master/packages/math#roundn-p)
+
 ---
+
 
 #### [pool-system](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system)
 Manages a dinamically grown pool of DOM Elements
 import PoolSystem from '@okiba/pool-system'
-
 ###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#poolsystemparent-createEl), [`ensure`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#ensuresize), [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#get), [`free`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#freeElement), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/pool-system#destroy)
+
 ---
+
 
 #### [resource-loader](https://github.com/okiba-gang/okiba/tree/master/packages/resource-loader)
 Manages loading of resources trough fetch to boost caching.
 Transparently relies on a WebWorker if possible to load on a separate thread.
-
 ###### [`load`](https://github.com/okiba-gang/okiba/tree/master/packages/resource-loader#loadurl)
+
 ---
+
 
 #### [search](https://github.com/okiba-gang/okiba/tree/master/packages/search)
 Search utilities
-
 ###### [`binarySearch`](https://github.com/okiba-gang/okiba/tree/master/packages/search#binarysearchdata-target-start-end-prop)
+
 ---
+
+
+#### [store](https://github.com/okiba-gang/okiba/tree/master/packages/store)
+A store module to implement state management.
+###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/store#module:storeinitialState), [`set`](https://github.com/okiba-gang/okiba/tree/master/packages/store#setkey-value), [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/store#getkey), [`getState`](https://github.com/okiba-gang/okiba/tree/master/packages/store#getstate), [`setState`](https://github.com/okiba-gang/okiba/tree/master/packages/store#setstatestate), [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/store#reset), [`subscribe`](https://github.com/okiba-gang/okiba/tree/master/packages/store#subscribekey-callback), [`unsubscribe`](https://github.com/okiba-gang/okiba/tree/master/packages/store#unsubscribekey-callback)
+
+---
+
 
 #### [time-progress](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress)
 Maps progress ovrer time, normalized between 0 and 1
-
 ###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#timeprogressduration), [`update`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#update), [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reset), [`setProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setprogressprogress), [`setDirection`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setdirectiondirection), [`reverse`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reverse)
+
 ---
+
 
 #### [worker-utils](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils)
 Set of useful functions to ease WebWorkers development
-
 ###### [`createWorker`](https://github.com/okiba-gang/okiba/tree/master/packages/worker-utils#createworkerfn)
+
+
+
 
 
 

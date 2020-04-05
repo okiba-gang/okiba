@@ -54,6 +54,20 @@ For example, using Babel with Webpack, you should prevent imports from okiba to 
 }
 ```
 
+{% if submodules %}
+### Submodules:
+{% for s in submodules %}
+#### [{{s.name}}]({{s.url}})
+{{s.description}}
+{% if s.members %}
+###### {% for sm in s.members -%}
+[`{{ sm.name }}`]({{ s.url }}){%- if not loop.last %}, {% endif -%}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
 {% if todo %}
 #### Todo:
 {% for t in todo %}
@@ -62,7 +76,7 @@ For example, using Babel with Webpack, you should prevent imports from okiba to 
 {% endif %}
 
 {% for member in members -%}
-{% if member.kind == 'class' %}
+{% if member.kind == 'class' or member.name == name %}
 ## constructor({{ps(member.params)}})
 {% else %}
 ## {{member.name}}({{ps(member.params)}})
@@ -70,4 +84,3 @@ For example, using Babel with Webpack, you should prevent imports from okiba to 
 
 {% include "./bin/readme/partials/describe.njk" %}
 {%- endfor -%}
-

@@ -1,0 +1,16 @@
+{
+  "name": "@okiba/store",
+  "version": "0.0.1",
+  "description": "A store module to implement state management",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okiba-gang/okiba.git"
+  },
+  "contributors": [
+    "Alberto Parziale <alberto.parziale@caffeina.com> (http://lavolpechevola.com/)",
+    "Vincent De Feo <vincent.defeo@caffeina.com> (http://ghzmdr.github.io/)",
+    "Andrea Fiadone <andrea.fiadone@caffeina.com> ()"
+  ],
+  "license": "MIT"
+}
