@@ -94,14 +94,28 @@ For example, using Babel with Webpack, you should prevent imports from okiba to 
 ## Full API List:
 {% if packages %}
 {% for pkg in packages %}
+{% if not pkg.parent -%}
 #### [{{ pkg.name }}]({{ pkg.url }})
 {{pkg.description}}
-
 {% if pkg.members -%}
 ###### {% for m in pkg.members -%}
 [`{{ m.name }}`]({{ m.url }}){%- if not loop.last %}, {% endif -%}
 {%- endfor -%}
 {%- endif %}
-{% if not loop.last %}---{% endif %}
+{% if pkg.submodules -%}
+#### Submodules:
+{% for s in pkg.submodules %}
+##### • [{{s.name}}]({{s.url}})
+{{s.description}}
+{% if s.members %}
+###### {% for sm in s.members -%}
+[`{{ sm.name }}`]({{ s.url }}){%- if not loop.last %}, {% endif -%}
 {% endfor %}
 {% endif %}
+{% endfor %}
+{% endif %}
+{% if not loop.last %}---{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+

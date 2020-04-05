@@ -13,6 +13,7 @@
     "@okiba/pool-system",
     "@okiba/resource-loader",
     "@okiba/search",
+    "@okiba/store",
     "@okiba/time-progress",
     "@okiba/worker-utils"
   ]
