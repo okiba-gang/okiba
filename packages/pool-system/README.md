@@ -4,11 +4,6 @@
 Manages a dinamically grown pool of DOM Elements
 import PoolSystem from '@okiba/pool-system'
 
-
-###### Untranspiled code. 🛑
-
-Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
-
 __
 
 
@@ -42,6 +37,25 @@ import PoolSystem from '@okiba/core/pool-system'
 Or use it in the browser
 ```html
 <script type="module" src="https://unpkg.com/@okiba/pool-system/index.js"></script>
+```
+
+## Usage
+
+#### Untranspiled code 🛑
+Okiba UI packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
+For example, using Babel with Webpack, you should prevent imports from okiba to be excluded from transpilation, like follows:
+
+```javascript
+{
+  test: /\.js$/,
+  exclude: /node_modules\/(?!(@okiba)\/).*/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env']
+    }
+  }
+}
 ```
 
 

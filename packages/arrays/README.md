@@ -3,11 +3,6 @@
 # Okiba / arrays
 Array utils for okiba js
 
-
-###### Untranspiled code. 🛑
-
-Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
-
 __
 
 
@@ -29,6 +24,25 @@ import arrays from '@okiba/core/arrays'
 Or use it in the browser
 ```html
 <script type="module" src="https://unpkg.com/@okiba/arrays/index.js"></script>
+```
+
+## Usage
+
+#### Untranspiled code 🛑
+Okiba UI packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
+For example, using Babel with Webpack, you should prevent imports from okiba to be excluded from transpilation, like follows:
+
+```javascript
+{
+  test: /\.js$/,
+  exclude: /node_modules\/(?!(@okiba)\/).*/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env']
+    }
+  }
+}
 ```
 
 

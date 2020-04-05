@@ -4,11 +4,6 @@
 Manages loading of resources trough fetch to boost caching.
 Transparently relies on a WebWorker if possible to load on a separate thread.
 
-
-###### Untranspiled code. 🛑
-
-Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
-
 __
 
 
@@ -47,6 +42,25 @@ import ResourceLoader from '@okiba/core/resource-loader'
 Or use it in the browser
 ```html
 <script type="module" src="https://unpkg.com/@okiba/resource-loader/index.js"></script>
+```
+
+## Usage
+
+#### Untranspiled code 🛑
+Okiba UI packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
+For example, using Babel with Webpack, you should prevent imports from okiba to be excluded from transpilation, like follows:
+
+```javascript
+{
+  test: /\.js$/,
+  exclude: /node_modules\/(?!(@okiba)\/).*/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env']
+    }
+  }
+}
 ```
 
 

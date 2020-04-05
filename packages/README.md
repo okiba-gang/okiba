@@ -63,11 +63,6 @@ No line makes it into `master` if the overall code quality gets degraded.
 
 _We could state that our API is 100% documented, but we still have no tests in place to back this metric up... so we don't 🤡_
 
-
-###### Untranspiled code. 🛑
-
-Okiba is transpiled for browser usage only. If you use it in production, **don't forget to transpile it with your bundler**.
-
 ______
 
 ## Installation
@@ -75,6 +70,25 @@ ______
 You can grab all okiba core packages as an unique `npm` package
 ```bash
 npm i --save @okiba/core
+```
+
+## Usage
+
+#### Untranspiled code 🛑
+Okiba UI packages are not transpiled, so _don't forget to transpile them with your favourite bundler_.
+For example, using Babel with Webpack, you should prevent imports from okiba to be excluded from transpilation, like follows:
+
+```javascript
+{
+  test: /\.js$/,
+  exclude: /node_modules\/(?!(@okiba)\/).*/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env']
+    }
+  }
+}
 ```
 
 ## Full API List:
