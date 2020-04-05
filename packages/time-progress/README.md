@@ -36,7 +36,7 @@ requestAnimationFrame(loop)
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/time-progress
 ```
@@ -45,12 +45,12 @@ or you can grab it from core
 npm i --save @okiba/core
 ```
 ```javascript
-import time-progress from '@okiba/core/time-progress'
+import TimeProgress from '@okiba/core/time-progress'
 ```
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/time-progress/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/time-progress/index.js"></script>
 ```
 
 

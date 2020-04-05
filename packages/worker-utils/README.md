@@ -14,7 +14,7 @@ __
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/worker-utils
 ```
@@ -28,7 +28,7 @@ import worker-utils from '@okiba/core/worker-utils'
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/worker-utils/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/worker-utils/index.js"></script>
 ```
 
 

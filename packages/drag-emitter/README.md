@@ -14,7 +14,7 @@ __
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/drag-emitter
 ```
@@ -23,12 +23,12 @@ or you can grab it from core
 npm i --save @okiba/core
 ```
 ```javascript
-import drag-emitter from '@okiba/core/drag-emitter'
+import DragEmitter from '@okiba/core/drag-emitter'
 ```
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/drag-emitter/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/drag-emitter/index.js"></script>
 ```
 
 

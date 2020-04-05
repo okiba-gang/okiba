@@ -14,7 +14,7 @@ __
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/class-utils
 ```
@@ -28,7 +28,7 @@ import class-utils from '@okiba/core/class-utils'
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/class-utils/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/class-utils/index.js"></script>
 ```
 
 

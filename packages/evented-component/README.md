@@ -70,7 +70,7 @@ class UIPiece extends Component {
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/evented-component
 ```
@@ -79,12 +79,12 @@ or you can grab it from core
 npm i --save @okiba/core
 ```
 ```javascript
-import evented-component from '@okiba/core/evented-component'
+import EventedComponent from '@okiba/core/evented-component'
 ```
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/evented-component/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/evented-component/index.js"></script>
 ```
 
 

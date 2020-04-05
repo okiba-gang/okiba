@@ -21,7 +21,7 @@ const easedProgress = easeInQuad(progress)
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/easings
 ```
@@ -35,7 +35,7 @@ import easings from '@okiba/core/easings'
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/easings/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/easings/index.js"></script>
 ```
 
 

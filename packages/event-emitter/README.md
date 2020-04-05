@@ -28,7 +28,7 @@ emitter.emit('log', 'Will not run')
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/event-emitter
 ```
@@ -37,12 +37,12 @@ or you can grab it from core
 npm i --save @okiba/core
 ```
 ```javascript
-import event-emitter from '@okiba/core/event-emitter'
+import EventEmitter from '@okiba/core/event-emitter'
 ```
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/event-emitter/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/event-emitter/index.js"></script>
 ```
 
 

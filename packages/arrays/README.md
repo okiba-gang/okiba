@@ -14,7 +14,7 @@ __
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/arrays
 ```
@@ -28,7 +28,7 @@ import arrays from '@okiba/core/arrays'
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/arrays/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/arrays/index.js"></script>
 ```
 
 

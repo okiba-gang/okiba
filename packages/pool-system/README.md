@@ -27,7 +27,7 @@ const pool = new PoolSystem(container, createEl)
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/pool-system
 ```
@@ -36,12 +36,12 @@ or you can grab it from core
 npm i --save @okiba/core
 ```
 ```javascript
-import pool-system from '@okiba/core/pool-system'
+import PoolSystem from '@okiba/core/pool-system'
 ```
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/pool-system/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/pool-system/index.js"></script>
 ```
 
 

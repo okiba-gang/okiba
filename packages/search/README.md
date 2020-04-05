@@ -14,7 +14,7 @@ __
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/search
 ```
@@ -28,7 +28,7 @@ import search from '@okiba/core/search'
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/search/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/search/index.js"></script>
 ```
 
 

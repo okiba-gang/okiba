@@ -32,7 +32,7 @@ urls.forEach(
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/resource-loader
 ```
@@ -41,12 +41,12 @@ or you can grab it from core
 npm i --save @okiba/core
 ```
 ```javascript
-import resource-loader from '@okiba/core/resource-loader'
+import ResourceLoader from '@okiba/core/resource-loader'
 ```
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/resource-loader/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/resource-loader/index.js"></script>
 ```
 
 

@@ -63,7 +63,7 @@ const app = new Component({
 
 ### Installation
 
-You can grab it as an `npm` package
+You can grab it as a `npm` package
 ```bash
 npm i --save @okiba/component
 ```
@@ -72,12 +72,12 @@ or you can grab it from core
 npm i --save @okiba/core
 ```
 ```javascript
-import component from '@okiba/core/component'
+import Component from '@okiba/core/component'
 ```
 
 Or use it in the browser
 ```html
-<script src="https://unpkg.com/@okiba/component/index.js"></script>
+<script type="module" src="https://unpkg.com/@okiba/component/index.js"></script>
 ```
 
 
