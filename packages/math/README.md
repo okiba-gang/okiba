@@ -242,7 +242,7 @@ Round a number with given precision, with memoized powers
 
 ```javascript
 import {round} from '@okiba/math'
-const rounded = distance(1.111111, 3)
+const rounded = round(1.111111, 3)
 console.log(rounded) // 1.111
 ```
 
