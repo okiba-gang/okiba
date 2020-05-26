@@ -1,19 +1,23 @@
 /**
  * @module Store
  * @description A store module to implement state management.
+ * It allows registering to prop updates, as well as any update trough the catch-all callback.
  *
  * @example
  * import Store from '@okiba/store'
  *
- * const store = new Store({ level: 1 })
+ * const store = new Store({ level: 1, lives: 3 })
  *
  * const onLevelChange = level => {
  *  console.log(level)
  * }
  *
+ * store.subscribe('*', state => console.log(`Store: ${state}`))
  * store.subscribe('level', onLevelChange)
  *
- * store.set('level', 2) // Logs: 2
+ * store.set('level', 2)
+ * // Logs: 2
+ * // Logs: the whole state ({level: 1, lives: 3})
  */
 import EventEmitter from '@okiba/event-emitter'
 
@@ -35,6 +39,7 @@ export default function Store(initialState = {}) {
   this.set = (key, value) => {
     data[key] = value
     emitter.emit(key, { value })
+    emitter.emit('*', data)
   }
 
   /**
@@ -62,7 +67,7 @@ export default function Store(initialState = {}) {
    */
   this.reset = () => {
     Object.keys(data).forEach(key => {
-      this.set(key, (props.includes(key) ? initialState[key] : null))
+      this.set(key, (props.includes(key) ? initialState[key] : void 0))
     })
   }
 

@@ -2,6 +2,7 @@
 
 # Okiba / Store
 A store module to implement state management.
+It allows registering to prop updates, as well as any update trough the catch-all callback.
 
 __
 
@@ -10,15 +11,18 @@ __
 ```javascript
 import Store from '@okiba/store'
 
-const store = new Store({ level: 1 })
+const store = new Store({ level: 1, lives: 3 })
 
 const onLevelChange = level => {
  console.log(level)
 }
 
+store.subscribe('*', state => console.log(`Store: ${state}`))
 store.subscribe('level', onLevelChange)
 
-store.set('level', 2) // Logs: 2
+store.set('level', 2)
+// Logs: 2
+// Logs: the whole state ({level: 1, lives: 3})
 ```
 
 

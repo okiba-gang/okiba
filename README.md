@@ -138,7 +138,7 @@ Collection of easings to alter a value
 
 
 #### [event-emitter](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter)
-Emits events that can be listened and unlistened to
+Emits events that can be listened and unlistened to. Allows for a catch-all event which is always triggered.
 ###### [`on`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#onname-handler), [`off`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#offname-handler), [`emit`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#emitname-data), [`hasListeners`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#haslistenerstype), [`destroy`](https://github.com/okiba-gang/okiba/tree/master/packages/event-emitter#destroy)
 
 ---
@@ -193,6 +193,7 @@ Search utilities
 
 #### [store](https://github.com/okiba-gang/okiba/tree/master/packages/store)
 A store module to implement state management.
+It allows registering to prop updates, as well as any update trough the catch-all callback.
 ###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/store#module:storeinitialState), [`set`](https://github.com/okiba-gang/okiba/tree/master/packages/store#setkey-value), [`get`](https://github.com/okiba-gang/okiba/tree/master/packages/store#getkey), [`getState`](https://github.com/okiba-gang/okiba/tree/master/packages/store#getstate), [`setState`](https://github.com/okiba-gang/okiba/tree/master/packages/store#setstatestate), [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/store#reset), [`subscribe`](https://github.com/okiba-gang/okiba/tree/master/packages/store#subscribekey-callback), [`unsubscribe`](https://github.com/okiba-gang/okiba/tree/master/packages/store#unsubscribekey-callback)
 
 ---

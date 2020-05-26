@@ -1,7 +1,7 @@
 
 
 # Okiba / EventEmitter
-Emits events that can be listened and unlistened to
+Emits events that can be listened and unlistened to. Allows for a catch-all event which is always triggered.
 
 __
 
