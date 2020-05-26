@@ -1,6 +1,6 @@
 {
   "name": "@okiba/evented-component",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "Component with events",
   "main": "./index.js",
   "keywords": [
@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@okiba/component": "^2.0.7",
-    "@okiba/event-emitter": "^1.1.16"
+    "@okiba/event-emitter": "^1.1.17"
   },
   "license": "MIT",
   "gitHead": "e1860440adf360f32a6f3b04d332e198fbd93e2a"
