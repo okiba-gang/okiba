@@ -132,7 +132,7 @@ Emits drag events for all common pointers kinds (touch & mouse)
 
 #### [easings](https://github.com/okiba-gang/okiba/tree/master/packages/easings)
 Collection of easings to alter a value
-######
+###### 
 
 ---
 
@@ -199,7 +199,7 @@ A store module to implement state management.
 
 
 #### [time-progress](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress)
-Maps progress over time, normalized between 0 and 1
+Maps progress ovrer time, normalized between 0 and 1
 ###### [`constructor`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#timeprogressduration), [`update`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#update), [`reset`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reset), [`setProgress`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setprogressprogress), [`setDirection`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#setdirectiondirection), [`reverse`](https://github.com/okiba-gang/okiba/tree/master/packages/time-progress#reverse)
 
 ---

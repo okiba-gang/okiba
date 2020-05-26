@@ -1,6 +1,6 @@
 /**
  * @module EventEmitter
- * @description Emits events that can be listened and unlistened to
+ * @description Emits events that can be listened and unlistened to. Allows for a catch-all event which is always triggered.
  * @example
  * import EventEmitter from '@okiba/event-emitter'
  * const emitter = new EventEmitter
