@@ -57,6 +57,28 @@ it('should not have any callback for "test-event" event', done => {
   done()
 })
 
+it('should trigger the catchall listener on every event', done => {
+  const ee = new EventEmitter()
+  const mock = jest.fn()
+
+  ee.on('*', mock)
+  ee.emit('whatever')
+
+  expect(mock).toBeCalled()
+  done()
+})
+
+// it('should not trigger the catchall listener if it has no handlers', done => {
+//   const ee = new EventEmitter()
+//   const mock = jest.fn()
+
+//   ee.hs = {'*': mock}
+//   ee.trigger('whatever')
+
+//   expect(mock).not.toBeCalled()
+//   done()
+// })
+
 it('should not call listeners after destroy', done => {
   const ee = new EventEmitter()
   const spy = jest.fn()

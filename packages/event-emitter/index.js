@@ -46,8 +46,15 @@ class EventEmitter {
    * @param  {Object} [data] Custom data to be passed to the handlers
    */
   emit(name, data) {
-    if (!this.hs || !this.hs[name]) return
-    this.hs[name].forEach(handler => handler(data))
+    if (!this.hs) return
+
+    if (this.hs[name]) {
+      this.hs[name].forEach(handler => handler(data))
+    }
+
+    if (this.hs['*']) {
+      this.hs['*'].forEach(handler => handler(data))
+    }
   }
 
   /**
