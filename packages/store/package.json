@@ -1,6 +1,6 @@
 {
   "name": "@okiba/store",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A store module to implement state management",
   "main": "./index.js",
   "repository": {
