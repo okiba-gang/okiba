@@ -184,6 +184,18 @@ State resetter
 
 
 
+## clear()
+
+
+Clears the current state, that is, the store is going to be empty.
+No callbacks are fired.
+
+
+
+
+
+
+
 ## subscribe(key, callback)
 
 

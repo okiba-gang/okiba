@@ -41,6 +41,17 @@ describe('store', () => {
     done()
   })
 
+  test('should be empty after a clear', done => {
+    const initialState = { key: 'value' }
+    const expectedState = {}
+
+    const store = new Store(initialState)
+    store.clear()
+
+    expect(store.getState()).toEqual(expectedState)
+    done()
+  })
+
   test('should notify an update on single store property value change', done => {
     const store = new Store({ key: 'value' })
     const f = jest.fn()

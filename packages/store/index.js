@@ -72,6 +72,14 @@ export default function Store(initialState = {}) {
   }
 
   /**
+   * Clears the current state, that is, the store is going to be empty.
+   * No callbacks are fired.
+   */
+  this.clear = () => {
+    data = {}
+  }
+
+  /**
    * State update subscription handler
    * @param {String} key The property to be observed
    * @param {Function} callback The function to be called on property update
